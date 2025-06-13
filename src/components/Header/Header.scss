@@ -1,0 +1,85 @@
+@use '../../app/globals.scss' as *;
+
+.header {
+    position: fixed; 
+    top: 15; 
+    z-index: 1000; 
+    background-color: transparent;
+    color: $white-primary;
+    width: 80%; 
+    left: 10%; 
+    right: 10%;
+    box-sizing: border-box;
+    padding: 20px 40px; 
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 30px;
+
+    &--scrolled {
+        background-color: $black-primary;
+    }
+
+    &--visible {
+        transform: translateY(0); 
+    }
+
+    &--hidden {
+        transform: translateY(-100%); 
+    }
+
+    &__container {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        flex-basis: 20%;
+        
+        h1 {
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+
+    &__nav {
+        flex-basis: 50%;
+        display: flex;
+        align-items: center;
+
+        &-list {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            width: 100%;
+            list-style: none;
+            padding: 0;
+        }
+
+        &-item {
+            &--link {
+                text-decoration: none;
+                color: $white-primary;
+                font-size: 16px;
+                font-weight: 300;
+            }
+        }
+    }
+
+    &__contact {
+        flex-basis: 20%;
+        display: flex;
+        justify-content: flex-end;
+
+        &-button {
+            background-color: $white-primary;
+            width: 144px;
+            height: 48px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}

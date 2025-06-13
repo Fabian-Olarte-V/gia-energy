@@ -1,0 +1,177 @@
+//shared styles
+
+main{
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 60px;
+  overflow: hidden;
+}
+
+
+.header-container{
+    width: 100%;
+    position: absolute;
+}
+
+.services-section {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 50px;
+
+  &__content {
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: space-between;
+  }
+
+  &__title-container {
+    flex-basis: 60%;
+  }
+
+  &__title {
+    font-size: 66px;
+    font-weight: 600;
+    color: #1A3D7E;
+
+    span{
+      color: #4F5D78;
+      font-weight: 400;
+    }
+  }
+
+  &__description-container {
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    position: relative;;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 30%;
+      height: 1px;
+      background-color: #F9AE74;
+      margin-bottom: 20px;
+      position: absolute;
+      top: -3px;
+    }
+  }
+
+  &__button {
+    border-radius: 30px;
+    width: 144px;
+    height: 48px;
+    color: #1A3D7E;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid #D2D2D2;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &__description {
+    font-size: 18px;
+    color: #4A4A4A;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+
+  &__services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
+
+    .service-card-container {
+      flex: 1;
+      height: 350px;
+      transition: transform 0.3s ease;
+      background-color: #D9D9D9;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+}
+
+.carousel-container {
+  position: relative;
+  left: 0%;
+  width: 100vw;
+  max-width: unset;
+}
+
+.results-section {
+  &__content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+  }
+
+  &__title-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 60px;
+    font-weight: 100;
+    color: #4F5D78;
+
+    span {
+      color: #1A3D7E;
+      font-weight: bold;
+    }
+  }
+  
+  &__buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  .nav-button{
+    padding: 10px 30px;
+    border-radius: 30px;
+    border: 1px solid #D8D8D8;
+    background-color: transparent;
+  }
+
+  &__nav-buttons{
+    display: flex;
+    gap: 20px;
+  }
+  
+  &__link-button{
+    font-size: 16px;
+    font-weight: bold;
+    color: #1A3D7E;
+  }
+
+  &__results {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+    overflow: hidden;
+
+    &--card{
+      width: 500px;
+      height: 500px;
+      background-color: #D9D9D9;
+    }
+  }
+}
+
+.bottom-section{
+  background-image: url('/assets/images/bottom-background.jpg');
+  background-position: top;
+  background-size: cover;
+  padding-bottom: 20px;
+}

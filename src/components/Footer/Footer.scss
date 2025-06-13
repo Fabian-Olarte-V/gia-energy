@@ -1,0 +1,80 @@
+@use '../../app/globals.scss' as *;
+
+.footer {
+    width: calc(100% - 40px);
+    background-color: $black-primary;
+    color: $white-primary;
+    padding: 20px;
+    border-radius: 30px;
+    margin: 20px 20px 0px 20px;
+    
+    box-sizing: border-box;
+
+    &__container {
+        display: flex;
+        flex-flow: row wrap;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    &__logo {
+        flex-basis: 10%;
+
+        h2 {
+            font-size: 16px;
+        }
+    }
+
+    &__contact-info {
+        flex-basis: 25%;
+    }
+
+    &__nav {
+        flex-basis: 25%;
+
+        &-list {
+            list-style: none;
+            padding: 0;
+
+            &-item {
+                margin-bottom: 20px;
+                
+                .footer__link {
+                    text-decoration: none;
+                    color: $white-primary;
+                }
+            }
+        }
+    }
+
+    &__company-info {
+        flex-basis: 25%;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 30px;
+    }
+
+    &__copy {
+        flex-basis: auto;
+        text-align: start;
+
+        .footer__text {
+            font-size: 12px;
+            margin: 0;
+        }
+    }
+}
+
+.footer__label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: $font-color-secondary;
+}
+
+.footer__text {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}

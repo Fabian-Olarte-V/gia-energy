@@ -1,0 +1,66 @@
+@use '../../app/globals.scss' as *;
+
+.about-us {
+    padding: 70px 0;
+
+    &__container {
+        height: 400px;   
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+    }
+
+    &__content {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    &__title-container {
+        flex: 0.5;
+        
+        &--label {
+            font-size: 20px;
+            font-weight: 100;
+            color: $white-primary;
+        }
+
+        &--title {
+            font-size: 64px;
+            font-weight: bold;
+            color: $white-primary;
+        }
+
+        &--buttons-container {
+            margin-top: 20px;
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 20px;
+
+            &--button {
+                width: 144px;
+                height: 48px;
+                border: 1px solid $white-primary;
+                border-radius: 30px;
+                background-color: transparent;
+                font-size: 16px;
+                font-weight: bold;
+                color: $white-primary;
+            }
+        }
+    }
+
+    &__description-container {
+        flex: 0.5;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        color: $white-primary;
+        
+        &--description {
+            width: 80%;
+            font-size: 20px;
+            line-height: 1.8rem;
+        }
+    }
+}

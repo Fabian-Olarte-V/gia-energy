@@ -1,0 +1,22 @@
+//colors
+$black-primary: #000000;
+
+$white-primary: #ffffff;
+
+$font-color-primary: #333333;
+$font-color-secondary: #A1A1A1;
+
+$font-hero-subtitle: #CDCDCD;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-roboto), sans-serif;
+}	
+
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+}
