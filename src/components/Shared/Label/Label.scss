@@ -1,9 +1,8 @@
-.label-container{
+.label-container {
     display: flex;
 
-    &__label{
+    &__label {
         font-size: 20px;
-        color: #F9AE74;
         box-sizing: border-box;
         width: auto;
         font-weight: 300;
@@ -14,7 +13,7 @@
             display: inline-block;
             width: 100%;
             height: 1px;
-            background-color: #F9AE74;
+            background-color: currentColor;
             vertical-align: text-top;
             top: -5px;
             position: absolute;

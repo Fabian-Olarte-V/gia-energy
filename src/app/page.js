@@ -15,23 +15,24 @@ const serviceCardsData = [
 		title: "Recuperación de Generadores de Alta Tensión",
 		description:
 			"Reconstrucción de bobinados y aislamiento para extender la vida útil en más del 150%.",
-		backgroundImage: "/assets/images/bottom-background.jpg",
+		backgroundImage: "/assets/images/service-1.png",
 	},
 	{
 		title: "Repotenciación de Centrales de Generación",
 		description:
 			"Mejoramos equipos antiguos para aumentar eficiencia sin reemplazos costosos.",
-		backgroundImage: "/assets/images/bottom-background.jpg",
+		backgroundImage: "/assets/images/service-5.png",
 	},
 	{
 		title: "Automatización y Análisis de Fallas",
 		description: "Automatizamos procesos críticos y reducimos tiempos de parada.",
-		backgroundImage: "/assets/images/bottom-background.jpg",
+		backgroundImage: "/assets/images/service-6.png",
 	},
 	{
 		title: "Evaluación de Riesgos Eléctricos",
 		description: "Identificamos fallas críticas y aplicamos análisis RCA.",
-		backgroundImage: "/assets/images/bottom-background.jpg",
+		backgroundImage: "/assets/images/service-4.png",
+		black:true
 	},
 ];
 
@@ -50,7 +51,7 @@ export default function Home() {
 					<div className="services-section__title-container">
 						<Label label="SERVICIOS" />
 						<h1 className="services-section__title">
-							<span>Confianza Que</span> Impulsa Resultados
+							<span>Confianza Que<br /></span> Impulsa Resultados
 						</h1>
 					</div>
 					<div className="services-section__description-container">
@@ -70,19 +71,20 @@ export default function Home() {
 								title={card.title}
 								description={card.description}
 								backgroundImage={card.backgroundImage}
+								black={card.black}
 							/>
 						</div>
 					))}
 				</div>
 			</div>
 
+			<div className="stats-badge-container">
+				<StatsBadge />
+			</div>
+		
 			<Results />
 
 			<div className="bottom-section">
-				<div className="stats-badge-container">
-					<StatsBadge />
-				</div>
-
 				<div className="about-us-container">
 					<AboutUs />
 				</div>

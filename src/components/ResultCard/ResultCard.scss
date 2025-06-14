@@ -12,11 +12,13 @@
     gap: 20px;
     color: $white-primary;
     justify-content: space-between;
+    border-radius: 15px;
 
     &__title {
         text-align: start;
-        font-size: 40px;
-        line-height: 2.5rem;
+        font-size: 36px;
+        line-height: 2.3rem;
+        font-weight: 500;
     }
 
     &__description {
@@ -24,6 +26,5 @@
         font-size: 18px;
         line-height: 1.2rem;
         padding-bottom: 10px;
-        
     }
 }

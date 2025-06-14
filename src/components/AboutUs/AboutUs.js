@@ -1,5 +1,6 @@
 import React from 'react';
 import './AboutUs.scss';
+import Label from '../Shared/Label/Label';
 
 export default function AboutUs() {
   return (
@@ -7,11 +8,11 @@ export default function AboutUs() {
       <div className="about-us__container container">
         <div className="about-us__content">
           <div className="about-us__title-container">
-            <p className='about-us__title-container--label'>SOBRE NOSOTROS</p>
+            <Label label={"SOBRE NOSOTROS"} color='#fff'/>
             <p className='about-us__title-container--title'>Somos Expertos En Energía Eléctrica</p>
             <div className='about-us__title-container--buttons-container'>
-              <button className='about-us__title-container--buttons-container--button'>Conoce más</button>
-              <button className='about-us__title-container--buttons-container--button'>Contáctanos</button>
+              <button className='about-us__title-container--buttons-container--button more-info-button'>Conoce más</button>
+              <button className='about-us__title-container--buttons-container--button contact-button'>Contáctanos</button>
             </div>
           </div>
           <div className="about-us__description-container">

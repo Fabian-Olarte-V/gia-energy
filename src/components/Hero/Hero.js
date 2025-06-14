@@ -16,7 +16,7 @@ export default function Hero() {
           <p className="hero__description">
             Lleva tus activos al siguiente nivel con soluciones de diagnóstico, 
             recuperación y automatización que mejoran el rendimiento, 
-            reducen costos y alargan la vida útil de tus equipos — 
+            reducen costos y alargan la vida útil de tus equipos 
             todo con ingeniería experta y confiable.
           </p>
           <button className="hero__cta-button">Conoce más</button>

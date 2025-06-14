@@ -50,10 +50,9 @@ export default function Carousel({ onSwiper }) {
 
   return (
     <Swiper
-      modules={[Navigation, Pagination, Autoplay]}
+      modules={[Navigation, Pagination]}
       spaceBetween={20}
-      slidesPerView={4}
-      pagination={{ clickable: true }}
+      slidesPerView={3}
       autoplay={{ delay: 4000 }}
       onSwiper={onSwiper}
     >

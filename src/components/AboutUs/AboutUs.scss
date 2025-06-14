@@ -1,10 +1,10 @@
 @use '../../app/globals.scss' as *;
 
 .about-us {
-    padding: 70px 0;
+    padding: 80px 0 50px 0px;
 
     &__container {
-        height: 400px;   
+        height: 480px;   
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
@@ -17,6 +17,7 @@
 
     &__title-container {
         flex: 0.5;
+        border-right: 1px solid $white-primary;
         
         &--label {
             font-size: 20px;
@@ -44,6 +45,16 @@
                 background-color: transparent;
                 font-size: 16px;
                 font-weight: bold;
+                color: $white-primary;
+            }
+
+            .more-info-button {
+                background-color: $white-primary;
+                color: $black-primary;
+            }
+
+            .contact-button {
+                background-color: rgba(145, 140, 140, 0.562);
                 color: $white-primary;
             }
         }

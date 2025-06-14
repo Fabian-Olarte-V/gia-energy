@@ -1,22 +1,21 @@
 @use '../../app/globals.scss' as *;
 
+.temporal{
+    background-color: red;
+    width: 100%;
+    height: auto;
+}
+
 .header {
     position: fixed; 
-    top: 15; 
+    top: 0; 
     z-index: 1000; 
     background-color: transparent;
     color: $white-primary;
-    width: 80%; 
-    left: 10%; 
-    right: 10%;
+    width: 100%; 
     box-sizing: border-box;
-    padding: 20px 40px; 
+    padding-top: 15px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    border-radius: 30px;
-
-    &--scrolled {
-        background-color: $black-primary;
-    }
 
     &--visible {
         transform: translateY(0); 
@@ -26,11 +25,25 @@
         transform: translateY(-100%); 
     }
 
+    &__wrapper {
+        width: 97%;
+        margin: 0 auto;
+        background-color: transparent;
+        padding: 20px 40px; 
+        border-radius: 30px;
+
+        &--scrolled {
+            background-color: $black-primary;
+        }
+    }
+
     &__container {
         display: flex;
         gap: 20px;
         justify-content: space-between;
         align-items: center;
+        width: 90%;
+        margin: 0 auto;
     }
 
     &__logo {

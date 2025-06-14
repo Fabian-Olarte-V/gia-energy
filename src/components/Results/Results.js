@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import Carousel from "@/components/Carousel/Carousel";
 import Label from "@/components/Shared/Label/Label";
 import "./Results.scss";
+import ArrowIcon from "../Shared/IconsSvg/ArrowIcon/ArrowIcon";
 
 export default function Results() {
   const swiperRef = useRef(null); 
@@ -35,13 +36,13 @@ export default function Results() {
               className="results-section__nav-buttons--prev nav-button"
               onClick={handlePrev} 
             >
-              Anterior
+              <ArrowIcon />
             </button>
             <button
               className="results-section__nav-buttons--next nav-button"
               onClick={handleNext}
             >
-              Siguiente
+              <ArrowIcon rotation={180}/>
             </button>
           </div>
           <button className="results-section__link-button nav-button">
