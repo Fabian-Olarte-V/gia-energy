@@ -1,0 +1,30 @@
+@use "sass:map";
+
+$breakpoints: (
+    "xs": 320px,
+    "sm": 480px,
+    "md": 768px,
+    "lg": 992px,
+    "xl": 1200px,
+    "xxl": 1440px
+);
+
+@mixin responsive($breakpoint) {
+    $value: map.get($breakpoints, $breakpoint);
+    @if $value {
+        @media (max-width: $value) {
+            @content;
+        }
+    } @else {
+        @warn "⚠️ Breakpoint '#{$breakpoint}' no está definido.";
+    }
+}
+
+@mixin flex-center($direction: row) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: $direction nowrap;
+}
+
+

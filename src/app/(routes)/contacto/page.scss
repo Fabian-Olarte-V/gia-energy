@@ -1,0 +1,147 @@
+@use '../../globals.scss' as *;
+
+.contact-page {
+    margin-top: 120px;
+    margin-bottom: 15px;
+
+    @include responsive(lg) {
+        margin-top: 100px;
+    }
+
+    &__container {
+        display: flex;
+        gap: 50px;
+
+        @include responsive(lg) {
+            gap: 10px;
+            padding-bottom: 20px;
+        }
+    }
+
+    &__image-container {
+        flex: 0.5;
+        position: relative;
+        border-radius: 30px;
+        overflow: hidden;
+
+        @include responsive(md) {
+            display: none; 
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    &__content {
+        flex: 0.5;
+        padding: 50px 20px;
+
+        @include responsive(lg) {
+            padding: 20px;
+        }
+
+        @include responsive(md) {
+            padding: 0px;
+            flex: 1;
+        }
+
+        &--logo {
+            font-size: clamp(12px, 1vw, 32px);
+            font-weight: 300;
+            color: $black-primary;
+
+            @include responsive(lg) {
+                display: none;
+            }
+        }
+
+        &--title {
+            font-size: clamp(12px, 1vw + 1rem, 32px);
+            font-weight: 300;
+            color: $blue-50;
+        }
+
+        &--subtitle {
+            font-size: clamp(12px, 1vw + 1rem, 32px);
+            font-weight: 500;
+            color: $blue-100;
+        }
+
+        &--description {
+            font-size: clamp(12px, 1vw + 0.4rem, 18px);
+            color: $font-color-secondary;
+        }
+    }
+
+    &__form-container {
+        margin-top: 40px;
+
+        @include responsive(lg) {
+            margin-top: 20px;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+
+        &--input-group {
+            width: 100%;
+            display: flex;
+            flex-flow: column;
+            gap: 5px;
+
+            &__names {
+                display: flex;
+                gap: 20px;
+
+                @include responsive(lg) {
+                    flex-direction: column;
+                }
+
+                &--input-group {
+                    flex: 1;
+
+                    &--label {
+                        font-size: clamp(12px, 1vw, 16px);
+                        padding-bottom: 10px;
+                    }
+
+                    &--input {
+                        padding: 15px 20px;
+                        border-radius: 5px;
+                        border: 1px solid #ccc;
+                        width: 100%;
+                        margin-top: 5px;
+                    }
+                }
+            }
+
+            &--label {
+                font-size: clamp(12px, 1vw, 16px);
+            }
+
+            &--input {
+                padding: 15px 20px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+        }
+
+        &--button {
+            border-radius: 5px;
+            padding: 15px 20px;
+            border: none;
+            background-color: $blue-100;
+            font-size: clamp(12px, 1vw, 16px);
+            color: $white-primary;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+    }
+}

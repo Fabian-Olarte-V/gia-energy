@@ -1,0 +1,101 @@
+@use '../../globals.scss' as *;
+
+.services-page {
+    margin-top: 140px;
+    margin-bottom: 15px;
+
+    @include responsive(lg) {
+        margin-top: 120px;
+    }
+
+    &__container {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 50px;
+    }
+
+    &__hero {
+        @include flex-center;
+        justify-content: space-between;
+        gap: 50px;
+
+        @include responsive(lg) {
+            flex-flow: column nowrap;
+            align-items: center;
+        }
+
+        &-content {
+            flex: 0.6;
+            color: $blue-100;
+            position: relative;
+                        
+            &::before {
+                content: '';
+                display: inline-block;
+                width: 30%;
+                height: 1px;
+                background-color: #F9AE74;
+                vertical-align: text-top;
+                top: -5px;
+                position: absolute;
+            }
+        }
+
+        &-title {
+            margin-bottom: 15px;
+            font-weight: 400 !important;
+            color: $blue-50 !important;
+
+            @include responsive(lg) {
+                margin-bottom: 10px;
+            }
+
+            span{
+                color: $blue-100 !important;
+                font-weight: 500 !important;
+            }
+        }
+
+        &-description {
+            width: 90%;
+
+            @include responsive(lg) {
+                width: 100%;
+            }
+        }
+
+        &-image {
+            flex: 0.4;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+
+            @include responsive(lg) {
+                display: none;
+            }
+
+            &-container{
+                position: relative;
+                width: 400px;
+                height: 360px;
+            }
+        }
+
+        &-button-container{
+            display: flex;
+            margin-top: 20px;
+
+            @include responsive(md) {
+                margin-top: 10px;
+            }
+        }
+
+        &-button{
+            background-color: #ED7D24;
+            color: $white-primary !important;
+            width: auto !important;
+            border: none !important;
+        }
+    }
+}

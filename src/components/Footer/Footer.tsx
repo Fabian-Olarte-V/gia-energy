@@ -1,4 +1,7 @@
 import React from 'react';
+import Link from 'next/link';
+import WhatsappIcon from '../Shared/IconsSvg/Whatsapp/WhatsappIcon';
+import LinkedinIcon from '../Shared/IconsSvg/Linkedin/LinkedinIcon';
 import './Footer.scss';
 
 export default function Footer() {
@@ -10,22 +13,35 @@ export default function Footer() {
         </div>
         <div className="footer__contact-info">
           <h3 className="footer__label">Contacto</h3>
-          <p className="footer__text">Email: vqingsas@hotmail.com</p>
+          <p className="footer__text">
+            <a href="mailto:jvelazqu1@gmail.com" className="footer__link">jvelazqu1@gmail.com</a>
+          </p>
+          <p className="footer__text">
+            <a href="mailto:Oscarquintero2006@hotmail.com" className="footer__link">Oscarquintero2006@hotmail.com</a>
+          </p>
+          <div className="footer__social-icons">
+            <Link href="https://wa.me/573102860714" target="_blank" rel="noopener noreferrer">
+              <WhatsappIcon color="#A1A1A1" />
+            </Link>
+            <Link href="https://www.linkedin.com/company/vq-global-ingenieria" target="_blank" rel="noopener noreferrer">
+              <LinkedinIcon color="#A1A1A1" />
+            </Link>
+          </div>
         </div>
         <nav className="footer__nav">
           <h3 className="footer__label">Navegación</h3>
           <ul className="footer__nav-list">
             <li className="footer__nav-list-item">
-              <a className="footer__link" href="#privacy">Servicios</a>
+              <Link className="header__nav-item--link footer__text footer__link" href={`/servicios`}>Servicios</Link>
             </li>
             <li className="footer__nav-list-item">
-              <a className="footer__link" href="#terms">Sobre Nosotros</a>
+              <Link className="header__nav-item--link footer__text footer__link" href={`/resultados`}>Resultados</Link>
             </li>
             <li className="footer__nav-list-item">
-              <a className="footer__link" href="#contact">Proyectos</a>
+              <Link className="header__nav-item--link footer__text footer__link" href={`/sobre-nosotros`}>Sobre Nosotros</Link>
             </li>
             <li className="footer__nav-list-item">
-              <a className="footer__link" href="#contact">Contactanos</a>
+              <Link className="header__nav-item--link footer__text footer__link" href={`/contacto`}>Contacto</Link>
             </li>
           </ul>
         </nav>

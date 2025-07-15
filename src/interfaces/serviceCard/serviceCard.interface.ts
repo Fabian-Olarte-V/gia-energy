@@ -1,5 +1,8 @@
-export interface ServiceCardProps {
-    title: string;
-    description: string;
-    backgroundImage: string;
+export interface IServiceCard {
+  title: string;
+  description: string;
+  category: string;
+  backgroundImage: string;
+  black?: boolean; 
+  expanded?: boolean;
 }

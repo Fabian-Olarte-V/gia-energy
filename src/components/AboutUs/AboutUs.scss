@@ -3,32 +3,42 @@
 .about-us {
     padding: 80px 0 50px 0px;
 
+    @include responsive(md) {
+        padding: 20px 0 0px 0;
+    }
+
     &__container {
         height: 480px;   
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
+        @include flex-center(column);
     }
 
     &__content {
         display: flex;
         flex-flow: row nowrap;
+                
+        @include responsive(md) {
+            flex-flow: column nowrap;
+        }
     }
 
     &__title-container {
         flex: 0.5;
         border-right: 1px solid $white-primary;
+        padding-right: 20px;
+
+        @include responsive(md) {
+            border-right: none;
+        }
         
         &--label {
-            font-size: 20px;
+            font-size: clamp(10px, 0.5vw + 0.5em, 20px); 
             font-weight: 100;
             color: $white-primary;
         }
 
         &--title {
-            font-size: 64px;
-            font-weight: bold;
-            color: $white-primary;
+            font-weight: bold !important;
+            color: $white-primary !important;
         }
 
         &--buttons-container {
@@ -37,15 +47,17 @@
             flex-flow: row nowrap;
             gap: 20px;
 
-            &--button {
-                width: 144px;
-                height: 48px;
-                border: 1px solid $white-primary;
-                border-radius: 30px;
-                background-color: transparent;
-                font-size: 16px;
-                font-weight: bold;
-                color: $white-primary;
+            @include responsive(md) {
+                display: none;
+            }
+
+            &--mobile{
+                display: none;
+                gap: 20px;
+
+                @include responsive(md) {
+                    display: flex;
+                }
             }
 
             .more-info-button {
@@ -54,7 +66,7 @@
             }
 
             .contact-button {
-                background-color: rgba(145, 140, 140, 0.562);
+                background-color: $button-color-transparent;
                 color: $white-primary;
             }
         }
@@ -62,16 +74,21 @@
 
     &__description-container {
         flex: 0.5;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
-        color: $white-primary;
+        @include flex-center(column);
+
+        @include responsive(md) {
+            align-items: flex-start;
+            text-align: start;
+            margin-top: 10px;
+        }
         
         &--description {
             width: 80%;
-            font-size: 20px;
-            line-height: 1.8rem;
+            color: $white-primary !important;
+
+            @include responsive(md) {
+                width: 100%;
+            }
         }
     }
 }

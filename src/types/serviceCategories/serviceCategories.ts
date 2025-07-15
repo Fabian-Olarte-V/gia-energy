@@ -1,0 +1,1 @@
+export type ServiceCategory = "Diagnóstico" | "Recuperación" | "Automatización" | "Modernización";

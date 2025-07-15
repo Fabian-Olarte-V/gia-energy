@@ -27,47 +27,84 @@
     }
 
     &__container {
-        z-index: 1; 
-        display: flex;
-        align-items: center;
+        @include flex-center;
+        justify-content: flex-start;
         height: 100%;
+        z-index: 1; 
         text-align: start;
     }
 
     &__content {
-        width: 65%;
+        width: 75%;
+
+        @include responsive(lg) {
+            width: 100%;
+        }
     }
 
     &__title {
-        font-size: 74px;
+        font-size: clamp(20px, 2vw + 2rem, 68px); 
         font-weight: 700;
         color: $white-primary;
+        animation: fadeIn 1.5s ease-in-out; 
     }
 
     &__subtitle {
-        font-size: 70px;
+        font-size: clamp(18px, 2vw + 2rem, 64px); 
         margin-bottom: 1rem;
         font-weight: 500;
-        color: $font-hero-subtitle;
+        color: $font-color-tertiary;
+        animation: fadeIn 2s ease-in-out;
     }
 
     &__description {
-        font-size: 20px;
+        font-size: clamp(12px, 0.4vw + 1rem, 20px); 
         margin-bottom: 2rem;
         font-weight: 300;
-        color: #EFEFEF;
-        line-height: 1.6rem;
+        color: $font-color-quaternary;
+        line-height: clamp(1.3rem, 1vw + 0.5rem, 1.6rem); 
+        width: 70%;
+        animation: fadeIn 2.5s ease-in-out; 
+
+        @include responsive(md) {
+            width: 90%;
+            font-size: clamp(12px, 0.4vw + 0.8rem, 18px); 
+            margin-bottom: 1rem;
+        }
     }
 
     &__cta-button {
-        width: 144px;
-        height: 48px;
-        background-color: rgba(182, 182, 182, 0.267);
-        color: $white-primary;
-        padding: 10px 20px;
-        border: 1px solid $white-primary;
-        border-radius: 30px;
-        font-size: 1rem;
+        background-color: $button-color-transparent;
+        color: $white-primary !important;
+        animation: fadeIn 3s ease-in-out;
+    }
+
+    &__scroll-indicator {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 3s infinite; 
         cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateX(-50%) translateY(0); 
+        }
+        50% {
+            transform: translateX(-50%) translateY(-15px); 
+        }
     }
 }

@@ -1,7 +1,11 @@
 import React from 'react';
+import { ISimpleResultCardProps } from '@/interfaces/resultCard/resultCard.interface';
 import './ResultCard.scss';
 
-export default function ResultCard({ title, description, backgroundImage }) {
+
+export default function ResultCard({ data }: {data: ISimpleResultCardProps}) {
+  const { title, description, backgroundImage } = data;
+  
   return (
     <div
       className="result-card"

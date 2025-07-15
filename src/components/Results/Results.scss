@@ -1,3 +1,4 @@
+@use '../../app/globals.scss' as *;
 
 .results-section {
     &__content {
@@ -6,25 +7,6 @@
         justify-content: space-between;
     }
 
-    &__title-container {
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    &__title {
-        font-size: 60px;
-        font-weight: 100;
-        color: #4F5D78;
-
-        span {
-        color: #1A3D7E;
-        font-weight: bold;
-        }
-    }
-    
     &__buttons-container {
         display: flex;
         flex-direction: row;
@@ -32,25 +14,23 @@
         margin-bottom: 30px;
     }
 
-    .nav-button{
-        padding: 12px 30px;
-        padding-bottom: 8px;
-        border-radius: 30px;
-        border: 1px solid #D8D8D8;
-        background-color: transparent;
-        cursor: pointer;
-    }
-
     &__nav-buttons{
         display: flex;
         gap: 20px;
+
+        @include responsive(sm) {
+            gap: 10px;
+        }
     }
-    
-    &__link-button{
-        font-size: 16px;
-        font-weight: bold;
-        color: #1A3D7E;
-        padding: 10px 30px !important;
+
+    .nav-button{
+        background-color: transparent !important;
+        width: auto !important;
+        padding: 0px 30px !important;
+
+        @include responsive(sm) {
+            padding: 0px 15px !important;
+        }
     }
 
     &__results {
@@ -58,11 +38,5 @@
         flex-flow: row nowrap;
         gap: 20px;
         overflow: hidden;
-
-        &--card{
-            width: 500px;
-            height: 500px;
-            background-color: #D9D9D9;
-        }
     }
 }

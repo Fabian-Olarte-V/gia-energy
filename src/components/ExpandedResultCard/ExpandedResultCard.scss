@@ -1,0 +1,111 @@
+@use '../../app/globals.scss' as *;
+
+
+.expanded-result-card {
+    border: 1px solid #d8d8d8;
+    border-radius: 15px;
+    padding: 10px;
+    padding-bottom: 20px;
+
+    &__separator{
+        padding: 15px 0px;
+        margin: 15px 0px;
+        position: relative;
+        
+        @include responsive(md) {
+            padding: 10px 0px;
+            margin: 10px 0px;
+        }
+        
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 80%;
+            height: 1px;
+            background-color: $orange-50;
+            vertical-align: text-top;
+            top: 50%;
+            transform: translateY(-50%);
+            position: absolute;
+            margin: 0 auto;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__image-container {
+        border-radius: 15px;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        height: 450px;
+
+        @include responsive(md) {
+            height: 300px;
+        }
+    }
+
+    &__title-container {
+        padding: 10px 0px;
+
+        &--title {
+            font-size: clamp(16px, 2vw + 0.8rem, 26px);
+            font-weight: 500;
+            color: $blue-100;
+        }
+
+        &--description {
+            padding-top: 5px;
+            font-size: clamp(12px, 2vw + 0.4rem, 18px);
+            color: $font-color-secondary;
+        }
+    }
+
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        grid-template-rows: repeat(2, 1fr); 
+        gap: 40px;
+        padding: 10px 0px;
+
+        @include responsive(md) {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        &--item {
+            display: flex;
+            gap: 10px;
+
+            &--stat-container {
+                width: 55px; 
+                height: 55px;
+                background-color: $orange-50;
+                border-radius: 50%;
+                @include flex-center;
+                flex-shrink: 0;
+
+                @include responsive(md) {
+                    width: 45px; 
+                    height: 45px;
+                }
+            }
+
+            &--stat {
+                font-size: clamp(12px, 2vw + 0.4rem, 20px);
+                color: $white-primary;
+                font-weight: 600;
+            }
+
+            &--description {
+                flex: 1;
+                font-size: clamp(13px, 1.5vw + 0.4rem, 16px);
+                color: $font-color-secondary;
+                align-self: center;
+            }
+        }
+    }
+}

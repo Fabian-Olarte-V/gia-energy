@@ -1,11 +1,5 @@
 @use '../../app/globals.scss' as *;
 
-.temporal{
-    background-color: red;
-    width: 100%;
-    height: auto;
-}
-
 .header {
     position: fixed; 
     top: 0; 
@@ -32,25 +26,40 @@
         padding: 20px 40px; 
         border-radius: 30px;
 
+        @include responsive(lg) {
+            padding: 20px 10px;
+        }
+
         &--scrolled {
             background-color: $black-primary;
         }
     }
 
     &__container {
-        display: flex;
-        gap: 20px;
+        @include flex-center;
         justify-content: space-between;
-        align-items: center;
-        width: 90%;
+        gap: 20px;
+        width: 100%;
         margin: 0 auto;
+        max-width: 1400px;
+        padding: 0 20px;
+
+        @include responsive(lg) {
+            max-width: none;
+            width: 100%;
+            padding: 0px 20px;
+        }
+
+        @include responsive(lg) {
+            flex-direction: row;
+        }
     }
 
     &__logo {
         flex-basis: 20%;
         
         h1 {
-            font-size: 20px;
+            font-size: clamp(16px, 2vw, 20px); 
             font-weight: 500;
         }
     }
@@ -60,21 +69,51 @@
         display: flex;
         align-items: center;
 
+        @include responsive(lg) {
+            display: none;
+        }
+
+        &--open {
+            display: block;
+            position: absolute;
+            top: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 97%;
+            background-color: $black-primary;
+            padding: 20px 30px;
+            border-radius: 30px;
+            z-index: 1000;
+
+            .header__nav-item {
+                padding: 5px 0;
+            }
+        }
+
         &-list {
-            display: flex;
-            flex-flow: row nowrap;
+            @include flex-center;
             justify-content: space-around;
             width: 100%;
             list-style: none;
             padding: 0;
+
+            @include responsive(lg) {
+                flex-direction: column;
+                display: block;
+            }
         }
 
         &-item {
             &--link {
                 text-decoration: none;
                 color: $white-primary;
-                font-size: 16px;
+                font-size: clamp(14px, 1.5vw, 16px); 
                 font-weight: 300;
+
+                @include responsive(lg) {
+                    padding: 10px 0;
+                    display: block;
+                }
             }
         }
     }
@@ -84,15 +123,27 @@
         display: flex;
         justify-content: flex-end;
 
+        @include responsive(lg) {
+            display: none;
+        }
+
         &-button {
+            @include flex-center;
             background-color: $white-primary;
-            width: 144px;
-            height: 48px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 16px;
-            border: none;
+            border: none !important;
+            color: $black-primary !important;        
+        }
+    }
+
+    &__toggle {
+        display: none;
+
+        @include responsive(lg) {
+            display: block;
+            font-size: clamp(20px, 2vw, 24px); 
+            color: $white-primary;
             cursor: pointer;
+            margin-left: auto;
         }
     }
 }

@@ -2,11 +2,12 @@
     display: flex;
 
     &__label {
-        font-size: 20px;
+        font-size: clamp(10px, 0.5vw + 0.5em, 20px); 
         box-sizing: border-box;
         width: auto;
         font-weight: 300;
         position: relative;
+        margin-bottom: 4px;
 
         &::before {
             content: '';

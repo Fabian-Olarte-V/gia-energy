@@ -1,7 +1,17 @@
 import React from 'react';
 import './Hero.scss';
+import ArrowIcon from '../Shared/IconsSvg/ArrowIcon/ArrowIcon';
 
 export default function Hero() {
+  const handleScroll = () => {
+    const nextSection = document.querySelector('.services-section');
+    if (nextSection) {
+      const offset = -30; 
+      const sectionPosition = nextSection.getBoundingClientRect().top + window.scrollY + offset;
+      window.scrollTo({ top: sectionPosition, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="hero">
       <video className="hero__video" autoPlay loop muted>
@@ -19,8 +29,16 @@ export default function Hero() {
             reducen costos y alargan la vida útil de tus equipos 
             todo con ingeniería experta y confiable.
           </p>
-          <button className="hero__cta-button">Conoce más</button>
+          <button 
+            className="hero__cta-button button-template" 
+            onClick={handleScroll}
+          >
+            Conoce más
+          </button>
         </div>
+      </div>
+      <div className='hero__scroll-indicator' onClick={handleScroll}>
+        <ArrowIcon color='#fff' rotation={-90}/>
       </div>
     </section>
   );
