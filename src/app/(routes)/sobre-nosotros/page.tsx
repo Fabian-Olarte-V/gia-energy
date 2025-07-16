@@ -13,19 +13,21 @@ export default function AboutPage() {
                     <div className="about-page__hero__title-container">
                         <h1 className="about-page__hero__title-container--title decoration title-template">Sobre Nosotros</h1>
                         <p className="about-page__hero__title-container--description description-template">
-                            Somos una empresa especializada en soluciones eléctricas 
-                            para centrales de generación y sistemas críticos. Combinamos experiencia, 
-                            innovación y precisión técnica para optimizar el rendimiento de los activos 
-                            eléctricos de nuestros clientes.
+                            En VQ Global Ingeniería brindamos soluciones eléctricas especializadas para centrales 
+                            de generación y sistemas de alta criticidad. Nos enfocamos en el diagnóstico, 
+                            recuperación y optimización de activos mediante pruebas avanzadas, 
+                            análisis técnicos y automatización. Ayudamos a nuestros clientes a 
+                            extender la vida útil de sus equipos, reducir fallas y operar con máxima eficiencia.
                         </p>
                     </div>
                     <div className="about-page__hero__title-container about-page__hero__title-container--secondary">
                         <p className="about-page__hero__title-container--description description-template">
-                            Contamos con una sólida trayectoria desarrollando proyectos en generación 
-                            eléctrica, redes de media y baja tensión, mantenimiento predictivo y reingeniería 
-                            de plantas. Conocemos a fondo la normativa ISO y los desafíos del sector energético.
+                            Respaldados por más de 40 años de experiencia técnica, hemos desarrollado proyectos 
+                            en generación eléctrica, mantenimiento predictivo, redes de media y baja 
+                            tensión y modernización de plantas. Nuestro equipo domina la normativa ISO 
+                            y está preparado para afrontar los retos más complejos del sector energético.
                         </p>
-                        <h1 className="about-page__hero__title-container--title title-template"><span className="subtitle-template">+15 Años</span> Generando <br className="break-line"/> Confianza Técnica</h1>
+                        <h1 className="about-page__hero__title-container--title title-template"><span className="subtitle-template">+40 Años</span> Generando <br className="break-line"/> Confianza Técnica</h1>
                     </div>
                 </div>
             </div>  
@@ -36,19 +38,32 @@ export default function AboutPage() {
                         <div className="about-page__qualities__container">
                             <div className="about-page__qualities__container--item">
                                 <h3 className="about-page__qualities__container--item--title">Calidad Técnica</h3>
-                                <p className="about-page__qualities__container--item--description">Ejecutamos cada servicio bajo altos estándares y normas internacionales.</p>
+                                <p className="about-page__qualities__container--item--description">
+                                    Aplicamos metodologías certificadas y normas internacionales para garantizar resultados precisos, 
+                                    seguros y duraderos en cada intervención.
+                                </p>
                             </div>
                             <div className="about-page__qualities__container--item">
                                 <h3 className="about-page__qualities__container--item--title">Compromiso Con El cliente</h3>
-                                <p className="about-page__qualities__container--item--description">Ofrecemos soluciones a medida que priorizan eficiencia y resultados.</p>
+                                <p className="about-page__qualities__container--item--description">
+                                    Escuchamos tus necesidades, diseñamos soluciones personalizadas y acompañamos 
+                                    todo el proceso para asegurar eficiencia real y mejora continua.
+                                </p>
                             </div>
                             <div className="about-page__qualities__container--item">
                                 <h3 className="about-page__qualities__container--item--title">Innovación</h3>
-                                <p className="about-page__qualities__container--item--description">Incorporamos tecnología avanzada y automatización inteligente.</p>
+                                <p className="about-page__qualities__container--item--description">
+                                    Implementamos tecnologías de diagnóstico, automatización y 
+                                    análisis predictivo para maximizar la eficiencia y 
+                                    anticiparnos a los riesgos.
+                                </p>
                             </div>
                             <div className="about-page__qualities__container--item">
                                 <h3 className="about-page__qualities__container--item--title">Responsabilidad</h3>
-                                <p className="about-page__qualities__container--item--description">Evaluamos riesgos, protegemos tus activos y evitamos fallas críticas.</p>
+                                <p className="about-page__qualities__container--item--description">
+                                    Protegemos tus activos críticos evaluando riesgos con visión integral, 
+                                    minimizando fallas y asegurando la continuidad operativa.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -58,9 +73,10 @@ export default function AboutPage() {
                 <div className="about-page__team">
                     <h1 className="about-page__team--title title-template">Liderazgo con experiencia <br/> comprobada</h1>
                     <p className="about-page__team--description description-template">
-                        Nuestro equipo está liderado por el Ing. José Iván Velásquez y el Ing. 
-                        Oscar Quintero, profesionales con amplia trayectoria en operación de centrales, 
-                        reparación de generadores, análisis de fallas y modernización de redes eléctricas.
+                        Nuestro equipo está liderado por los ingenieros José Iván Velásquez y Oscar Quintero, 
+                        referentes en el sector energético por su experiencia en diagnóstico, reparación y 
+                        modernización de sistemas eléctricos. Su conocimiento técnico ha sido clave en proyectos 
+                        de alta complejidad para centrales hidroeléctricas, térmicas y redes de distribución.
                     </p>
                     <div className="about-page__team__container">
                         <div className="about-page__team__container--item">

@@ -2,14 +2,14 @@ import React from "react";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import Link from "next/link";
-import ExpandedResultCard from "@/components/ExpandedResultCard/ExpandedResultCard";
-import { expandedResultCardData, statsData } from "@/lib/initialData/initialData";
-import { IExpandedResultCardProps } from "@/interfaces/resultCard/resultCard.interface";
+import { statsData } from "@/lib/initialData/initialData";
+import { Result } from "@/interfaces/result/resultCard.interface";
+import { resultsData } from "@/lib/resultsData/resultsData";
+import ResultCard from "@/components/ResultCard/ResultCard/ResultCard";
 import "./page.scss";
 
-
 export default function ResultsPage() {
-    const results: IExpandedResultCardProps[] = expandedResultCardData;
+    const results: Result[] = resultsData;
 
     return (
         <main className="results-page">
@@ -19,8 +19,9 @@ export default function ResultsPage() {
                     <div className="results-page__hero-title-container">
                         <h1 className="results-page__hero-title-container--title title-template">Donde la ingeniería se <br className="break-line"/> traduce en resultados</h1>
                         <p className="results-page__hero-title-container--description description-template">
-                            Explora los proyectos donde nuestras soluciones generaron mejoras 
-                            técnicas, operativas y económicas para nuestros clientes.
+                            Descubre cómo nuestros proyectos han transformado centrales y sistemas eléctricos, 
+                            logrando mejoras técnicas, operativas y económicas tangibles. Cada solución está respaldada 
+                            por experiencia en campo y análisis especializado que garantizan resultados sostenibles.
                         </p>
                         <div className="results-page__hero-title-container--button-container">
                             <Link className="results-page__hero-title-container--button button-template" href={'/contacto'}>Solicita tu cotización</Link>
@@ -39,7 +40,7 @@ export default function ResultsPage() {
                 <div className="results-page__content">
                     {results.map((result, index) => (
                         <div key={index} className="results-page__content--item">
-                            <ExpandedResultCard data={result} />
+                            <ResultCard data={result} />
                         </div>
                     ))}
                 </div>

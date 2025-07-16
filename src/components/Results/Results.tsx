@@ -2,12 +2,12 @@
 import React, { useRef } from "react";
 import Carousel from "@/components/Carousel/Carousel";
 import ArrowIcon from "../Shared/IconsSvg/ArrowIcon/ArrowIcon";
-import "./Results.scss";
-import { simpleResultsItems } from "@/lib/initialData/initialData";
 import Link from "next/link";
+import { resultsData } from "@/lib/resultsData/resultsData";
+import "./Results.scss";
+
 
 export default function Results() {
-  const resultsData = simpleResultsItems;
   const swiperRef = useRef(null); 
 
   const handlePrev = () => {

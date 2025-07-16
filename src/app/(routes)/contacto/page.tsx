@@ -18,7 +18,6 @@ export default function ContactPage() {
                     />
                 </div>
                 <div className="contact-page__content">
-                    <h1 className="contact-page__content--logo">vqglobal</h1>
                     <h1 className="contact-page__content--title">¿Tienes un proyecto en mente?</h1>
                     <h1 className="contact-page__content--subtitle">Conectemos y hagámoslo posible.</h1>
                     <p className="contact-page__content--description">

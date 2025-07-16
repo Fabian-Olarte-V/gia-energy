@@ -18,10 +18,11 @@ export default function AboutUs() {
           </div>
           <div className="about-us__description-container">
             <p className='about-us__description-container--description description-template'>
-              En VQ Global Ingeniería ofrecemos soluciones eléctricas especializadas para centrales 
-              de generación y sistemas críticos. Nuestro equipo cuenta con más de 40 años de 
-              experiencia en diagnóstico, recuperación y optimización de activos, asegurando 
-              resultados confiables y eficientes adaptados a cada necesidad.
+              En VQ Global Ingeniería combinamos más de 40 años de experiencia con tecnología de 
+              punta para ofrecer soluciones eléctricas especializadas en generación de energía. 
+              Diagnosticamos, recuperamos y optimizamos activos críticos con precisión, reduciendo 
+              fallas, maximizando la eficiencia y extendiendo la vida útil de tus equipos. Nuestra 
+              ingeniería transforma problemas complejos en resultados sostenibles.
             </p>
             <div className='about-us__title-container--buttons-container about-us__title-container--buttons-container--mobile'>
               <Link href={'sobre-nosotros'} className='about-us__title-container--buttons-container--button more-info-button button-template' >Conoce más</Link>

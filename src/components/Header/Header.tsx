@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import './Header.scss';
+import Image from 'next/image';
 
 export default function Header({ alwaysVisible = true }: { alwaysVisible?: boolean }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -57,9 +58,11 @@ export default function Header({ alwaysVisible = true }: { alwaysVisible?: boole
         }`}
       >
         <div className="header__container">
-          <div className="header__logo">
-            <h1>VQGLOBAL</h1>
+          <div className="header__logo--container">
+            <div className="header__logo"> 
+              <Image src={"assets/images/icon/vqGlobalIcon.png"} alt="VQGLOBAL" fill objectFit='contain' />
             </div>
+          </div>
           <div className="header__toggle" onClick={toggleMenu}>☰</div>
           <nav className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`}>
             <ul className="header__nav-list">

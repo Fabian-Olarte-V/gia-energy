@@ -23,15 +23,30 @@
         gap: 20px;
 
         @include responsive(lg) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+        }
+
+        @include responsive(md) {
+            display: flex;
             flex-flow: column nowrap;
+            gap: 50px;
         }
     }
 
-    &__logo {
+    &__logo--container {
         flex-basis: 10%;
+    }
 
-        h2 {
-            font-size: clamp(16px, 1.5vw + 1rem, 24px); 
+    &__logo {
+        position: relative;
+        width: 150px;
+        height: 75px;
+
+        @include responsive(md) {
+            width: 115px;
+            height: 60px;
         }
     }
 

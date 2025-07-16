@@ -23,11 +23,11 @@
         width: 97%;
         margin: 0 auto;
         background-color: transparent;
-        padding: 20px 40px; 
+        padding: 10px 40px; 
         border-radius: 30px;
 
         @include responsive(lg) {
-            padding: 20px 10px;
+            padding: 12px 10px;
         }
 
         &--scrolled {
@@ -42,7 +42,6 @@
         width: 100%;
         margin: 0 auto;
         max-width: 1400px;
-        padding: 0 20px;
 
         @include responsive(lg) {
             max-width: none;
@@ -55,12 +54,23 @@
         }
     }
 
-    &__logo {
+    &__logo--container {
         flex-basis: 20%;
-        
+
         h1 {
             font-size: clamp(16px, 2vw, 20px); 
             font-weight: 500;
+        }
+    }
+
+    &__logo{
+        width: 150px;
+        height: 75px;
+        position: relative;
+
+        @include responsive(lg) {
+            width: 115px;
+            height: 60px;
         }
     }
 

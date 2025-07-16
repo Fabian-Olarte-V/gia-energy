@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
-import { IExpandedResultCardProps } from '@/interfaces/resultCard/resultCard.interface';
-import './ExpandedResultCard.scss';
+import { Result } from '@/interfaces/result/resultCard.interface';
+import './ResultCard.scss';
 
-export default function ExpandedResultCard({data}: {data: IExpandedResultCardProps}) {
-  const { title, description, backgroundImage, stats } = data;
+export default function ResultCard({data}: {data: Result}) {
+  const { title, description, backgroundImage, outcomeHighlights } = data;
   
   return (
     <div className="expanded-result-card">
@@ -17,12 +17,10 @@ export default function ExpandedResultCard({data}: {data: IExpandedResultCardPro
       </div>
       <div className="expanded-result-card__separator" />
       <div className="expanded-result-card__content">
-        {stats.map((stat, index) => (
+        {outcomeHighlights.map((outcome, index) => (
           <div key={index} className="expanded-result-card__content--item">
-            <div className="expanded-result-card__content--item--stat-container">
-              <h2 className="expanded-result-card__content--item--stat">{stat.value}</h2>
-            </div>
-            <p className="expanded-result-card__content--item--description">{stat.label}</p>
+            <div className="expanded-result-card__content--item--stat-container"></div>
+            <p className="expanded-result-card__content--item--description">{outcome}</p>
           </div>
         ))}
       </div>

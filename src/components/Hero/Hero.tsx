@@ -24,10 +24,10 @@ export default function Hero() {
           <h1 className="hero__title">Ingeniería Que Transforma.</h1>
           <h1 className="hero__subtitle">Soluciones Que Perduran.</h1>
           <p className="hero__description">
-            Lleva tus activos al siguiente nivel con soluciones de diagnóstico, 
-            recuperación y automatización que mejoran el rendimiento, 
-            reducen costos y alargan la vida útil de tus equipos 
-            todo con ingeniería experta y confiable.
+            Diagnóstico, recuperación y soluciones de ingeniería avanzada que extienden 
+            la vida útil de tus activos críticos, optimizan el desempeño operativo y previenen 
+            fallas mayores. Especialistas en generación eléctrica, transformamos desafíos técnicos 
+            en resultados sostenibles.
           </p>
           <button 
             className="hero__cta-button button-template" 

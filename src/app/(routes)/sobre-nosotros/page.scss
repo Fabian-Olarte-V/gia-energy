@@ -130,6 +130,7 @@
             font-size: clamp(16px, 2vw + 1rem, 62px);
             color: $white-primary !important;
             font-weight: 400 !important;
+            flex-basis: 70%;
         }
 
         &__container {

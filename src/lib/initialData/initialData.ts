@@ -1,44 +1,6 @@
-import { IExpandedResultCardProps, ISimpleResultCardProps } from "@/interfaces/resultCard/resultCard.interface";
-import { IServiceCard } from "@/interfaces/serviceCard/serviceCard.interface";
+import { IExpandedResultCardProps, ISimpleResultCardProps } from "@/interfaces/result/resultCard.interface";
 import { IStatItem } from "@/interfaces/stats/stast.interface";
 
-export const serviceCategories = {
-    ALL: "Todos",
-    DIAGNOSTIC: "Diagnóstico",
-    RECOVERY: "Recuperación",
-    AUTOMATION: "Automatización",
-    MODERNIZATION: "Modernización",
-};
-
-export const serviceCardsData: IServiceCard[] = [
-    {
-        title: "Recuperación de Generadores de Alta Tensión",
-        category: serviceCategories.RECOVERY,
-        description:
-            "Reconstrucción de bobinados y aislamiento para extender la vida útil en más del 150%.",
-        backgroundImage: "/assets/images/service-1.png",
-    },
-    {
-        title: "Repotenciación de Centrales de Generación",
-        category: serviceCategories.MODERNIZATION,
-        description:
-            "Mejoramos equipos antiguos para aumentar eficiencia sin reemplazos costosos.",
-        backgroundImage: "/assets/images/service-5.png",
-    },
-    {
-        title: "Automatización y Análisis de Fallas",
-        category: serviceCategories.AUTOMATION,
-        description: "Automatizamos procesos críticos y reducimos tiempos de parada.",
-        backgroundImage: "/assets/images/service-6.png",
-    },
-    {
-        title: "Evaluación de Riesgos Eléctricos",
-        category: serviceCategories.DIAGNOSTIC,
-        description: "Identificamos fallas críticas y aplicamos análisis RCA.",
-        backgroundImage: "/assets/images/service-4.png",
-        black:true
-    },
-];
 
 export const simpleResultsItems: ISimpleResultCardProps[] = [
     {
@@ -75,13 +37,14 @@ export const simpleResultsItems: ISimpleResultCardProps[] = [
 
 export const statsData: IStatItem[] = [
     {
-        label: "+150%",
-        value: "Aumento de la vida útil de generadores tras recuperación de bobinados",
-    },
-    {
         label: "+40",
         value: "Años de experiencia combinada de nuestro equipo en ingeniería especializada y reparación eléctrica.",
     },
+    {
+        label: "+150%",
+        value: "Aumento de la vida útil de generadores tras recuperación de bobinados",
+    },
+
     {
         label: "-40%",
         value: "Reducción promedio de costos tras procesos de repotenciación.",

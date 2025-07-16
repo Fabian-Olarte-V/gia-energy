@@ -1,21 +1,21 @@
 import React from 'react';
-import { IService } from '@/interfaces/serviceCard/serviceCard.interface';
 import Link from 'next/link';
 import './ServiceCard.scss';
+import { Service } from '@/interfaces/service/serviceCard.interface';
 
 type ServiceCardComponentProps = {
-  data: IService;
+  data: Service;
   expanded?: boolean;
 };
 
 export default function ServiceCard({ data, expanded = true }: ServiceCardComponentProps) {
-  const { title, description } = data;
+  const { title, description, backgroundImage, benefits, commonApplications, whatWeDo } = data;
 
   if (expanded) {
     return (
       <div
         className="service-card-expanded"
-        style={{ backgroundImage: `url(${"../../../public/assets/images/service-1.png"})` }}
+        style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div className="service-card-expanded__main-content">
           <div className="service-card-expanded__main-content--title-container">
@@ -28,21 +28,21 @@ export default function ServiceCard({ data, expanded = true }: ServiceCardCompon
           <div className="service-card-expanded__info-item service-card-expanded__info-item--benefits">
             <h2 className="service-card-expanded__info-item--subtitle">Beneficios:</h2>
             <ul className="service-card-expanded__info-item--list">
-              <li>Reducción de tiempos de parada</li>
-              <li>Eliminación de focos de falla</li>
-              <li>Mejora en la eficiencia operativa</li>
+              {benefits.map((benefit, index) => (
+                <li key={index}>{benefit.trim()}</li>
+              ))}
             </ul>
           </div>
           <div className="service-card-expanded__info-item">
             <h2 className="service-card-expanded__info-item--subtitle">¿Qué hacemos?</h2>
             <p className="service-card-expanded__info-item--description">
-              Digitalizamos procesos críticos mediante automatización y análisis predictivo con redes neuronales.
+              {whatWeDo}
             </p>
           </div>
           <div className="service-card-expanded__info-item">
             <h2 className="service-card-expanded__info-item--subtitle">Aplicaciones comunes</h2>
             <p className="service-card-expanded__info-item--description">
-              Centrales de generación, subestaciones automatizadas y sistemas con alta carga operativa.
+              {commonApplications}
             </p>
           </div>
         </div>
@@ -59,7 +59,7 @@ export default function ServiceCard({ data, expanded = true }: ServiceCardCompon
   return (
     <div
       className={`service-card ${ 'service-card--black' }`}
-      style={{ backgroundImage: `url(${""})` }}
+      style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="service-card__overlay"></div>
       <h1 className="service-card__title">{title}</h1>

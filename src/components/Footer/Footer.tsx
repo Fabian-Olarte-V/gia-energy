@@ -3,13 +3,16 @@ import Link from 'next/link';
 import WhatsappIcon from '../Shared/IconsSvg/Whatsapp/WhatsappIcon';
 import LinkedinIcon from '../Shared/IconsSvg/Linkedin/LinkedinIcon';
 import './Footer.scss';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__container container">
-        <div className="footer__logo">
-          <h2>VQ Global</h2>
+        <div className="footer__logo--container">
+          <div className="footer__logo"> 
+            <Image src={"assets/images/icon/vqGlobalIcon.png"} alt="VQGLOBAL" fill objectFit='contain' />
+          </div>
         </div>
         <div className="footer__contact-info">
           <h3 className="footer__label">Contacto</h3>

@@ -43,18 +43,30 @@
     }
 
     &__title {
-        font-size: clamp(20px, 2vw + 2rem, 68px); 
+        font-size: clamp(24px, 2vw + 2.4rem, 68px); 
         font-weight: 700;
         color: $white-primary;
         animation: fadeIn 1.5s ease-in-out; 
+
+        @include responsive(md) {
+            width: 90%;
+            text-align: center;
+            margin: 10 auto;
+        }
     }
 
     &__subtitle {
-        font-size: clamp(18px, 2vw + 2rem, 64px); 
+        font-size: clamp(20px, 2vw + 2rem, 64px); 
         margin-bottom: 1rem;
         font-weight: 500;
         color: $font-color-tertiary;
         animation: fadeIn 2s ease-in-out;
+
+        @include responsive(md) {
+            width: 90%;
+            text-align: center;
+            margin: 10 auto;
+        }
     }
 
     &__description {
@@ -70,6 +82,8 @@
             width: 90%;
             font-size: clamp(12px, 0.4vw + 0.8rem, 18px); 
             margin-bottom: 1rem;
+            text-align: center;
+            margin: 10px auto;
         }
     }
 
@@ -77,6 +91,10 @@
         background-color: $button-color-transparent;
         color: $white-primary !important;
         animation: fadeIn 3s ease-in-out;
+
+        @include responsive(md) {
+            margin: 20px auto;
+        }
     }
 
     &__scroll-indicator {

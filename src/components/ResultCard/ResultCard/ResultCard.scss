@@ -1,5 +1,4 @@
-@use '../../app/globals.scss' as *;
-
+@use '../../../app/globals.scss' as *;
 
 .expanded-result-card {
     border: 1px solid #d8d8d8;
@@ -8,19 +7,15 @@
     padding-bottom: 20px;
 
     &__separator{
-        padding: 15px 0px;
-        margin: 15px 0px;
+        padding: 13px 0px;
+        margin: 13px 0px;
         position: relative;
         
-        @include responsive(md) {
-            padding: 10px 0px;
-            margin: 10px 0px;
-        }
         
         &::before {
             content: '';
             display: inline-block;
-            width: 80%;
+            width: 90%;
             height: 1px;
             background-color: $orange-50;
             vertical-align: text-top;
@@ -46,10 +41,15 @@
     }
 
     &__title-container {
-        padding: 10px 0px;
+        padding: 10px 5px;
+        height: 170px;
+
+        @include responsive(md) {
+            height: 100px;
+        }
 
         &--title {
-            font-size: clamp(16px, 2vw + 0.8rem, 26px);
+            font-size: clamp(16px, 2vw + 0.4rem, 22px);
             font-weight: 500;
             color: $blue-100;
         }
@@ -63,17 +63,21 @@
 
 
     &__content {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); 
-        grid-template-rows: repeat(2, 1fr); 
-        gap: 40px;
-        padding: 10px 0px;
+        height: 200px;
+        display: flex;
+        flex-flow: column;
+        gap: 30px;
+        padding: 10px 10px;
+        box-sizing: border-box;
 
         @include responsive(md) {
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: space-between;
-            gap: 30px;
+            height: 140px;
+        }
+
+        &--title {
+            font-size: clamp(16px, 2vw + 0.4rem, 18px);
+            font-weight: 500;
+            color: $blue-100;
         }
 
         &--item {
@@ -81,28 +85,22 @@
             gap: 10px;
 
             &--stat-container {
-                width: 55px; 
-                height: 55px;
+                width: 25px; 
+                height: 25px;
                 background-color: $orange-50;
                 border-radius: 50%;
                 @include flex-center;
                 flex-shrink: 0;
 
                 @include responsive(md) {
-                    width: 45px; 
-                    height: 45px;
+                    width: 20px; 
+                    height: 20px;
                 }
-            }
-
-            &--stat {
-                font-size: clamp(12px, 2vw + 0.4rem, 20px);
-                color: $white-primary;
-                font-weight: 600;
             }
 
             &--description {
                 flex: 1;
-                font-size: clamp(13px, 1.5vw + 0.4rem, 16px);
+                font-size: clamp(13px, 1.5vw + 0.4rem, 18px);
                 color: $font-color-secondary;
                 align-self: center;
             }

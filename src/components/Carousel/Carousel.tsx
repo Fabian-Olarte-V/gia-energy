@@ -2,12 +2,13 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
-import ResultCard from '../ResultCard/ResultCard';
-import { ISimpleResultCardProps } from '@/interfaces/resultCard/resultCard.interface';
+import { ISimpleResultCardProps } from '@/interfaces/result/resultCard.interface';
+import SimpleResultCard from '../ResultCard/SimpleResultCard/SimpleResultCard';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './Carousel.scss';
+
 
 type CarouselProps = {
   onSwiper: (swiper: any) => void; 
@@ -38,7 +39,7 @@ export default function Carousel({ onSwiper, items }: CarouselProps) {
     >
       {items.map((item, index) => (
         <SwiperSlide key={index}>
-          <ResultCard data={item}/>
+          <SimpleResultCard data={item}/>
         </SwiperSlide>
       ))}
     </Swiper>

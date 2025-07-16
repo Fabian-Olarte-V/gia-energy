@@ -8,12 +8,13 @@ import AboutUs from "@/components/AboutUs/AboutUs";
 import ServiceCard from "@/components/ServiceCard/ServiceCard";
 import Label from "@/components/Shared/Label/Label";
 import Results from "@/components/Results/Results";
-import { serviceCardsData } from "@/lib/initialData/initialData";
 import Link from "next/link";
+import { ServicesData } from "@/lib/servicesData/servicesData";
 import "./page.scss";
 
+
 export default function Home() {
-	const servicesData = serviceCardsData;
+	const servicesData = ServicesData.slice(0, 4);
 	
 	return (
 		<main className="home-page">
@@ -35,10 +36,10 @@ export default function Home() {
 					</div>
 					<div className="services-section__description-container">
 						<p className="services-section__description description-template">
-							Brindamos soluciones eléctricas que reducen fallas, alargan la
-							vida útil de tus equipos y optimizan tu operación con tecnología y
-							experiencia comprobada. Nuestro enfoque está orientado a resultados
-							reales con mínima inversión y máxima eficiencia.
+							Entregamos soluciones de ingeniería eléctrica que identifican fallas ocultas, extienden 
+							la vida útil de tus activos y mejoran el desempeño de tus sistemas de generación. A través 
+							de tecnología avanzada, diagnósticos especializados y metodologías comprobadas, ofrecemos 
+							resultados concretos con mínima inversión y alta eficiencia operativa.
 						</p>
 						<Link className="services-section__button button-template" href={'/servicios'}>Ver Servicios</Link>
 					</div>

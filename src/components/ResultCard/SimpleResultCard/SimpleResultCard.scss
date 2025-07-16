@@ -1,4 +1,4 @@
-@use '../../app/globals.scss' as *;
+@use '../../../app/globals.scss' as *;
 
 .result-card {
     position: relative; 
@@ -47,6 +47,22 @@
         font-weight: 400;
         font-size: clamp(12px, 2vw + 1rem, 18px); 
         line-height: 1.2rem;
-        padding-bottom: 10px;
+        padding-bottom: 30px;
+    }
+
+    &__link {
+        font-weight: 300;
+        font-size: clamp(12px, 2vw + 1rem, 18px); 
+        line-height: 1.2rem;
+        color: $white-primary;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        @include flex-center;
+        justify-content: start;
+        gap: 3px;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }

@@ -1,12 +1,12 @@
 'use client';
 import React, { useState } from "react";
 import ServiceCard from "@/components/ServiceCard/ServiceCard";
+import { Service } from "@/interfaces/service/serviceCard.interface";
+import { ServiceCardCategory } from "@/lib/servicesData/servicesData";
 import "./ServicesSection.scss";
-import { IServiceCard } from "@/interfaces/serviceCard/serviceCard.interface";
-import { serviceCategories } from "@/lib/initialData/initialData";
 
-export default function ServicesSection({ initialData }: { initialData: IServiceCard[] }) {
-    const categories = serviceCategories;
+export default function ServicesSection({ initialData }: { initialData: Service[] }) {
+    const categories = ServiceCardCategory;
     const [filteredServices, setFilteredServices] = useState(initialData); 
     const [activeCategory, setActiveCategory] = useState<string>(categories.ALL); 
 
@@ -42,8 +42,7 @@ export default function ServicesSection({ initialData }: { initialData: IService
                 {filteredServices.map((service, index) => (
                     <div
                         key={index}
-                        className={`all-services-section__list-item ${
-                                    service.expanded ? "all-services-section__list-item--expanded" : ""}`}
+                        className={`all-services-section__list-item`}
                     >
                         <ServiceCard data={service} />
                     </div>
