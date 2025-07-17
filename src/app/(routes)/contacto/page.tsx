@@ -11,7 +11,7 @@ export default function ContactPage() {
             <div className="contact-page__container container">
                 <div className="contact-page__image-container">
                     <Image 
-                        src={"/assets/images/service-1.png"}
+                        src={"/assets/images/background/contact-image-bg.jpg"}
                         fill
                         alt="Hero Image"
                         className="contact-page__image"

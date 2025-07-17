@@ -54,12 +54,17 @@
     font-size: clamp(12px, 0.4vw + 1rem, 16px); 
     text-decoration: none;
     border: 1px solid $border-color-primary;
+    transition: all 0.3s ease;
     @include flex-center(row);
 
     @include responsive(lg) {
         width: 120px;
         height: 36px;
         font-size: 12px;
+    }
+
+    &:hover{
+        transform: scale(1.02);
     }
 }
 

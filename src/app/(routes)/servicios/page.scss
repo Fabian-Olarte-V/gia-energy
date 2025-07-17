@@ -1,11 +1,11 @@
 @use '../../globals.scss' as *;
 
 .services-page {
-    margin-top: 140px;
+    margin-top: 150px;
     margin-bottom: 15px;
 
     @include responsive(lg) {
-        margin-top: 120px;
+        margin-top: 140px;
     }
 
     &__container {

@@ -11,6 +11,7 @@
         overflow-x: scroll;
         scrollbar-width: none; 
 
+
         @include responsive(lg) {
             gap: 30px;
             margin: 0px 0px 15px 0px;

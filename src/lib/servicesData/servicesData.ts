@@ -4,11 +4,9 @@ export enum ServiceCardCategory {
   ALL = 'Todos',
   DIAGNOSTICO = 'Diagnóstico',
   RECUPERACION = 'Recuperación',
-  CONSULTORIA = 'Consultoría',
-  SUPERVISION = 'Supervisión',
-  MODERNIZACION = 'Modernización',
-  INNOVACION = 'Innovación',
+  OPTIMIZACION = 'Optimización',
 }
+
 
 export const ServicesData: Service[] = [
   {
@@ -25,6 +23,19 @@ export const ServicesData: Service[] = [
     backgroundImage: "/assets/images/service-1.png",
   },
   {
+    title: "Consultoría en recuperación de generadores tras eventos críticos",
+    description: "Diagnóstico, análisis y acompañamiento técnico en la recuperación de generadores afectados por eventos como inundaciones o fallas severas.",
+    benefits: [
+      "Recuperación efectiva de activos críticos",
+      "Minimización del impacto económico",
+      "Prolongación de la vida útil de equipos afectados"
+    ],
+    whatWeDo: "Evaluamos condiciones de bobinas, núcleo y rotor, aplicamos pruebas de tensión y diagnóstico de descargas parciales.",
+    commonApplications: "Centrales hidroeléctricas afectadas por eventos extremos",
+    category: ServiceCardCategory.RECUPERACION,
+    backgroundImage: "/assets/images/service-5.png",
+  },
+  {
     title: "Detección y análisis de descargas parciales con tensión aplicada en recinto oscuro",
     description: "Inspección especializada para identificar y analizar fallas eléctricas incipientes en generadores.",
     benefits: [
@@ -38,17 +49,17 @@ export const ServicesData: Service[] = [
     backgroundImage: "/assets/images/service-2.png",
   },
   {
-    title: "Detección de descargas parciales con pruebas de ozono",
-    description: "Medición de concentración de ozono como indicador indirecto de actividad de descargas parciales internas.",
+    title: "Pruebas eléctricas especializadas a generadores",
+    description: "Evaluación técnica profunda del estado eléctrico de generadores mediante pruebas de aislamiento, tensión aplicada y descarga parcial.",
     benefits: [
-      "Detección temprana de defectos de aislamiento",
-      "Identificación de riesgo sin necesidad de intervención directa",
-      "Soporte para decisiones de mantenimiento predictivo"
+      "Verificación del estado real del generador",
+      "Soporte para decisiones de puesta en marcha o retiro",
+      "Detección de problemas ocultos"
     ],
-    whatWeDo: "Realizamos pruebas en línea midiendo concentraciones de ozono en el recinto del generador para identificar deterioro del aislamiento.",
-    commonApplications: "Plantas térmicas en operación, generadores encapsulados o de difícil acceso",
+    whatWeDo: "Ejecutamos pruebas eléctricas en generadores como vacío, cortocircuito, tensión aplicada y descarga parcial.",
+    commonApplications: "Generadores nuevos, en reparación o previo a su puesta en operación",
     category: ServiceCardCategory.DIAGNOSTICO,
-    backgroundImage: "/assets/images/service-3.png",
+    backgroundImage: "/assets/images/service-5.png",
   },
   {
     title: "Inspección visual y con fibroendoscopio para detección de descargas parciales",
@@ -64,17 +75,17 @@ export const ServicesData: Service[] = [
     backgroundImage: "/assets/images/service-4.png",
   },
   {
-    title: "Pruebas eléctricas especializadas a generadores",
-    description: "Evaluación técnica profunda del estado eléctrico de generadores mediante pruebas de aislamiento, tensión aplicada y descarga parcial.",
+    title: "Detección de descargas parciales con pruebas de ozono",
+    description: "Medición de concentración de ozono como indicador indirecto de actividad de descargas parciales internas.",
     benefits: [
-      "Verificación del estado real del generador",
-      "Soporte para decisiones de puesta en marcha o retiro",
-      "Detección de problemas ocultos"
+      "Detección temprana de defectos de aislamiento",
+      "Identificación de riesgo sin necesidad de intervención directa",
+      "Soporte para decisiones de mantenimiento predictivo"
     ],
-    whatWeDo: "Ejecutamos pruebas eléctricas en generadores como vacío, cortocircuito, tensión aplicada y descarga parcial.",
-    commonApplications: "Generadores nuevos, en reparación o previo a su puesta en operación",
+    whatWeDo: "Realizamos pruebas en línea midiendo concentraciones de ozono en el recinto del generador para identificar deterioro del aislamiento.",
+    commonApplications: "Plantas térmicas en operación, generadores encapsulados o de difícil acceso",
     category: ServiceCardCategory.DIAGNOSTICO,
-    backgroundImage: "/assets/images/service-5.png",
+    backgroundImage: "/assets/images/service-3.png",
   },
   {
     title: "Análisis de causa raíz (ACR) en fallas de bobinados",
@@ -99,21 +110,8 @@ export const ServicesData: Service[] = [
     ],
     whatWeDo: "Asesoramos en la creación de pliegos técnicos para proyectos de modernización, adquisición de bobinados y rehabilitación de generadores.",
     commonApplications: "Empresas generadoras públicas o privadas en procesos de licitación",
-    category: ServiceCardCategory.CONSULTORIA,
-    backgroundImage: "/assets/images/service-7.png",
-  },
-  {
-    title: "Consultoría en recuperación de generadores tras eventos críticos",
-    description: "Diagnóstico, análisis y acompañamiento técnico en la recuperación de generadores afectados por eventos como inundaciones o fallas severas.",
-    benefits: [
-      "Recuperación efectiva de activos críticos",
-      "Minimización del impacto económico",
-      "Prolongación de la vida útil de equipos afectados"
-    ],
-    whatWeDo: "Evaluamos condiciones de bobinas, núcleo y rotor, aplicamos pruebas de tensión y diagnóstico de descargas parciales.",
-    commonApplications: "Centrales hidroeléctricas afectadas por eventos extremos",
-    category: ServiceCardCategory.RECUPERACION,
-    backgroundImage: "/assets/images/service-8.png",
+    category: ServiceCardCategory.OPTIMIZACION,
+    backgroundImage: "/assets/images/service-4.png",
   },
   {
     title: "Supervisión técnica e interventoría especializada",
@@ -125,8 +123,8 @@ export const ServicesData: Service[] = [
     ],
     whatWeDo: "Supervisamos montaje, desmontaje, pruebas y procesos críticos durante intervenciones en generadores.",
     commonApplications: "Proyectos de rehabilitación de plantas eléctricas",
-    category: ServiceCardCategory.SUPERVISION,
-    backgroundImage: "/assets/images/service-9.png",
+    category: ServiceCardCategory.OPTIMIZACION,
+    backgroundImage: "/assets/images/service-6.png",
   },
   {
     title: "Modernización de sistemas de distribución y transmisión",
@@ -138,8 +136,8 @@ export const ServicesData: Service[] = [
     ],
     whatWeDo: "Rediseñamos y actualizamos redes en baja y media tensión, incluyendo sistemas de medición y control.",
     commonApplications: "Empresas de distribución y sistemas urbanos o rurales",
-    category: ServiceCardCategory.MODERNIZACION,
-    backgroundImage: "/assets/images/service-10.png",
+    category: ServiceCardCategory.OPTIMIZACION,
+    backgroundImage: "/assets/images/service-4.png",
   },
   {
     title: "Innovación y eficiencia energética",
@@ -151,7 +149,7 @@ export const ServicesData: Service[] = [
     ],
     whatWeDo: "Evaluamos y diseñamos sistemas energéticos alternativos y automatizados con alto retorno de inversión.",
     commonApplications: "Industrias, centrales eléctricas, nuevos desarrollos de generación",
-    category: ServiceCardCategory.INNOVACION,
-    backgroundImage: "/assets/images/service-11.png",
+    category: ServiceCardCategory.OPTIMIZACION,
+    backgroundImage: "/assets/images/service-5.png",
   },
 ];
