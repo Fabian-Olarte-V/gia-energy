@@ -15,8 +15,8 @@ export default function AboutPage() {
                         <p className="about-page__hero__title-container--description description-template">
                             En VQ Global Ingeniería brindamos soluciones eléctricas especializadas para centrales 
                             de generación y sistemas de alta criticidad. Nos enfocamos en el diagnóstico, 
-                            recuperación y optimización de activos mediante pruebas avanzadas, 
-                            análisis técnicos y automatización. Ayudamos a nuestros clientes a 
+                            recuperación, mantenimiento y optimización de activos mediante pruebas avanzadas y  
+                            análisis técnicos. Ayudamos a nuestros clientes a 
                             extender la vida útil de sus equipos, reducir fallas y operar con máxima eficiencia.
                         </p>
                     </div>
@@ -24,7 +24,7 @@ export default function AboutPage() {
                         <p className="about-page__hero__title-container--description description-template">
                             Respaldados por más de 40 años de experiencia técnica, hemos desarrollado proyectos 
                             en generación eléctrica, mantenimiento predictivo, redes de media y baja 
-                            tensión y modernización de plantas. Nuestro equipo domina la normativa ISO 
+                            tensión y modernización de plantas. Nuestro equipo domina la normativa IEEE 
                             y está preparado para afrontar los retos más complejos del sector energético.
                         </p>
                         <h1 className="about-page__hero__title-container--title title-template"><span className="subtitle-template">+40 Años</span> Generando <br className="break-line"/> Confianza Técnica</h1>
@@ -73,7 +73,7 @@ export default function AboutPage() {
                 <div className="about-page__team">
                     <h1 className="about-page__team--title title-template">Liderazgo con experiencia <br/> comprobada</h1>
                     <p className="about-page__team--description description-template">
-                        Nuestro equipo está liderado por los ingenieros José Iván Velásquez y Oscar Quintero, 
+                        Nuestro equipo está liderado por los ingenieros José Iván Velásquez Duque y Oscar Quintero Valencia, 
                         referentes en el sector energético por su experiencia en diagnóstico, reparación y 
                         modernización de sistemas eléctricos. Su conocimiento técnico ha sido clave en proyectos 
                         de alta complejidad para centrales hidroeléctricas, térmicas y redes de distribución.
@@ -87,8 +87,8 @@ export default function AboutPage() {
                                 height={200}
                                 alt="José Iván Velásquez"
                             />
-                            <h3 className="about-page__team__container--item--name">Ing. José Iván Velásquez</h3>
-                            <p className="about-page__team__container--item--role">Especialista en operación de centrales y reparación de generadores.</p>
+                            <h3 className="about-page__team__container--item--name">Ing. José Iván Velásquez Duque</h3>
+                            <p className="about-page__team__container--item--role">Especialista en operación de centrales, análisis de fallas y reparación de generadores.</p>
                         </div>
                         <div className="about-page__team__container--item">
                             <Image 
@@ -98,8 +98,8 @@ export default function AboutPage() {
                                 height={200}
                                 alt="Oscar Quintero"
                             />
-                            <h3 className="about-page__team__container--item--name">Ing. Oscar Quintero</h3>
-                            <p className="about-page__team__container--item--role">Experto en análisis de fallas y modernización de redes eléctricas.</p>
+                            <h3 className="about-page__team__container--item--name">Ing. Oscar Quintero Valencia</h3>
+                            <p className="about-page__team__container--item--role">Especialista en pruebas y modernización de redes electricas</p>
                         </div>
                     </div>
                 </div>

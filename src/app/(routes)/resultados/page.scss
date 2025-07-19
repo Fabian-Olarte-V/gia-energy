@@ -1,7 +1,7 @@
 @use '../../globals.scss' as *;
 
 .results-page {
-    margin-top: 140px;
+    margin-top: 160px;
     margin-bottom: 15px;
 
     @include responsive(lg) {
@@ -135,7 +135,8 @@
         flex-flow: row wrap;
         justify-content: space-between;
         gap: 10px;
-        margin-bottom: 30px;
+        row-gap: 20px;
+        margin: 30px 0px;
 
         @include responsive(md) {
             flex-direction: column;

@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="footer__container container">
         <div className="footer__logo--container">
           <div className="footer__logo"> 
-            <Image src={"assets/images/icon/vqGlobalIcon.png"} alt="VQGLOBAL" fill objectFit='contain' />
+            <Image className='footer__logo--image' src={"assets/images/icon/vqGlobalIcon.png"} alt="VQGLOBAL" fill objectFit='contain' />
           </div>
         </div>
         <div className="footer__contact-info">

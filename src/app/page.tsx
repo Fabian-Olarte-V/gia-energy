@@ -68,6 +68,7 @@ export default function Home() {
 			</div>
 		
 			<div className="bottom-section">
+				<div></div>
 				<div className="about-us-container">
 					<AboutUs />
 				</div>

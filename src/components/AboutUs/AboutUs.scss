@@ -85,6 +85,10 @@
         &--description {
             width: 80%;
             color: $white-primary !important;
+            font-size: clamp(12px, 1vw + 0.4rem, 23px) !important; 
+            line-height: clamp(0.4rem, 2vw + 0.7rem, 1.8rem) !important; 
+            text-align: justify;
+
 
             @include responsive(md) {
                 width: 100%;

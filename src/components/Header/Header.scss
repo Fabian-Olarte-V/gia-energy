@@ -56,21 +56,20 @@
 
     &__logo--container {
         flex-basis: 20%;
-
-        h1 {
-            font-size: clamp(16px, 2vw, 20px); 
-            font-weight: 500;
-        }
     }
 
     &__logo{
-        width: 150px;
-        height: 75px;
+        width: 170px;
+        height: 90px;
         position: relative;
 
         @include responsive(lg) {
             width: 115px;
             height: 60px;
+        }
+
+        &--image {
+            filter: brightness(1.2) contrast(1.1);
         }
     }
 
@@ -78,6 +77,7 @@
         flex-basis: 50%;
         display: flex;
         align-items: center;
+    
 
         @include responsive(lg) {
             display: none;
@@ -106,10 +106,12 @@
             width: 100%;
             list-style: none;
             padding: 0;
+            gap: 60px;
 
             @include responsive(lg) {
                 flex-direction: column;
                 display: block;
+                gap: 20px;
             }
         }
 
@@ -117,12 +119,17 @@
             &--link {
                 text-decoration: none;
                 color: $white-primary;
-                font-size: clamp(14px, 1.5vw, 16px); 
+                font-size: clamp(14px, 1.5vw, 17px); 
                 font-weight: 300;
 
                 @include responsive(lg) {
                     padding: 10px 0;
                     display: block;
+                }
+
+                &:hover {
+                    color: white;
+                    font-weight: 400;
                 }
             }
         }

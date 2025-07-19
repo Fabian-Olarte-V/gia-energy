@@ -41,12 +41,16 @@
 
     &__logo {
         position: relative;
-        width: 150px;
-        height: 75px;
+        width: 170px;
+        height: 80px;
 
         @include responsive(md) {
             width: 115px;
             height: 60px;
+        }
+
+        &--image {
+            filter: brightness(1.2) contrast(1.1);
         }
     }
 
