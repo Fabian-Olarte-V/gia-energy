@@ -3,12 +3,11 @@
 .expanded-result-card {
     border: 1px solid #d8d8d8;
     border-radius: 15px;
-    padding: 10px;
     padding-bottom: 20px;
 
     &__separator{
-        padding: 10px 0px;
-        margin: 3px 0px;
+        padding: 20px 0px;
+        margin: 10px 0px;
         position: relative;
         
         &::before {
@@ -40,7 +39,7 @@
     }
 
     &__title-container {
-        padding: 10px 5px 0px 5px;
+        padding: 10px 15px 0px 15px;
         height: 170px;
 
         @include responsive(md) {
@@ -49,14 +48,14 @@
         }
 
         &--title {
-            font-size: clamp(16px, 2vw + 0.4rem, 22px);
-            font-weight: 500;
-            color: $blue-100;
+            font-size: clamp(16px, 2vw + 0.4rem, 26px);
+            font-weight: 600;
+            color: $black;
         }
 
         &--description {
-            padding-top: 5px;
-            font-size: clamp(12px, 2vw + 0.4rem, 18px);
+            padding-top: 15px;
+            font-size: clamp(12px, 2vw + 0.4rem, 19px);
             color: $font-color-secondary;
         }
     }

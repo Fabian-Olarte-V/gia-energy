@@ -3,19 +3,19 @@ import { IStatItem } from "@/interfaces/stats/stast.interface";
 export const statsData: IStatItem[] = [
     {
         label: "+40",
-        value: "Años de experiencia combinada de nuestro equipo en ingeniería especializada y reparación eléctrica.",
+        value: "Años de experiencia combinada en ingeniería especializada y reparación de equipos eléctricos",
     },
     {
         label: "+150%",
-        value: "Aumento de la vida útil de generadores tras recuperación de bobinados",
+        value: "Extensión de vida útil en generadores tras procesos de recuperación de bobinados",
     },
 
     {
         label: "-40%",
-        value: "Reducción promedio de costos tras procesos de repotenciación.",
+        value: "Reducción promedio en costos operativos tras procesos de repotenciación de sistemas",
     },
     {
         label: "-70%",
-        value: "Disminución de fallas tras procesos de automatización",
+        value: "Disminución comprobada de fallas tras implementación de automatización en procesos",
     },
 ];

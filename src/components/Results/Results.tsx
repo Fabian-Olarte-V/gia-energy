@@ -40,7 +40,7 @@ export default function Results() {
               <ArrowIcon rotation={180}/>
             </button>
           </div>
-          <Link className="results-section__link-button button-template" href={'/resultados'}>Ver más</Link>
+          <Link className="results-section__link-button button-template" href={'/resultados'}>Ver Todos</Link>
         </div>
       </div>
       <div className="results-sectio__carousel-container">

@@ -1,187 +1,134 @@
 @use '../../globals.scss' as *;
 
 .about-page {
-    margin-top: 200px;
-    margin-bottom: 15px;
+    $self: &;
+    padding: {
+        top: 200px;
+    }
     overflow-x: hidden;
 
     @include responsive(lg) {
-        margin-top: 130px;
-    }
-
-    @include responsive(md) {
-        margin-top: 120px;
+        padding-top: 140px;
     }
 
     &__container {
-        display: flex;
-        flex-flow: column nowrap;
-        gap: 60px;
+        padding-bottom: 60px;
     }
 
     &__hero {
-        display: flex;
-        flex-flow: column nowrap;
-        gap: 140px;
-
-        @include responsive(lg) {
-            gap: 70px;
-        }
-
+        @include flex-center(column);
+        gap: 10px;
+        
         &__title-container {
-            display: flex;
-            gap: 120px;
-
-            @include responsive(lg) {
-                gap: 5px;
-            }
-
-            &--secondary{
-                @include responsive(lg) {
-                    &:last-child {
-                        order: 0;
-                    }
-                }
-            }
-
-            @include responsive(lg) {
-                flex-flow: column nowrap;
-            }
-
-            .decoration{
-                position: relative;
-
-                &::before {
-                    content: '';
-                    display: inline-block;
-                    width: 30%;
-                    height: 1px;
-                    background-color: #F9AE74;
-                    vertical-align: text-top;
-                    top: -5px;
-                    position: absolute;
-                }
-            }
+            @include flex-center(column);
+            text-align: start;
 
             &--title {
-                flex: 0.5;
-
-                span{
-                    color: $blue-100 !important;
-                    font-weight: 600 !important;
-                    font-size: clamp(20px, 2vw + 1.5rem, 66px); 
-                }
+                margin-bottom: 10px;
             }
 
             &--description {
-                flex:0.5;
-                font-size: clamp(16px, 2vw + 0.5rem, 24px);
-                font-weight: 300;
-                color: #4F5D78;
-                text-align: justify;
+                width: 75%;
+                font: {
+                    size: clamp(16px, 2vw + 0.5rem, 24px);
+                    weight: 400 !important;
+                }
+                text-align: center;
                 
                 @include responsive(lg) {
                     order: 2;
+                    width: 95%;
                 }
             }
         }
     }
 
     &__qualities {
-        width: 100vw;
-        margin: 70px 0;
-        background-image: url('/assets/images/background/about-us-page-bg.jpg');
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        padding: 70px 0;
+        margin: 180px 0;
 
         @include responsive(lg) {
-            padding: 40px 0;
+            margin: 100px 0;
+        }
+
+        &__title-container {
+            @include flex-center(column);
             margin: 50px 0;
-        }
 
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
-            z-index: 1; 
-        }
-
-        .container {
-            position: relative;
-            z-index: 2; 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            @include responsive(lg) {
-                flex-flow: column nowrap;
-                align-items: start;
-                gap: 30px;
+            &--title {
+                color: $orange-primary !important;
             }
-        }
-
-        &--title {
-            font-size: clamp(16px, 2vw + 1rem, 62px);
-            color: $white-primary !important;
-            font-weight: 400 !important;
-            flex-basis: 70%;
         }
 
         &__container {
-            display: flex;
-            flex-flow: column nowrap;
-            gap: 50px;
+            @include flex-center;
+            gap: 70px;
+            text-align: center;
 
             @include responsive(lg) {
                 gap: 30px;
             }
 
+            @include responsive(md) {
+                flex-flow: column nowrap;
+                align-items: center;
+                gap: 70px;
+            }
+
             &--item {
-                color: #fff;
+                color: $black;
+
+                &--icon-bg {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    background: #ffead7;
+                    margin: 0 auto 16px;
+                    @include flex-center;
+                }
 
                 &--title {
-                    font-size: clamp(14px, 1vw + 0.2rem, 22px);
-                    font-weight: 500;
+                    font: {
+                        size: clamp(14px, 1vw + 0.4rem, 28px);
+                        weight: 500;
+                    }
+                    color: $orange-primary !important;
                 }
 
                 &--description {
-                    font-size: clamp(12px, 1.5vw, 18px);
-                    font-weight: 300;
+                    font: {
+                        size: clamp(12px, 1.5vw, 18px);
+                        weight: 300;
+                    }
                 }
             }
         }
     }
 
     &__team {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
+        @include flex-center(column);
         text-align: center;
-        gap: 30px;
         color: $blue-100;
-        padding-bottom: 30px;
+        padding-bottom: 70px;
 
         @include responsive(lg) {
-            gap: 20px;
+            gap: 5px;
         }
 
         &--title {
-            font-size: clamp(16px, 2vw + 1.2rem, 52px);
-            font-weight: 400;
+            font: {
+                size: clamp(16px, 2vw + 1.2rem, 52px);
+                weight: 400;
+            }
             line-height: clamp(1rem, 2vw + 1.2rem, 4rem);
         }
 
         &--description {
-            width: 60%;
-            font-size: clamp(12px, 1vw + 0.7rem, 24px);
-            font-weight: 300;
+            width: 75%;
+            margin: 30px 0;
+            font: {
+                size: clamp(12px, 1vw + 0.7rem, 24px);
+                weight: 300;
+            }
 
             @include responsive(lg) {
                 width: 90%;
@@ -208,7 +155,7 @@
                     flex: 0.35;
                 }
 
-                &--image{
+                &--image {
                     border-radius: 20px;
                     width: 300px;
                     height: 300px;
@@ -220,18 +167,22 @@
                 }
 
                 &--name {
-                    font-size: clamp(14px, 1vw + 0.8rem, 24px);
-                    font-weight: 500;
-                    color: $blue-100;
+                    margin: 10px 0;
+                    font: {
+                        size: clamp(14px, 1vw + 0.8rem, 26px);
+                        weight: 500;
+                    }
+                    color: $blue-primary;
                 }
 
                 &--role {
-                    font-size: clamp(12px, 1vw + 0.4rem, 18px);
-                    font-weight: 300;
-                    color: #4F5D78;
                     width: 70%;
-                    margin: 0 auto;
-                    margin-top: 10px;
+                    margin: 10px auto 0;
+                    font: {
+                        size: clamp(12px, 1vw + 0.5rem, 20px);
+                        weight: 400;
+                    }
+                    color: $font-color-secondary;
 
                     @include responsive(lg) {
                         width: 90%;

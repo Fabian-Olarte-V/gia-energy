@@ -1,112 +1,86 @@
 @use '../../globals.scss' as *;
 
 .results-page {
-    margin-top: 160px;
-    margin-bottom: 15px;
-
-    @include responsive(lg) {
-        margin-top: 80px;
+    $self: &;
+    padding: {
+        top: 130px;
+        bottom: 15px;
     }
 
-    &__hero {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 40px 0px;
+    @include responsive(lg) {
+        padding-top: 80px;
+    }
 
-        @include responsive(lg) {
-            justify-content: center;
-            align-items: center;
-        }
+    &__container{
+        padding-bottom: 60px;
+    }
+    
+    &__hero {
+        padding: 40px 0;
+        gap: 20px;
+        text-align: center;
 
         @include responsive(md) {
-            flex-direction: column;
-            align-items: center;
             gap: 10px;
             padding-bottom: 20px;
         }
 
         &-title-container {
-            flex: 0.5;
-            display: flex;
-            flex-flow: column nowrap;
-            gap: 20px;
-
-            @include responsive(lg) {
-                flex: 0.65;
-            }
-
-            @include responsive(md) {
-                gap: 10px;
-            }
+            @include flex-center(column);
+            gap: 10px;
 
             &--title {
-                position: relative;
-
-                &::before {
-                    content: '';
-                    display: inline-block;
-                    width: 30%;
-                    height: 1px;
-                    background-color: #F9AE74;
-                    vertical-align: text-top;
-                    top: -5px;
-                    position: absolute;
-                }
+                color: $black !important;
             }
 
-            &--button-container {
-                display: flex;
-                gap: 20px;
-                flex-wrap: wrap;
+            &--highlight {
+                color: $orange-primary;
+            }
+
+            &--description {
+                font: {
+                    size: clamp(16px, 1vw + 1.3rem, 24px);
+                    weight: 400;
+                }
+                max-width: 80%;
+                margin: 20px 0;
+
+                @include responsive(md) {
+                    font-size: clamp(16px, 1vw + 1.3rem, 18px);
+                    max-width: 100%;
+                    line-height: 1.3rem;
+                }
             }
 
             &--button {
+                &-container {
+                    @include flex-center(column);
+                    gap: 20px;
+                    flex-wrap: wrap;
+                }
+
                 background-color: $orange-100;
                 color: $white-primary !important;
                 width: auto !important;
-                border: none !important;
+                border: none;
 
                 @include responsive(md) {
-                    display: none !important;
-                }
-                
-                &--mobile {
-                    display: none !important;
-
-                    @include responsive(md) {
-                        display: block !important;
-                    }
+                    margin-bottom: 20px;
                 }
             }
         }
 
         &-stats-container {
-            flex: 0.45;
             display: grid;
-            grid-template-columns: repeat(2, 1fr); 
-            grid-template-rows: repeat(2, 1fr);  
-            gap: 60px; 
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
             align-items: start;
+            margin-top: 60px;
 
-            @include responsive(lg) {
-                grid-template-columns: repeat(1, 1fr); 
-                flex: 0.3;
-                gap: 30px; 
-                row-gap: 30px;
-            }
-            
             @include responsive(md) {
-                grid-template-columns: repeat(4, 1fr); 
-                grid-template-rows: repeat(1, 1fr);  
-                gap: 30px; 
-                margin: 20px 0px;
-            }
-
-            @include responsive(sm) {
-                grid-template-columns: repeat(2, 1fr); 
-                grid-template-rows: repeat(2, 1fr);  
-                gap: 30px; 
+                grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+                gap: 30px;
+                margin: 20px 0 50px;
             }
 
             &--item {
@@ -114,17 +88,22 @@
                 text-align: center;
 
                 &--data {
-                    font-size: clamp(18px, 1vw + 2rem, 50px);
-                    font-weight: 600;
+                    font: {
+                        size: clamp(18px, 1vw + 2rem, 48px);
+                        weight: 700;
+                    }
+                    color: $orange-primary;
 
                     @include responsive(lg) {
-                        font-size: clamp(16px, 1.5vw + 1.5rem, 30px);
+                        font-size: clamp(16px, 1.5vw + 1.5rem, 28px);
                     }
                 }
 
                 &--description {
-                    font-size: clamp(10px, 0.7vw + 0.3rem, 26px);
-                    font-weight: 300;       
+                    font: {
+                        size: clamp(10px, 0.5vw + 0.6rem, 18px);
+                        weight: 300;
+                    }
                 }
             }
         }
@@ -134,19 +113,20 @@
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
-        gap: 10px;
-        row-gap: 20px;
-        margin: 30px 0px;
+        gap: 15px;
+        margin: 30px 0;
+        row-gap: 30px;
 
         @include responsive(md) {
             flex-direction: column;
+            gap: 20px;
         }
 
         &--item {
-            flex-basis: calc(100% / 3 - 10px);
+            flex-basis: calc(100% / 3 - 12px);
 
             @include responsive(lg) {
-                flex-basis: calc(100% / 2 - 10px);
+                flex-basis: calc(100% / 2 - 12px);
             }
 
             @include responsive(md) {
@@ -154,13 +134,13 @@
             }
 
             &:last-child {
-                margin-right: auto; 
+                margin-right: auto;
             }
         }
     }
 }
 
-.break-line{
+.break-line {
     @include responsive(lg) {
         display: none;
     }

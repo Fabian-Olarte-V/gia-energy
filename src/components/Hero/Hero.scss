@@ -6,24 +6,8 @@
     height: 100vh;
     overflow: hidden;
 
-    &__video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover; 
-        z-index: -1;
-    }
-
-    &__overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); 
-        z-index: -1;
+    @include responsive(md) {
+        margin-top: 26px;
     }
 
     &__container {
@@ -38,6 +22,7 @@
         width: 75%;
 
         @include responsive(lg) {
+            @include flex-center(column);
             width: 100%;
         }
     }
@@ -45,7 +30,7 @@
     &__title {
         font-size: clamp(24px, 2vw + 2.4rem, 68px); 
         font-weight: 700;
-        color: $white-primary;
+        color: $black;
         animation: fadeIn 1.5s ease-in-out; 
 
         @include responsive(md) {
@@ -55,11 +40,16 @@
         }
     }
 
+    &__highlight {
+        color: $blue-primary; 
+        font-weight: 700;
+    }
+
     &__subtitle {
         font-size: clamp(20px, 2vw + 2rem, 64px); 
         margin-bottom: 1rem;
         font-weight: 500;
-        color: $font-color-tertiary;
+        color: $font-color-secondary;
         animation: fadeIn 2s ease-in-out;
 
         @include responsive(md) {
@@ -70,12 +60,12 @@
     }
 
     &__description {
-        font-size: clamp(12px, 0.4vw + 1rem, 20px); 
+        font-size: clamp(12px, 0.4vw + 1rem, 22px); 
         margin-bottom: 2rem;
-        font-weight: 300;
-        color: $font-color-quaternary;
+        font-weight: 400;
+        color: $font-color-secondary;
         line-height: clamp(1.3rem, 1vw + 0.5rem, 1.6rem); 
-        width: 70%;
+        width: 75%;
         animation: fadeIn 2.5s ease-in-out; 
 
         @include responsive(md) {
@@ -87,9 +77,25 @@
         }
     }
 
-    &__cta-button {
-        background-color: $button-color-transparent;
+    &__cta-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__more-button {
+        background-color: $blue-primary;
         color: $white-primary !important;
+        animation: fadeIn 3s ease-in-out;
+
+        @include responsive(md) {
+            margin: 20px auto;
+        }
+    }
+
+    &__cta-button {
+        background-color: $white;
+        color: $font-color-secondary !important;
+        font-weight: 400 !important;
         animation: fadeIn 3s ease-in-out;
 
         @include responsive(md) {
@@ -99,11 +105,15 @@
 
     &__scroll-indicator {
         position: absolute;
-        bottom: 5%;
+        bottom: 10%;
         left: 50%;
         transform: translateX(-50%);
         animation: bounce 3s infinite; 
         cursor: pointer;
+
+        @include responsive(md) {
+            bottom: 5%;
+        }
     }
 
     @keyframes fadeIn {

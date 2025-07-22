@@ -1,27 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-export default function ArrowIcon({ color = "$blue-100", rotation = 0 }) {
-    const [size, setSize] = useState("24px");
-
-    useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth <= 480) {
-                setSize("14px");
-            } else if (window.innerWidth <= 768) {
-                setSize("20px");
-            } else {
-                setSize("24px");
-            }
-        };
-
-        handleResize();
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
-
+export default function ArrowIcon({ color = "$blue-100", rotation = 0, size = "20px" }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"

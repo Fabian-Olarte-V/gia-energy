@@ -8,10 +8,33 @@ $orange-50: #F9AE74;
 $orange-100: #ED7D24;
 
 $font-color-primary: #020101;
-$font-color-secondary: #4A4A4A;
-$font-color-tertiary: #A1A1A1;
+$font-color-secondary: #455261;
+$font-color-tertiary: #494949;
 $font-color-quaternary: #EFEFEF;
 
 $border-color-primary: #cfcfcf;
 $button-color-transparent: rgba(182, 182, 182, 0.267);
+
+
+// AZULES (inspirados en el texto "Transforma" y branding)
+$blue-primary:      #005cb8;   // Azul principal (para títulos, botones primarios)
+$blue-secondary:    #007BCE;   // Azul medio (hover, enlaces)
+$blue-light:        #b6dcfd;   // Azul claro (fondos, detalles suaves)
+$blue-lighter:      #d4ebffff; // Azul más claro (fondos sutiles)
+$blue-gradient:     #2F66F8;   // Azul brillante para acentos o gradientes
+
+// NARANJAS (extraídos del logo y del texto "Resultados")
+$orange-primary:    #ff7300ff;   // Naranja corporativo (logo, íconos clave)
+$orange-gradient:   #FF6A00;   // Naranja más brillante para efectos de fondo o gradientes
+$orange-light:      #FFE4CC;   // Naranja claro para fondos sutiles o etiquetas
+$orange-lighter:    #ffead7ff;   // Naranja más claro para fondos muy sutiles
+
+// GRISES Y NEUTROS
+$gray-dark:         #333333;   // Texto fuerte
+$gray-medium:       #5A6E85;   // Texto secundario o iconos
+$gray-light:        #F5F5F5;   // Fondos o separadores
+
+// GENERALES
+$white:             #FFFFFF;
+$black:             #000000;
 

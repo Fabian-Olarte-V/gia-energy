@@ -4,7 +4,7 @@
     padding: 80px 0 50px 0px;
 
     @include responsive(md) {
-        padding: 20px 0 0px 0;
+        padding: 20px 0 80px 0;
     }
 
     &__container {
@@ -18,16 +18,19 @@
                 
         @include responsive(md) {
             flex-flow: column nowrap;
+            gap: 40px;
         }
     }
 
     &__title-container {
         flex: 0.5;
-        border-right: 1px solid $white-primary;
         padding-right: 20px;
 
+
         @include responsive(md) {
+            @include flex-center(column);
             border-right: none;
+            text-align: center;
         }
         
         &--label {
@@ -37,8 +40,18 @@
         }
 
         &--title {
-            font-weight: bold !important;
-            color: $white-primary !important;
+            color: $black !important;
+        }
+
+        &--highlight {
+            color: $blue-primary;
+        }
+
+        &--subtitle {
+            font-size: clamp(12px, 1vw + 0.4rem, 20px) !important; 
+            line-height: clamp(0.4rem, 2vw + 0.7rem, 1.8rem) !important; 
+            margin-top: 10px;
+            width: 80%;
         }
 
         &--buttons-container {
@@ -61,13 +74,13 @@
             }
 
             .more-info-button {
-                background-color: $white-primary;
-                color: $black-primary;
+                background-color: $blue-primary;
+                color: $white;
             }
 
             .contact-button {
-                background-color: $button-color-transparent;
-                color: $white-primary;
+                background-color: $white;
+                color: $black;
             }
         }
     }
@@ -75,23 +88,31 @@
     &__description-container {
         flex: 0.5;
         @include flex-center(column);
+        align-items: start;
 
         @include responsive(md) {
-            align-items: flex-start;
-            text-align: start;
+            align-items: center;
+            text-align: center;
             margin-top: 10px;
+        }
+
+        &--title {
+            font-size: clamp(20px, 1.5vw + 1rem, 24px);
+            font-weight: 700;
+            color: $black !important;
+            margin-bottom: 20px;
         }
         
         &--description {
             width: 80%;
-            color: $white-primary !important;
-            font-size: clamp(12px, 1vw + 0.4rem, 23px) !important; 
+            color: $font-color-secondary !important;
+            font-size: clamp(12px, 1vw + 0.4rem, 20px) !important; 
             line-height: clamp(0.4rem, 2vw + 0.7rem, 1.8rem) !important; 
             text-align: justify;
 
-
             @include responsive(md) {
-                width: 100%;
+                width: 80%;
+                text-align: center;
             }
         }
     }

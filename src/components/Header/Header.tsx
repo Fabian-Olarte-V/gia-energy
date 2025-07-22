@@ -1,36 +1,46 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import './Header.scss';
 import Image from 'next/image';
+import './Header.scss';
+
 
 export default function Header({ alwaysVisible = true }: { alwaysVisible?: boolean }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); 
-  let lastScrollY = 0;
+  const lastScrollY = useRef(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
+    const SCROLL_THRESHOLD = 100; 
+    const SCROLL_DIFF_THRESHOLD = 5; 
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      const diff = currentScrollY - lastScrollY.current;
 
-      if (currentScrollY > lastScrollY) {
-        setIsVisible(false); 
-      } else {
+      if (currentScrollY <= 0) {
         setIsVisible(true);
+        setIsScrolled(false);
+      } else if (currentScrollY < SCROLL_THRESHOLD) {
+        setIsVisible(true);
+        setIsScrolled(true);
+      } else if (diff > SCROLL_DIFF_THRESHOLD) {
+        setIsVisible(false);
+        setIsScrolled(true);
+      } else if (diff < -SCROLL_DIFF_THRESHOLD) {
+        setIsVisible(true);
+        setIsScrolled(true);
       }
 
-      setIsScrolled(currentScrollY > 0);
-      lastScrollY = currentScrollY;
+      lastScrollY.current = currentScrollY;
     };
 
     setIsScrolled(window.scrollY > 0);
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -51,10 +61,10 @@ export default function Header({ alwaysVisible = true }: { alwaysVisible?: boole
   };
 
   return (
-    <header className={`header ${isVisible ? 'header--visible' : 'header--hidden'}`}>
+    <header className={`header ${isVisible ? 'header--visible' : 'header--hidden'}`}> 
       <div
         className={`header__wrapper ${
-          alwaysVisible || isScrolled ? 'header__wrapper--scrolled' : ''
+          (alwaysVisible && isScrolled) || (!alwaysVisible && isScrolled) ? 'header__wrapper--scrolled' : ''
         }`}
       >
         <div className="header__container">
@@ -78,6 +88,9 @@ export default function Header({ alwaysVisible = true }: { alwaysVisible?: boole
               <li className="header__nav-item">
                 <Link className="header__nav-item--link" href={`/sobre-nosotros`}>Sobre Nosotros</Link>
               </li>
+              <li className="header__nav-item header__contact">
+                <Link className="header__contact-button button-template" href={`/contacto`}>Contáctanos</Link>
+              </li>
               {isMenuOpen && (
                 <li className="header__nav-item">
                   <Link className="header__nav-item--link" href={`/contacto`}>Contacto</Link>
@@ -86,9 +99,6 @@ export default function Header({ alwaysVisible = true }: { alwaysVisible?: boole
               }
             </ul>
           </nav>
-          <div className="header__contact">
-            <Link className="header__contact-button button-template" href={`/contacto`}>Contactanos</Link>
-          </div>
         </div>
       </div>
     </header>

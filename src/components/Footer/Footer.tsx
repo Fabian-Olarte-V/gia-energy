@@ -14,6 +14,7 @@ export default function Footer() {
             <Image className='footer__logo--image' src={"assets/images/icon/vqGlobalIcon.png"} alt="VQGLOBAL" fill objectFit='contain' />
           </div>
         </div>
+        
         <div className="footer__contact-info">
           <h3 className="footer__label">Contacto</h3>
           <p className="footer__text">
@@ -59,9 +60,9 @@ export default function Footer() {
             <p className="footer__text">NIT 1231325734</p>
           </div>
         </div>
-        <div className="footer__copy">
-          <p className="footer__text">&copy; Derechos reservados © 2025 VQ Global Ingeniería</p>
-        </div>
+      </div>
+      <div className="footer__copy container">
+        <p className="footer__text">&copy; Derechos reservados © 2025 VQ Global Ingeniería</p>
       </div>
     </footer>
   );

@@ -1,5 +1,8 @@
-"use client";
+
 import React from "react";
+import Link from "next/link";
+import { ServicesData } from "@/lib/servicesData/servicesData";
+import GradientCircleResponsive from "@/components/Shared/GradientCircleResponsive";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
@@ -8,8 +11,7 @@ import AboutUs from "@/components/AboutUs/AboutUs";
 import ServiceCard from "@/components/ServiceCard/ServiceCard";
 import Label from "@/components/Shared/Label/Label";
 import Results from "@/components/Results/Results";
-import Link from "next/link";
-import { ServicesData } from "@/lib/servicesData/servicesData";
+import { gradientCirclesHome } from "@/lib/layoutData/gradientData";
 import "./page.scss";
 
 
@@ -17,7 +19,11 @@ export default function Home() {
 	const servicesData = ServicesData.slice(0, 4);
 	
 	return (
-		<main className="home-page">
+		<main className="home-page page-container" style={{ position: 'relative' }}>
+			{gradientCirclesHome.map((circle, index) => (
+				<GradientCircleResponsive key={index} {...circle} />
+			))}
+
 			<div className="header-container">
 				<Header alwaysVisible={false} />
 			</div>
@@ -26,10 +32,10 @@ export default function Home() {
 				<Hero />
 			</div>
 
-			<div className="services-section container">
+			<section className="services-section container">
 				<div className="services-section__content">
 					<div className="services-section__title-container">
-						<Label label="SERVICIOS" />
+						<Label label="Nuestros Servicios" color='#d4ebffff' textColor='#004C99'/>	
 						<h1 className="services-section__title title-template">
 							<span className="subtitle-template">Confianza Que</span> Impulsa Resultados
 						</h1>
@@ -37,13 +43,11 @@ export default function Home() {
 					<div className="services-section__description-container">
 						<p className="services-section__description description-template">
 							Entregamos soluciones de ingeniería eléctrica que identifican fallas ocultas, extienden 
-							la vida útil de tus activos y mejoran el desempeño de tus sistemas de generación. A través 
-							de tecnología avanzada, diagnósticos especializados y metodologías comprobadas, ofrecemos 
-							resultados concretos con mínima inversión y alta eficiencia operativa.
+							la vida útil de tus activos y mejoran el desempeño de tus sistemas de generación.
 						</p>
-						<Link className="services-section__button button-template" href={'/servicios'}>Ver Servicios</Link>
 					</div>
 				</div>
+
 				<div className="services-section__services">
 					{servicesData.map((card, index) => (
 						<div className="service-card-container" key={index}>
@@ -51,31 +55,34 @@ export default function Home() {
 						</div>
 					))}
 				</div>
-			</div>
+				
+				<Link className="services-section__button button-template" href='/servicios'>
+					Ver Todos Los Servicios
+				</Link>
+			</section>
 
-			<div className="stats-badge-container">
+			<section className="stats-badge-container">
 				<StatsBadge />
-			</div>
+			</section>
 
-			<div className="results-section-container">
+			<section className="results-section-container">
 				<div className="results-section-container__title-container">
-					<Label label="CASOS DE ÉXITO" />
+					<Label label="Casos De Éxito" color='#ffead7ff' textColor='#ff7300ff' />
 					<h1 className="results-section-container__title title-template">
 						<span className="subtitle-template">Resultados</span> que hablan por sí solos
 					</h1>
+					<p className="results-section-container__description description-template">
+						Nuestros proyectos demuestran nuestro compromiso con la excelencia.
+					</p>
 				</div>
 				<Results />
-			</div>
-		
+			</section>
+
 			<div className="bottom-section">
-				<div></div>
 				<div className="about-us-container">
 					<AboutUs />
 				</div>
-
-				<div className="footer-container">
-					<Footer />
-				</div>
+				<Footer />
 			</div>
 		</main>
 	);
