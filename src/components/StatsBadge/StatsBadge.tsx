@@ -2,10 +2,10 @@ import React from 'react';
 import './StatsBadge.scss';
 import { statsData } from '@/lib/initialData/initialData';
 import Label from '../Shared/Label/Label';
-import ClockIcon from '../Shared/IconsSvg/statsIcons/ClockIcon';
-import ExtensionUpIcon from '../Shared/IconsSvg/statsIcons/ExtensionUp';
-import CostsIcon from '../Shared/IconsSvg/statsIcons/CostsIcon';
-import SuccessIcon from '../Shared/IconsSvg/statsIcons/SuccessIcon';
+import ClockIcon from '../Shared/IconsSvg/StatsIcons/ClockIcon';
+import ExtensionUpIcon from '../Shared/IconsSvg/StatsIcons/ExtensionUp';
+import CostsIcon from '../Shared/IconsSvg/StatsIcons/CostsIcon';
+import SuccessIcon from '../Shared/IconsSvg/StatsIcons/SuccessIcon';
 
 
 function getIconForStat(index: number) {

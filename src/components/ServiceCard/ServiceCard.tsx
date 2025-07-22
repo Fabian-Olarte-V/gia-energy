@@ -59,16 +59,22 @@ export default function ServiceCard({ data, expanded = true }: ServiceCardCompon
   }
 
   return (
-    <div
-      className="service-card service-card--black"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
-      <div className="service-card__overlay" />
-      <h1 className="service-card__title">{title}</h1>
-      <p className="service-card__description">{description}</p>
-      <Link href="/servicios" className="service-card__button button-template">
+    <Link href="/servicios" className="service-card">
+      <div className='service-card__image-container'>
+        <Image src={backgroundImage} alt={title} fill objectFit='cover' />
+      </div>
+      <div className="service-card__content">
+        <h1 className="service-card__title">{title}</h1>
+        <p className="service-card__description">{description}</p>
+        <ul className="service-card__benefits">
+          {benefits.map((benefit, index) => (
+            <li className='service-card__benefits--item' key={index}>{benefit.trim()}</li>
+          ))}
+        </ul>
+      </div>
+      <span className="service-card__button button-template">
         Más Información
-      </Link>
-    </div>
+      </span>
+    </Link>
   );
 }

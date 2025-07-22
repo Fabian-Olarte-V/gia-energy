@@ -81,7 +81,7 @@
                     width: 100px;
                     height: 100px;
                     border-radius: 50%;
-                    background: #ffead7;
+                    background: #fac18f;
                     margin: 0 auto 16px;
                     @include flex-center;
                 }
@@ -117,7 +117,7 @@
         &--title {
             font: {
                 size: clamp(16px, 2vw + 1.2rem, 52px);
-                weight: 400;
+                weight: 700;
             }
             line-height: clamp(1rem, 2vw + 1.2rem, 4rem);
         }
@@ -127,7 +127,7 @@
             margin: 30px 0;
             font: {
                 size: clamp(12px, 1vw + 0.7rem, 24px);
-                weight: 300;
+                weight: 400;
             }
 
             @include responsive(lg) {

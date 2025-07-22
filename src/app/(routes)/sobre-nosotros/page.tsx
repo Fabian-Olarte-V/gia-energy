@@ -3,11 +3,24 @@ import Image from "next/image";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import Label from "@/components/Shared/Label/Label";
-import ClockIcon from "@/components/Shared/IconsSvg/statsIcons/ClockIcon";
+import ClockIcon from "@/components/Shared/IconsSvg/StatsIcons/ClockIcon";
 import GradientCircleResponsive from "@/components/Shared/GradientCircleResponsive";
 import { qualityItems, teamMembers } from "@/lib/aboutData/aboutData";
 import { gradientCirclesAboutUs } from "@/lib/layoutData/gradientData";
+import QualityIcon from "@/components/Shared/IconsSvg/ValuesIcons/QualityIcon";
+import ClientIcon from "@/components/Shared/IconsSvg/ValuesIcons/ClientIcon";
+import InnovationIcon from "@/components/Shared/IconsSvg/ValuesIcons/InnovationIcon";
+import ResponsabilityIcon from "@/components/Shared/IconsSvg/ValuesIcons/ResponsabilityIcon";
 import "./page.scss";
+
+
+function getIconForStat(index: number) {
+  if (index == 0) return <QualityIcon size={44} />;
+  if (index == 1) return <ClientIcon size={44} />;
+  if (index == 2) return <InnovationIcon size={44} />;
+  if (index == 3) return <ResponsabilityIcon size={44} />;
+}
+
 
 export default function AboutPage() {
     return (
@@ -65,7 +78,7 @@ export default function AboutPage() {
                         {qualityItems.map((item, index) => (
                             <div key={index} className="about-page__qualities__container--item">
                                 <div className="about-page__qualities__container--item--icon-bg">
-                                    <ClockIcon size={34} />
+                                    {getIconForStat(index)}
                                 </div>
                                 <h3 className="about-page__qualities__container--item--title">
                                     {item.title}
