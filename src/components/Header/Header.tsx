@@ -70,7 +70,15 @@ export default function Header({ alwaysVisible = true }: { alwaysVisible?: boole
         <div className="header__container">
           <div className="header__logo--container">
             <div className="header__logo"> 
-              <Image className='header__logo--image' src={"assets/images/icon/vqGlobalIcon.png"} alt="VQGLOBAL" fill objectFit='contain' />
+              <Link href={`/`}>
+                <Image 
+                  className='header__logo--image' 
+                  src={"assets/images/icon/vqGlobalIcon.png"} 
+                  alt="VQGLOBAL" 
+                  fill 
+                  style={{ objectFit: 'contain' }} 
+                />
+              </Link>
             </div>
           </div>
           <div className="header__toggle" onClick={toggleMenu}>☰</div>

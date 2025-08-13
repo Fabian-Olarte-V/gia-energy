@@ -31,6 +31,9 @@
       &--image {
         position: relative;
         z-index: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
 
       &::after {
@@ -46,7 +49,7 @@
         padding: 10px 20px;
         font-size: clamp(16px, 1.3vw + 0.8rem, 23px); 
         font-weight: 500;
-        color: $white-primary;
+        color: $white;
         position: absolute;
         bottom: 10px;
         z-index: 2;
@@ -68,10 +71,9 @@
 
     &--button {
       padding: 15px 30px;
-      border-radius: 15px;
+      border-radius: 10px;
       background-color: $blue-primary;
-      border: 1px solid $white-primary;
-      color: $white-primary;
+      color: $white;
       font-size: clamp(12px, 1vw, 16px);
       font-weight: 500;
       text-decoration: none;
@@ -140,7 +142,7 @@
   width: 100%;
   height: 100%;
   text-align: start;
-  color: $white-primary;
+  color: $white;
   justify-content: space-between;
   background-color: $white;
   text-decoration: none;
@@ -162,10 +164,13 @@
     height: 220px;
     width: 100%;
     overflow: hidden;
+  }
 
-    img {
-      transition: transform 0.3s ease;
-    }
+  &__image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
   }
 
   &__content{

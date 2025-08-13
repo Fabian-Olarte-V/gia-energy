@@ -11,7 +11,7 @@ export default function SimpleResultCard({ data }: {data: ISimpleResultCardProps
   return (
     <Link href="/resultados" className="result-card">
       <div className="result-card__image-container">
-        <Image src={backgroundImage} alt={title} layout="fill" objectFit="cover" />
+        <Image className='result-card__image' src={backgroundImage} alt={title} fill />
       </div>
       <div className='result-card__content'>
         <h1 className="result-card__title">{title}</h1>

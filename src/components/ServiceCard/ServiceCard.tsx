@@ -22,7 +22,6 @@ export default function ServiceCard({ data, expanded = true }: ServiceCardCompon
               src={backgroundImage} 
               alt={title} 
               fill 
-              objectFit='cover' 
             />
             <h1 className="service-card-expanded__main-content--title-container--title">
               {title}
@@ -61,7 +60,7 @@ export default function ServiceCard({ data, expanded = true }: ServiceCardCompon
   return (
     <Link href="/servicios" className="service-card">
       <div className='service-card__image-container'>
-        <Image src={backgroundImage} alt={title} fill objectFit='cover' />
+        <Image className='service-card__image' src={backgroundImage} alt={title} fill/>
       </div>
       <div className="service-card__content">
         <h1 className="service-card__title">{title}</h1>

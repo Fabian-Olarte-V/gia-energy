@@ -82,7 +82,7 @@
 
     &__more-button {
         background-color: $blue-primary;
-        color: $white-primary !important;
+        color: $white !important;
         
         @include responsive(md) {
             margin: 20px auto;
@@ -91,7 +91,7 @@
 
     &__cta-button {
         background-color: $white;
-        color: $font-color-primary !important;
+        color: $black !important;
         font-weight: 400 !important;
         
         @include responsive(md) {
