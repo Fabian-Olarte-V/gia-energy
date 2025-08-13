@@ -71,6 +71,12 @@
         }
 
         &-button {
+            background-color: $blue-primary;
+            color: $white !important;
+            width: auto !important;
+            border: none;
+            margin-top: 10px;
+
             &-container {
                 display: flex;
                 margin-top: 20px;
@@ -79,12 +85,6 @@
                     margin-top: 10px;
                 }
             }
-
-            background-color: $blue-primary;
-            color: $white !important;
-            width: auto !important;
-            border: none;
-            margin-top: 10px;
         }
     }
 }

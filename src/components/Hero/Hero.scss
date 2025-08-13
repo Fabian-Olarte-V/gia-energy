@@ -19,16 +19,12 @@
     }
 
     &__content {
-        width: 75%;
-
-        @include responsive(lg) {
-            @include flex-center(column);
-            width: 100%;
-        }
+        width: 100%;
+        @include flex-center(column);
     }
 
     &__title {
-        font-size: clamp(24px, 2vw + 2.4rem, 68px); 
+        font-size: clamp(24px, 2vw + 2.4rem, 72px); 
         font-weight: 700;
         color: $black;
         animation: fadeIn 1.5s ease-in-out; 
@@ -46,7 +42,7 @@
     }
 
     &__subtitle {
-        font-size: clamp(20px, 2vw + 2rem, 64px); 
+        font-size: clamp(20px, 2vw + 2rem, 68px); 
         margin-bottom: 1rem;
         font-weight: 500;
         color: $font-color-secondary;
@@ -60,7 +56,8 @@
     }
 
     &__description {
-        font-size: clamp(12px, 0.4vw + 1rem, 22px); 
+        text-align: center;
+        font-size: clamp(12px, 0.4vw + 1rem, 24px); 
         margin-bottom: 2rem;
         font-weight: 400;
         color: $font-color-secondary;
@@ -80,13 +77,13 @@
     &__cta-buttons {
         display: flex;
         gap: 1rem;
+        animation: fadeIn 3s ease-in-out; 
     }
 
     &__more-button {
         background-color: $blue-primary;
         color: $white-primary !important;
-        animation: fadeIn 3s ease-in-out;
-
+        
         @include responsive(md) {
             margin: 20px auto;
         }
@@ -94,10 +91,9 @@
 
     &__cta-button {
         background-color: $white;
-        color: $font-color-secondary !important;
+        color: $font-color-primary !important;
         font-weight: 400 !important;
-        animation: fadeIn 3s ease-in-out;
-
+        
         @include responsive(md) {
             margin: 20px auto;
         }
@@ -108,12 +104,16 @@
         bottom: 10%;
         left: 50%;
         transform: translateX(-50%);
-        animation: bounce 3s infinite; 
+        animation: bounce 3s infinite, fadeIn 3s ease-in-out;
         cursor: pointer;
 
         @include responsive(md) {
             bottom: 5%;
         }
+    }
+
+    &__label {
+        animation: fadeIn 1s ease-in-out;
     }
 
     @keyframes fadeIn {

@@ -53,16 +53,16 @@
             }
 
             &--button {
+                background-color: $orange-100;
+                color: $white-primary !important;
+                width: auto !important;
+                border: none;
+
                 &-container {
                     @include flex-center(column);
                     gap: 20px;
                     flex-wrap: wrap;
                 }
-
-                background-color: $orange-100;
-                color: $white-primary !important;
-                width: auto !important;
-                border: none;
 
                 @include responsive(md) {
                     margin-bottom: 20px;
@@ -75,7 +75,7 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 60px;
             align-items: start;
-            margin-top: 60px;
+            margin: 70px 0px 40px;
 
             @include responsive(md) {
                 grid-template: repeat(2, 1fr) / repeat(2, 1fr);
@@ -101,7 +101,7 @@
 
                 &--description {
                     font: {
-                        size: clamp(10px, 0.5vw + 0.6rem, 18px);
+                        size: clamp(12px, 0.5vw + 0.6rem, 18px);
                         weight: 300;
                     }
                 }

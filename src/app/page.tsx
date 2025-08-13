@@ -35,7 +35,7 @@ export default function Home() {
 			<section className="services-section container">
 				<div className="services-section__content">
 					<div className="services-section__title-container">
-						<Label label="Nuestros Servicios" color='#d4ebffff' textColor='#004C99'/>	
+						<Label label="Nuestros Servicios" color='#ffead7ff' textColor='#ff7300ff'/>	
 						<h1 className="services-section__title title-template">
 							<span className="subtitle-template">Confianza Que</span> Impulsa Resultados
 						</h1>

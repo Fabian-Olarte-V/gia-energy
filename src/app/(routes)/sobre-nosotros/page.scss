@@ -88,7 +88,7 @@
 
                 &--title {
                     font: {
-                        size: clamp(14px, 1vw + 0.4rem, 28px);
+                        size: clamp(16px, 1vw + 0.4rem, 28px);
                         weight: 500;
                     }
                     color: $orange-primary !important;
@@ -96,7 +96,7 @@
 
                 &--description {
                     font: {
-                        size: clamp(12px, 1.5vw, 18px);
+                        size: clamp(14px, 1.5vw, 18px);
                         weight: 300;
                     }
                 }
@@ -140,11 +140,13 @@
             justify-content: center;
             gap: 50px;
             margin-top: 30px;
+            margin-bottom: 100px;
 
             @include responsive(md) {
                 flex-flow: column nowrap;
                 align-items: center;
                 gap: 40px;
+                margin-bottom: 0px;
             }
 
             &--item {

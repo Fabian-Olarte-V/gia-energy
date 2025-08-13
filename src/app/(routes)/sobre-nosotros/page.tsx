@@ -3,7 +3,6 @@ import Image from "next/image";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import Label from "@/components/Shared/Label/Label";
-import ClockIcon from "@/components/Shared/IconsSvg/StatsIcons/ClockIcon";
 import GradientCircleResponsive from "@/components/Shared/GradientCircleResponsive";
 import { qualityItems, teamMembers } from "@/lib/aboutData/aboutData";
 import { gradientCirclesAboutUs } from "@/lib/layoutData/gradientData";
@@ -15,10 +14,10 @@ import "./page.scss";
 
 
 function getIconForStat(index: number) {
-  if (index == 0) return <QualityIcon size={44} />;
-  if (index == 1) return <ClientIcon size={44} />;
-  if (index == 2) return <InnovationIcon size={44} />;
-  if (index == 3) return <ResponsabilityIcon size={44} />;
+    if (index == 0) return <QualityIcon size={44} />;
+    if (index == 1) return <ClientIcon size={44} />;
+    if (index == 2) return <InnovationIcon size={44} />;
+    if (index == 3) return <ResponsabilityIcon size={44} />;
 }
 
 
@@ -50,12 +49,13 @@ export default function AboutPage() {
                             análisis técnicos. Ayudamos a nuestros clientes a 
                             extender la vida útil de sus equipos, reducir fallas y operar con máxima eficiencia.
                         </p>
-                        <br />
                         <p className="about-page__hero__title-container--description description-template">
+                            <br />
                             Respaldados por más de 40 años de experiencia técnica, hemos desarrollado proyectos 
                             en generación eléctrica, mantenimiento predictivo, redes de media y baja 
-                            tensión y modernización de plantas. Nuestro equipo domina la normativa IEEE 
-                            y está preparado para afrontar los retos más complejos del sector energético.
+                            tensión, y modernización de plantas de generación de energía eléctrica. Nuestro 
+                            equipo domina la normativa IEEE y está preparado para afrontar los retos más complejos 
+                            del sector energético.
                         </p>
                     </div>
                 </section>
@@ -99,7 +99,7 @@ export default function AboutPage() {
                     textColor='#004C99'
                 />
                 <h2 className="about-page__team--title title-template">
-                    Liderazgo con experiencia <br/> comprobada
+                    Liderazgo con experiencia comprobada
                 </h2>
                 <p className="about-page__team--description description-template">
                     Nuestro equipo está liderado por los ingenieros José Iván Velásquez Duque y Oscar Quintero Valencia, 

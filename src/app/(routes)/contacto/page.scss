@@ -1,4 +1,5 @@
 @use '../../globals.scss' as *;
+@use 'sass:color';
 
 .contact-page {
     $self: &;
@@ -13,11 +14,11 @@
 
     &__container {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         gap: 50px;
 
         @include responsive(lg) {
-            gap: 10px;
+            gap: 30px;
         }
 
         @include responsive(md) {
@@ -26,14 +27,14 @@
     }
 
     &__image-container {
-        flex: 0.45;
+        flex: 0.4;
         position: relative; 
         border-radius: 30px;
         overflow: visible;
         margin-top: 10px;
         
         @include responsive(lg) {
-            flex: 0.5;
+            flex: 0.45;
         }
 
         @include responsive(md) {
@@ -43,10 +44,14 @@
 
     &__image {
         width: 100%;
-        height: 90% !important;
+        height: 75% !important;
         aspect-ratio: 1 / 1;
         margin: auto;
         display: block;
+
+        @include responsive(lg) {
+            height: 65% !important;
+        }
     }
 
     &__content {
@@ -154,7 +159,7 @@
             transition: background-color 0.3s ease;
 
             &:hover {
-                background-color: darken($blue-primary, 10%);
+                background-color: color.scale($blue-primary, $lightness: -10%);
             }
         }
     }

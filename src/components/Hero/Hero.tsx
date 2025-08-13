@@ -19,7 +19,13 @@ export default function Hero() {
     <section className="hero">
       <div className="hero__container container">
         <div className="hero__content">
-          <Label label="Especialistas en ingeniería eléctrica" color='#d4ebffff' textColor='#004C99'/>
+          <div className="hero__label">
+            <Label 
+              label="Especialistas En Ingeniería Eléctrica" 
+              color='#d4ebffff' 
+              textColor='#004C99'
+            />
+          </div>
           <h1 className="hero__title">Ingeniería Que <span className='hero__highlight'>Transforma.</span></h1>
           <h1 className="hero__subtitle">Soluciones Que Perduran.</h1>
           <p className="hero__description">
@@ -42,7 +48,7 @@ export default function Hero() {
         </div>
       </div>
       <div className='hero__scroll-indicator' onClick={handleScroll}>
-        <ArrowIcon color='#fff' rotation={-90}/>
+        <ArrowIcon color='#1d1d1d' rotation={-90}/>
       </div>
     </section>
   );

@@ -50,6 +50,23 @@
         }
     }
 
+    &__contact-mobile {
+        display: none;
+        margin-top: 36px;
+
+        @include responsive(lg) {
+            display: block;
+        }
+    }
+
+    &__contact-desktop {
+        display: block;
+
+        @include responsive(lg) {
+            display: none;
+        }
+    }
+
     &__contact-info {
         flex-basis: 25%;
 
@@ -65,11 +82,14 @@
     }
 
     &__nav {
+        display: block;
+        padding-left: 70px;
         flex-basis: 25%;
 
         
         @include responsive(lg) {
             order: 2;
+            display: none;
         }
 
         &-list {
@@ -101,8 +121,8 @@
         color: $font-color-secondary;
         padding: 10px 15px;
 
-        @include responsive(md) {
-            padding-top: 30px !important;
+        @include responsive(lg) {
+            padding-top: 40px !important;
         }
 
         .footer__text {

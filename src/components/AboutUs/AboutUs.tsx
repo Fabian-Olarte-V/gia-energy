@@ -18,7 +18,6 @@ export default function AboutUs() {
             </div>
           </div>
           <div className="about-us__description-container">
-            <h3 className='about-us__description-container--title'>Nuestra Experiencia</h3>
             <p className='about-us__description-container--description description-template'>
               En VQ Global Ingeniería combinamos más de 40 años de experiencia con tecnología de 
               punta para ofrecer soluciones eléctricas especializadas en generación de energía.

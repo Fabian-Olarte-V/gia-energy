@@ -31,13 +31,13 @@ export default function Results() {
               className="results-section__nav-buttons--prev nav-button button-template"
               onClick={handlePrev} 
             >
-              <ArrowIcon />
+              <ArrowIcon color="#ff7300ff"/>
             </button>
             <button
               className="results-section__nav-buttons--next nav-button button-template"
               onClick={handleNext}
             >
-              <ArrowIcon rotation={180}/>
+              <ArrowIcon rotation={180} color="#ff7300ff"/>
             </button>
           </div>
           <Link className="results-section__link-button button-template" href={'/resultados'}>Ver Todos</Link>
