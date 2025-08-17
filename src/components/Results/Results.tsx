@@ -31,19 +31,19 @@ export default function Results() {
               className="results-section__nav-buttons--prev nav-button button-template"
               onClick={handlePrev} 
             >
-              <ArrowIcon color="#ff7300ff"/>
+              <ArrowIcon color="#1C211F"/>
             </button>
             <button
               className="results-section__nav-buttons--next nav-button button-template"
               onClick={handleNext}
             >
-              <ArrowIcon rotation={180} color="#ff7300ff"/>
+              <ArrowIcon rotation={180} color="#1C211F"/>
             </button>
           </div>
           <Link className="results-section__link-button button-template" href={'/resultados'}>Ver Todos</Link>
         </div>
       </div>
-      <div className="results-sectio__carousel-container">
+      <div className="results-section__carousel-container">
         <Carousel onSwiper={(swiper) => (swiperRef.current = swiper)} items={resultsData} />
       </div>
     </div>

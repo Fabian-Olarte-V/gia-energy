@@ -2,7 +2,7 @@ import { Result } from "@/interfaces/result/resultCard.interface";
 
 export const resultsData: Result[] = [
   {
-    title: "Recuperación de Generador Unidad 1 – Rionegro",
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum.",
     description: "Reconstrucción en sitio del generador 1 tras cortocircuito. Sustitución de bobinas, reconstrucción del anillo de cortocircuito y mantenimiento del rotor.",
     backgroundImage: "/assets/images/service-6.png",
     outcomeHighlights: [
@@ -13,10 +13,12 @@ export const resultsData: Result[] = [
     servicesInvolved: [
       "Recuperación de Generadores de Alta Tensión",
       "Pruebas eléctricas especializadas a generadores"
-    ]
+    ],
+    category: "Energia Solar",
+    site: "VILLAVICENCIO"
   },
   {
-    title: "Soporte Técnico para Generador Chimay – Perú",
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum.",
     description: "Desarrollo de especificaciones para reparación mayor del estator de la unidad #1 y acompañamiento técnico en procesos de mejora.",
     backgroundImage: "/assets/images/service-6.png",
     outcomeHighlights: [
@@ -27,10 +29,12 @@ export const resultsData: Result[] = [
     servicesInvolved: [
       "Consultoría técnica",
       "Análisis de causa raíz (ACR) en fallas de bobinados"
-    ]
+    ],
+    category: "Energia Solar",
+    site: "VILLAVICENCIO"
   },
   {
-    title: "Licitación para adquisición de bobinados – CHIVOR II",
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum.",
     description: "Elaboración de pliegos para compra de bobinas de estator y rotor. Revisión técnica y corrección posterior.",
     backgroundImage: "/assets/images/service-6.png",
     outcomeHighlights: [
@@ -39,10 +43,12 @@ export const resultsData: Result[] = [
     ],
     servicesInvolved: [
       "Soporte especializado en especificaciones técnicas para licitaciones"
-    ]
+    ],
+    category: "Energia Solar",
+    site: "VILLAVICENCIO"
   },
   {
-    title: "Consultoría para recuperación post-inundación – Central ESTI",
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum.",
     description: "Diagnóstico completo del generador tras evento de inundación. Análisis de bobinas, núcleo, polos y pruebas de tensión y descarga parcial.",
     backgroundImage: "/assets/images/service-6.png",
     outcomeHighlights: [
@@ -53,10 +59,12 @@ export const resultsData: Result[] = [
     servicesInvolved: [
       "Consultoría en recuperación de generadores tras eventos críticos",
       "Pruebas eléctricas especializadas a generadores"
-    ]
+    ],
+    category: "Energia Solar",
+    site: "VILLAVICENCIO"
   },
   {
-    title: "Supervisión técnica – Rehabilitación Central ESTI",
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum.",
     description: "Supervisión técnica en montaje, desmontaje y diagnóstico de ambas unidades. Acompañamiento en pruebas y especificaciones para adquisición de equipos.",
     backgroundImage: "/assets/images/service-6.png",
     outcomeHighlights: [
@@ -66,10 +74,12 @@ export const resultsData: Result[] = [
     ],
     servicesInvolved: [
       "Supervisión técnica e interventoría especializada"
-    ]
+    ],
+    category: "Energia Solar",
+    site: "VILLAVICENCIO"
   },
   {
-    title: "Rehabilitación de PCH Iquira I, II y La Pita",
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum.",
     description: "Dirección técnica y supervisión de la rehabilitación de tres pequeñas centrales hidroeléctricas, incluyendo evaluación de reposición de tuberías.",
     backgroundImage: "/assets/images/service-6.png",
     outcomeHighlights: [
@@ -79,6 +89,8 @@ export const resultsData: Result[] = [
     ],
     servicesInvolved: [
       "Supervisión técnica e interventoría especializada"
-    ]
+    ],
+    category: "Energia Solar",
+    site: "VILLAVICENCIO"
   }
 ];

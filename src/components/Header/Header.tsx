@@ -5,16 +5,13 @@ import Image from 'next/image';
 import './Header.scss';
 
 
-export default function Header({ alwaysVisible = true }: { alwaysVisible?: boolean }) {
+export default function Header({ blackItems = false }: { blackItems?: boolean }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  
   useEffect(() => {
-    const SCROLL_THRESHOLD = 100; 
-    const SCROLL_DIFF_THRESHOLD = 5; 
-
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       const diff = currentScrollY - lastScrollY.current;
@@ -22,14 +19,8 @@ export default function Header({ alwaysVisible = true }: { alwaysVisible?: boole
       if (currentScrollY <= 0) {
         setIsVisible(true);
         setIsScrolled(false);
-      } else if (currentScrollY < SCROLL_THRESHOLD) {
-        setIsVisible(true);
-        setIsScrolled(true);
-      } else if (diff > SCROLL_DIFF_THRESHOLD) {
-        setIsVisible(false);
-        setIsScrolled(true);
-      } else if (diff < -SCROLL_DIFF_THRESHOLD) {
-        setIsVisible(true);
+      } else {
+        setIsVisible(diff < 0);
         setIsScrolled(true);
       }
 
@@ -63,9 +54,7 @@ export default function Header({ alwaysVisible = true }: { alwaysVisible?: boole
   return (
     <header className={`header ${isVisible ? 'header--visible' : 'header--hidden'}`}> 
       <div
-        className={`header__wrapper ${
-          (alwaysVisible && isScrolled) || (!alwaysVisible && isScrolled) ? 'header__wrapper--scrolled' : ''
-        }`}
+        className={`header__wrapper ${isScrolled ? 'header__wrapper--scrolled' : blackItems ? 'header__wrapper--black-items' : ''}`}
       >
         <div className="header__container">
           <div className="header__logo--container">
@@ -73,7 +62,7 @@ export default function Header({ alwaysVisible = true }: { alwaysVisible?: boole
               <Link href={`/`}>
                 <Image 
                   className='header__logo--image' 
-                  src={"assets/images/icon/vqGlobalIcon.png"} 
+                  src={isScrolled? "assets/images/icon/fullIconBlack.png" : blackItems? "assets/images/icon/fullIconBlack.png" : "assets/images/icon/fullIconWhite.png"} 
                   alt="VQGLOBAL" 
                   fill 
                   style={{ objectFit: 'contain' }} 
@@ -93,12 +82,6 @@ export default function Header({ alwaysVisible = true }: { alwaysVisible?: boole
               <li className="header__nav-item">
                 <Link className="header__nav-item--link" href={`/resultados`}>Resultados</Link>
               </li>
-              <li className="header__nav-item">
-                <Link className="header__nav-item--link" href={`/sobre-nosotros`}>Sobre Nosotros</Link>
-              </li>
-              <li className="header__nav-item header__contact">
-                <Link className="header__contact-button button-template" href={`/contacto`}>Contáctanos</Link>
-              </li>
               {isMenuOpen && (
                 <li className="header__nav-item">
                   <Link className="header__nav-item--link" href={`/contacto`}>Contacto</Link>
@@ -107,6 +90,9 @@ export default function Header({ alwaysVisible = true }: { alwaysVisible?: boole
               }
             </ul>
           </nav>
+          <li className="header__nav-item header__contact">
+            <Link className="header__contact-button button-template" href={`/contacto`}>Contáctanos</Link>
+          </li>
         </div>
       </div>
     </header>

@@ -1,0 +1,131 @@
+@use '../../app/globals.scss' as *;
+
+.contact-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    @include responsive(md) {
+        flex-flow: column nowrap;
+    }
+
+    &__service {
+        flex: 0.6;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($dark-green, 0.85);
+        border-radius: 20px;
+        padding: 30px;
+        color: #fff;
+        border: 1px solid rgba($eerie-black, .15);
+
+        &--error {
+            border: 2px solid red;
+        }
+
+        @include responsive(lg) {
+            flex: 0.55;
+        }
+        
+        &-label {
+            font-size: clamp(0.8rem, 1rem + 0.6rem, 1.6rem);
+            font-weight: bold;
+            color: $white;
+
+            &--form{
+                color: $eerie-black;
+            }
+        }
+
+        &-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 13px;
+            margin-top: 30px;
+            padding: 15px 0px;
+            border-radius: 12px;
+        }
+
+        &-option {
+            padding: 25px 10px;
+            border-radius: 12px;
+            cursor: pointer;
+            background-color: rgba($white, 0.08);
+            border: 1px solid $white;
+            color: $white;
+
+            &--selected {
+                border-color: $green-yellow;
+                color: $green-yellow;
+            }
+
+            &:hover {
+                background-color: rgba($white, 0.1);
+            }
+        }
+
+        &-option-label {
+            font-size: clamp(0.8rem, 1rem + 0.5rem, 1.1rem);
+            font-weight: 400;
+        }
+    }
+
+    &__main {
+        flex: 0.4;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($dark-green, .05);
+        border-radius: 20px;
+        padding: 30px;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 20px;
+        border: 1px solid rgba($eerie-black, .15);
+
+        @include responsive(lg) {
+            flex: 0.45;
+        }
+    }
+
+    &__input-group {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    &__input {
+        padding: 20px 10px;
+        border-radius: 12px;
+        font-size: 16px;
+        border: 1px solid $border-color-primary;
+        background-color: rgba($white, 0.5);
+        color: $eerie-black;
+
+        &--error {
+            border: 2px solid red;
+        }
+    }
+
+    &__submit-container {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    &__submit {
+        width: 50% !important;
+        margin: 0 auto;
+        padding: 15px;
+        border-radius: 30px;
+        background-color: $green-yellow;
+        border: none;
+    }
+
+    &__error-message {
+        color: red;
+        font-size: 15px;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+

@@ -40,7 +40,7 @@
         }
 
         &--title {
-            color: $black !important;
+            color: $eerie-black !important;
         }
 
         &--highlight {
@@ -80,7 +80,7 @@
 
             .contact-button {
                 background-color: $white;
-                color: $black;
+                color: $eerie-black;
             }
         }
     }
@@ -99,13 +99,13 @@
         &--title {
             font-size: clamp(20px, 1.5vw + 1rem, 24px);
             font-weight: 700;
-            color: $black !important;
+            color: $eerie-black !important;
             margin-bottom: 20px;
         }
         
         &--description {
             width: 80%;
-            color: $font-color-secondary !important;
+            color: $eerie-black !important;
             font-size: clamp(12px, 1vw + 0.4rem, 20px) !important; 
             line-height: clamp(0.4rem, 2vw + 0.7rem, 1.8rem) !important; 
             text-align: justify;

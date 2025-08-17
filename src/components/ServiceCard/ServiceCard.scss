@@ -2,122 +2,130 @@
 
 .service-card-expanded {
   width: 100%;
-  height: 100%;
+  height: 600px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
   gap: 10px;
   position: relative;
-  overflow: hidden; 
+  overflow: hidden;
   background-position: center;
   background-size: cover;
   text-align: center;
   background-color: white;
+
+  &__description {
+    font-size: clamp(13px, 1vw, 17px);
+  }
+
+  &:hover {
+    .service-card-expanded__info {
+      opacity: 1;
+      height: 80%;
+      pointer-events: auto;
+
+      @include responsive(lg) { height: 65%; }
+      @include responsive(md) { height: 70%; }
+    }
+    .service-card-expanded__info--first {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  &.active {
+    .service-card-expanded__info {
+      opacity: 1;
+      height: 80%;
+      pointer-events: auto;
+
+      @include responsive(lg) { height: 65%; }
+      @include responsive(md) { height: 70%; }
+    }
+    .service-card-expanded__info--first {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
 
   * {
     position: relative;
     z-index: 2;
   }
 
-  &__main-content {
-    display: flex;
-    flex-flow: column nowrap;
-    position: relative;
-    
-    &--title-container {
-      position: relative;
-      height: 220px;
-
-      &--image {
-        position: relative;
-        z-index: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      &::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: rgba(0,0,0,0.4);
-        z-index: 1;
-        pointer-events: none;
-      }
-
-      &--title {
-        padding: 10px 20px;
-        font-size: clamp(16px, 1.3vw + 0.8rem, 23px); 
-        font-weight: 500;
-        color: $white;
-        position: absolute;
-        bottom: 10px;
-        z-index: 2;
-      }
-
-      &--description {
-        font-size: clamp(14px, 1.3vw, 18px);
-        font-weight: 400;
-        color: $font-color-secondary;
-        padding-top: 20px;
-        height: 80px;
-
-        @include responsive(md) {
-          height: 60px;
-          padding-top: 10px;
-        }
-      }
-    }
-
-    &--button {
-      padding: 15px 30px;
-      border-radius: 10px;
-      background-color: $blue-primary;
-      color: $white;
-      font-size: clamp(12px, 1vw, 16px);
-      font-weight: 500;
-      text-decoration: none;
-      margin-top: 20px;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: $blue-light;
-      }
-    }
+  &__title {
+    padding: 30px 20px;
+    font-size: clamp(16px, 1.3vw + 0.8rem, 28px);
+    font-weight: 600;
+    color: $eerie-black;
+    bottom: 10px;
+    z-index: 2;
+    text-align: start;
   }
 
   &__info {
     display: flex;
+    opacity: 0;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
     flex-flow: column nowrap;
     justify-content: space-between;
     padding: 0 15px;
-    color: $black;
-    height: 100%;
-    gap: 30px;
+    color: $white;
+    height: 15%;
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    gap: 20px;
     text-align: start;
+    background-color: $eerie-black;
+    border-radius: 14px;
+    padding-top: 20px;
+    pointer-events: none;
+    transition: opacity 0.7s cubic-bezier(.4,0,.2,1), height 1s cubic-bezier(.4,0,.2,1);
 
     @include responsive(lg) {
       align-items: center;
       gap: 20px;
-      padding: 0 15px;
+      padding: 15px;
       box-sizing: border-box;
+    }
+    @include responsive(md) { padding: 15px; }
+
+    &--first {
+      position: absolute;
+      bottom: 5%;
+      left: 5%;
+      height: 100px;
+      padding: 15px;
+      width: 90%;
+      background-color: $eerie-black;
+      color: $white;
+      border-radius: 14px;
+      opacity: 1;
+      pointer-events: auto;
+      transition: opacity 0.2s cubic-bezier(.4,0,.2,1);
+
+      &--description {
+        text-align: start;
+        font-size: clamp(13px, 1vw, 17px);
+      }
+
+      @include responsive(lg) { height: 100px; padding: 20px; }
     }
 
     &-item {
       flex: 0.3;
       padding: 0 20px;
 
-      @include responsive(lg) {
-        flex: 1;
-        padding: 0;
-        width: 100%;
-      }
+      @include responsive(lg) { flex: 1; padding: 0; width: 100%; }
 
       &--subtitle {
-        font-size: clamp(12px, 1.3vw, 18px);
+        font-size: clamp(13px, 1.3vw, 18px);
         font-weight: 600;
         margin-bottom: 10px;
-        color: $blue-primary;
+        color: $mint-cream;
       }
 
       &--list {
@@ -126,129 +134,15 @@
 
         li {
           padding-bottom: 5px;
-          font-size: clamp(12px, 1vw, 16px);
+          font-size: clamp(13px, 1vw, 16px);
         }
       }
 
       &--description {
         font-weight: 300;
-        font-size: clamp(12px, 1vw, 16px);
+        font-size: clamp(13px, 1vw, 16px);
+        text-align: start;
       }
-    }
-  }
-}
-
-.service-card {
-  width: 100%;
-  height: 100%;
-  text-align: start;
-  color: $white;
-  justify-content: space-between;
-  background-color: $white;
-  text-decoration: none;
-  display: block;
-  cursor: pointer;
-
-  &:hover {
-    .service-card__image-container img {
-      transform: scale(1.1);
-    }
-
-    .service-card__button {
-      text-decoration: underline !important;
-    }
-  }
-
-  &__image-container {
-    position: relative;
-    height: 220px;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  &__image {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.3s ease;
-  }
-
-  &__content{
-    color: $black !important;
-    padding: 20px;
-    height: 270px;
-
-    @include responsive(lg) {
-      height: 280px;
-    }
-
-    @include responsive(md) {
-      height: 220px;
-    }
-  }
-
-  &__title {
-    font-size: clamp(16px, 1.3vw + 0.6rem, 24px); 
-    font-weight: 700;
-    width: 95%;
-    line-height: clamp(0.8rem, 2vw + 0.8rem, 1.6rem); 
-    color: $black;
-    margin-bottom: 15px;
-    height: 50px;
-
-    @include responsive(lg) {
-      height: 70px;
-      font-size: clamp(16px, 1.3vw + 0.6rem, 22px); 
-      line-height: clamp(0.8rem, 2vw + 0.8rem, 1.3rem); 
-      width: 100%; 
-    }
-
-    @include responsive(md) {
-      margin-bottom: 5px;
-      height: 50px;
-    }
-  }
-
-  &__description {
-    font-size: clamp(12px, 1vw + 0.4rem, 18px); 
-    font-weight: 400;
-    text-align: start;
-    width: 85%;
-    color: $font-color-secondary;
-
-    @include responsive(lg) {
-      width: 95%;
-    }
-  }
-
-  &__benefits {
-    display: flex;
-    flex-flow: column nowrap;
-    gap: 10px;
-    margin-top: 20px;
-    padding-left: 20px;
-
-    &--item {
-      font-size: clamp(12px, 1vw + 0.4rem, 18px); 
-      font-weight: 300;
-      color: $font-color-secondary;
-
-      @include responsive(lg) {
-        padding-left: 0;
-      }
-    }
-  }
-
-  &__button {
-    color: $orange-primary!important;
-    font-weight: 500 !important;
-    width: 30% !important;
-    border: none !important;
-    text-align: start !important;
-    display: inline-block;
-    
-    @include responsive(md) {
-      width: 35% !important;
     }
   }
 }

@@ -1,29 +1,12 @@
 @use '../../../app/globals.scss' as *;
 
 .expanded-result-card {
-    border: 1px solid #d8d8d8;
+    border: 1px solid #dbdbdb;
     border-radius: 15px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
 
-    &__separator{
-        padding: 20px 0px;
-        margin: 10px 0px;
-        position: relative;
-        
-        &::before {
-            content: '';
-            display: inline-block;
-            width: 90%;
-            height: 1px;
-            background-color: $orange-light;
-            vertical-align: text-top;
-            top: 50%;
-            transform: translateY(-50%);
-            position: absolute;
-            margin: 0 auto;
-            left: 50%;
-            transform: translateX(-50%);
-        }
+    @include responsive(md) {
+        padding-bottom: 30px;
     }
 
     &__image-container {
@@ -39,8 +22,12 @@
     }
 
     &__title-container {
-        padding: 10px 15px 0px 15px;
-        height: 170px;
+        padding: 15px 10px;
+        height: 130px;
+
+        @include responsive(xl) {
+            height: 140px;
+        }
 
         @include responsive(md) {
             padding-bottom: 10px;
@@ -48,53 +35,63 @@
         }
 
         &--title {
-            font-size: clamp(16px, 2vw + 0.4rem, 26px);
+            font-size: clamp(18px, 1vw + 0.5rem, 24px);
             font-weight: 600;
-            color: $black;
+            color: $eerie-black;
+
+            @include responsive(md) {
+                margin-bottom: 30px;
+            }
         }
 
-        &--description {
+        &--category {
             padding-top: 15px;
-            font-size: clamp(12px, 2vw + 0.4rem, 19px);
-            color: $font-color-secondary;
+            font-size: 16px;
+            color: $dark-green;
+            font-weight: 400;
         }
     }
 
 
     &__content {
-        height: 180px;
+        height: 170px;
         display: flex;
         flex-flow: column;
-        gap: 30px;
-        padding: 10px 10px;
+        gap: 15px;
+        padding: 0px 20px;
         box-sizing: border-box;
+
+        @include responsive(xl) {
+            height: 200px;
+        }
 
         @include responsive(md) {
             height: auto;
         }
 
+        &--title{
+            font-size: 16px;
+            margin: -10px 0px 0px -10px;
+            color: $dark-green;
+            font-weight: 400;
+        }
+
         &--item {
             display: flex;
             gap: 10px;
+            @include flex-center(row);
 
             &--stat-container {
-                width: 25px; 
-                height: 25px;
-                background-color: $orange-light;
+                width: 8px; 
+                height: 8px;
+                background-color: $dark-green;
                 border-radius: 50%;
-                @include flex-center;
-                flex-shrink: 0;
-
-                @include responsive(md) {
-                    width: 20px; 
-                    height: 20px;
-                }
             }
 
             &--description {
                 flex: 1;
-                font-size: clamp(13px, 1.5vw + 0.4rem, 18px);
-                color: $font-color-secondary;
+                font-size: clamp(13px, 1.5vw + 0.4rem, 17px);
+                color: $eerie-black;
                 align-self: center;
             }
         }

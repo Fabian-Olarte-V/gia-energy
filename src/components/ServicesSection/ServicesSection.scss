@@ -1,50 +1,9 @@
 @use '../../app/globals.scss' as *;
 
 .all-services-section{
-    &__categories {
-        display: flex;
-        flex-flow: row nowrap;
-        gap: 60px;
-        list-style: none;
-        margin: 30px 0px;
-        overflow: hidden;
-        overflow-x: scroll;
-        scrollbar-width: none; 
-
-
-        @include responsive(lg) {
-            gap: 30px;
-            margin: 0px 0px 15px 0px;
-        }
-    }
-
-    &__category {
-        cursor: pointer;
-        margin-bottom: 20px;
-        transition: all 0.3s ease;
-
-        &-name {
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: 300;
-            font-size: clamp(12px, 1vw, 16px);
-
-            &--active {
-                background-color: $blue-primary;
-                color: white;
-            }
-
-            
-            &:hover {
-                background-color: $blue-light;
-                color: white;
-            }
-        }
-    }
-
     &__list {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: repeat(2, 1fr); 
         gap: 20px;
         row-gap: 30px;
         margin-bottom: 40px;

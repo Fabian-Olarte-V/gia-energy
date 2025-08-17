@@ -1,7 +1,9 @@
 @use '../../globals.scss' as *;
 
 .services-page {
-    padding: 180px 0px 15px;
+    position: relative;
+    padding: 180px 0 15px;
+    background-color: $mint-cream;
 
     @include responsive(lg) {
         padding-top: 140px;
@@ -22,68 +24,66 @@
 
         @include responsive(lg) {
             flex-direction: column;
-            align-items: center;
+            align-items: stretch;
         }
 
         &-content {
-            flex: 0.7;
+            flex-basis: 55%;
             position: relative;           
         }
 
         &-title {
+            color: $eerie-black;
             margin-bottom: 15px;
-            color: $black;
+            font-size: clamp(3rem, 4.5vw + 1rem, 6rem);
+            line-height: 1.15;
 
             @include responsive(lg) {
                 margin-bottom: 10px;
-            }
-
-            span {
-                color: $blue-primary;
+                font-size: clamp(2.5rem, 4vw, 6rem);
             }
         }
 
         &-description {
-            width: 90%;
+            width: 100%;
+            font-size: clamp(1rem, 1vw + 0.5rem, 1.5rem);
+            line-height: clamp(1.6rem, 1.7vw + 1rem, 2rem);
+            
+            &--mobile {
+                display: none;
 
-            @include responsive(lg) {
-                width: 100%;
+                @include responsive(lg) {
+                    display: block;
+                }
             }
         }
 
         &-image {
-            flex: 0.55;
+            flex-basis: 40%;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
 
             @include responsive(lg) {
                 display: none;
             }
+        }
+    }
 
-            &-container {
-                position: relative;
-                width: 450px;
-                height: 375px;
-            }
+    &__image-container {
+        height: 400px;
+        width: 100%;
+        background-image: url('../../../../public/assets/images/services/services_image.jpg');
+        background-position: bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 16px;
+
+        @include responsive(lg) {
+            height: 300px;
         }
 
-        &-button {
-            background-color: $blue-primary;
-            color: $white !important;
-            width: auto !important;
-            border: none;
-            margin-top: 10px;
-
-            &-container {
-                display: flex;
-                margin-top: 20px;
-
-                @include responsive(md) {
-                    margin-top: 10px;
-                }
-            }
+        @include responsive(md) {
+            height: 200px;
         }
     }
 }

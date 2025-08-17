@@ -35,7 +35,7 @@ export default function Footer() {
           <div className="footer__logo"> 
             <Image 
               className='footer__logo--image' 
-              src={"assets/images/icon/vqGlobalIcon.png"} 
+              src={"assets/images/icon/giaIconBlack.png"} 
               alt="VQGLOBAL" 
               fill 
               style={{ objectFit: 'contain' }}

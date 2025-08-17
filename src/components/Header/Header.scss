@@ -5,7 +5,6 @@
     top: 0;
     left: 0;
     z-index: 1000;
-    background-color: transparent;
     color: $white;
     background-color: transparent;
     width: 100vw;
@@ -32,7 +31,17 @@
         &--scrolled {
             border-bottom: 1.5px solid #e2e2e2;
             box-shadow: 4px 4px 12px 2px rgba(107, 107, 107, 0.15);
-            background-color: $white;
+            background-color: $mint-cream;
+
+            .header__nav-item--link, .header__toggle{
+                color: $eerie-black;
+            }
+        }
+
+        &--black-items {
+            .header__nav-item--link, .header__toggle{
+                color: $eerie-black;
+            }
         }
     }
 
@@ -42,8 +51,14 @@
         justify-content: space-between;
         gap: 20px;
         width: 100%;
-        margin: 3px auto;
+        margin: 10px auto 15px;
         max-width: 1480px;
+        padding: 0px 20px;
+
+        @include responsive(xl){
+            max-width: 1180px;
+            padding: 0px 30px;
+        }
 
         @include responsive(lg) {
             max-width: none;
@@ -57,16 +72,16 @@
     }
 
     &__logo--container {
-        flex-basis: 20%;
+        flex-basis: 15%;
     }
 
     &__logo{
-        width: 170px;
-        height: 90px;
+        width: 130px;
+        height: 80px;
         position: relative;
 
         @include responsive(lg) {
-            width: 115px;
+            width: 100px;
             height: 60px;
         }
 
@@ -76,9 +91,10 @@
     }
 
     &__nav {
-        flex-basis: 60%;
+        flex-basis: 70%;
         display: flex;
         align-items: center;
+        justify-content: center;
     
 
         @include responsive(lg) {
@@ -105,11 +121,11 @@
 
         &-list {
             @include flex-center;
-            justify-content: flex-end;
+            justify-content: center;
             width: 100%;
             list-style: none;
             padding: 0;
-            gap: 70px;
+            gap: 140px;
 
             @include responsive(lg) {
                 flex-direction: column;
@@ -123,9 +139,9 @@
                 @include flex-center;
                 flex-wrap: nowrap;
                 text-decoration: none;
-                color: $font-color-secondary;
+                color: $white;
                 font-size: clamp(14px, 1.5vw, 18px); 
-                font-weight: 400;
+                font-weight: 300;
                 
                 @include responsive(lg) {
                     padding: 10px 0;
@@ -133,7 +149,7 @@
                 }
 
                 &:hover {
-                    color: $blue-primary;
+                    color: $green-yellow;
                     font-weight: 400;
                 }
             }
@@ -141,6 +157,10 @@
     }
 
     &__contact {
+        flex-basis: 15%;
+        justify-content: flex-end;
+        @include flex-center;
+        
         @include responsive(lg) {
             display: none;
         }
@@ -149,9 +169,9 @@
             width: 144px;
             height: 50px !important;
             @include flex-center;
-            background-color: $blue-primary;
+            background-color: $green-yellow;
             border: none !important;
-            color: $white !important;        
+            color: $eerie-black !important;        
         }
     }
 
@@ -162,7 +182,7 @@
             display: block;
             @include flex-center;
             font-size: clamp(20px, 2vw, 24px); 
-            color: $font-color-secondary;
+            color: $mint-cream;
             cursor: pointer;
             margin-left: auto;
             padding-bottom: 10px;

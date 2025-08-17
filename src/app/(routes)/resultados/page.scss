@@ -1,11 +1,8 @@
 @use '../../globals.scss' as *;
 
 .results-page {
-    $self: &;
-    padding: {
-        top: 130px;
-        bottom: 15px;
-    }
+    background-color: $mint-cream;
+    padding: 150px 0px 15px;
 
     @include responsive(lg) {
         padding-top: 80px;
@@ -27,14 +24,21 @@
 
         &-title-container {
             @include flex-center(column);
-            gap: 10px;
 
             &--title {
-                color: $black !important;
-            }
+                margin-bottom: 15px;
+                color: $eerie-black;
+                font-size: clamp(3.5rem, 4.5vw + 0.8rem, 5rem);
+                line-height: 1.15;
 
-            &--highlight {
-                color: $orange-primary;
+                @include responsive(lg) {
+                    margin-bottom: 10px;
+                }
+
+                @include responsive(md) {
+                    font-size: clamp(3rem, 4.5vw, 8rem);
+                    line-height: clamp(3rem, 4vw, 9rem);
+                }
             }
 
             &--description {
@@ -53,10 +57,10 @@
             }
 
             &--button {
-                background-color: $orange-primary;
-                color: $white !important;
+                background-color: transparent;
+                color: $eerie-black;
+                border: 1px solid $eerie-black;
                 width: auto !important;
-                border: none;
 
                 &-container {
                     @include flex-center(column);
@@ -66,44 +70,6 @@
 
                 @include responsive(md) {
                     margin-bottom: 20px;
-                }
-            }
-        }
-
-        &-stats-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 60px;
-            align-items: start;
-            margin: 70px 0px 40px;
-
-            @include responsive(md) {
-                grid-template: repeat(2, 1fr) / repeat(2, 1fr);
-                gap: 30px;
-                margin: 20px 0 50px;
-            }
-
-            &--item {
-                @include flex-center(column);
-                text-align: center;
-
-                &--data {
-                    font: {
-                        size: clamp(18px, 1vw + 2rem, 48px);
-                        weight: 700;
-                    }
-                    color: $orange-primary;
-
-                    @include responsive(lg) {
-                        font-size: clamp(16px, 1.5vw + 1.5rem, 28px);
-                    }
-                }
-
-                &--description {
-                    font: {
-                        size: clamp(12px, 0.5vw + 0.6rem, 18px);
-                        weight: 300;
-                    }
                 }
             }
         }
@@ -140,8 +106,3 @@
     }
 }
 
-.break-line {
-    @include responsive(lg) {
-        display: none;
-    }
-}

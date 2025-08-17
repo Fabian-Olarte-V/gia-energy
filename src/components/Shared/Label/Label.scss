@@ -4,14 +4,11 @@
     display: flex;
 
     &__label {
-        font-size: clamp(10px, 0.5vw + 0.5em, 18px); 
+        font-size: clamp(14px, 0.5vw + 1rem, 20px); 
         box-sizing: border-box;
         width: auto;
-        font-weight: 400;
+        font-weight: 300;
         position: relative;
-        margin-bottom: 4px;
-        padding: 10px 25px;
-        border-radius: 20px;
         margin-bottom: 5px;
 
         @include responsive(sm) {

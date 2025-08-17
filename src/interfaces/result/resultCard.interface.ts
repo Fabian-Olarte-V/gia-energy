@@ -4,6 +4,8 @@ export interface ISimpleResultCardProps {
     title: string; 
     description: string; 
     backgroundImage: string; 
+    category: string;
+    site: string;
 }
 
 export interface IExpandedResultCardProps {
@@ -19,4 +21,6 @@ export interface Result {
     outcomeHighlights: string[];
     servicesInvolved: string[];
     backgroundImage: string;
+    category: string;
+    site: string;
 }
