@@ -13,8 +13,8 @@ export default function SimpleResultCard({ data }: {data: ISimpleResultCardProps
         <Image className='result-card__image' src={backgroundImage} alt={title} fill />
       </div>
       <div className='result-card__content'>
-        <p className="result-card__category">{category}</p>
-        <h1 className="result-card__title">{title}</h1>
+        <p className="result-card__title">100 kWp Potencia generada</p>
+        <h1 className="result-card__title">162 Paneles Instalados</h1>
       </div>
     </Link>
   );

@@ -1,28 +1,38 @@
 import React from "react";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
-import "./page.scss";
 import ContactForm from "@/components/ContactForm/ContactForm";
-import Label from "@/components/Shared/Label/Label";
+import "./page.scss";
+import Image from "next/image";
 
+const HeroSection = () => (
+    <section className="contact-page__hero">
+        <div className="contact-page__hero-content">
+            <div className="contact-page__logo">
+                <Image
+                    className="header__logo--image"
+                    src="/assets/images/icon/giaIcon.png"
+                    alt="VQGLOBAL"
+                    fill
+                    style={{ objectFit: 'contain' }}
+                />
+            </div>      
+            <p className="contact-page__subtitle">
+                &ldquo;Adquiere nuestros servicios de paneles solares y comienza a ahorrar energía de manera inteligente mientras cuidas el planeta.&rdquo;
+            </p>
+        </div>
+    </section>
+);
 
 export default function ContactPage() {
     return (
         <main className="contact-page page-container">
             <Header blackItems={true} />
-                <div className="contact-page__hero container">
-                    <div className="contact-page__hero-title-container">
-                        <Label
-                            label="Contacto" 
-                            textColor="#0F3529" 
-                        />
-                        <h1 className="contact-page__hero-title-container--title">
-                            Your Essential Source for Global Solutions
-                        </h1>
-                    </div>
-                </div>
             <div className="contact-page__container container">
-                <ContactForm />
+                <HeroSection />
+                <div className="contact-page__form">
+                    <ContactForm />
+                </div>
             </div>
             <Footer />
         </main>

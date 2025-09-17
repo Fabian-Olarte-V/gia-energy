@@ -9,44 +9,8 @@
   gap: 10px;
   position: relative;
   overflow: hidden;
-  background-position: center;
-  background-size: cover;
+  background: center/cover white;
   text-align: center;
-  background-color: white;
-
-  &__description {
-    font-size: clamp(13px, 1vw, 17px);
-  }
-
-  &:hover {
-    .service-card-expanded__info {
-      opacity: 1;
-      height: 80%;
-      pointer-events: auto;
-
-      @include responsive(lg) { height: 65%; }
-      @include responsive(md) { height: 70%; }
-    }
-    .service-card-expanded__info--first {
-      opacity: 0;
-      pointer-events: none;
-    }
-  }
-
-  &.active {
-    .service-card-expanded__info {
-      opacity: 1;
-      height: 80%;
-      pointer-events: auto;
-
-      @include responsive(lg) { height: 65%; }
-      @include responsive(md) { height: 70%; }
-    }
-    .service-card-expanded__info--first {
-      opacity: 0;
-      pointer-events: none;
-    }
-  }
 
   * {
     position: relative;
@@ -58,68 +22,72 @@
     font-size: clamp(16px, 1.3vw + 0.8rem, 28px);
     font-weight: 600;
     color: $eerie-black;
-    bottom: 10px;
-    z-index: 2;
     text-align: start;
   }
 
   &__info {
-    display: flex;
-    opacity: 0;
+    $info-transition: cubic-bezier(.4,0,.2,1);
     position: absolute;
     bottom: 5%;
     left: 5%;
+    width: 90%;
+    display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    padding: 0 15px;
-    color: $white;
-    height: 15%;
-    width: 90%;
-    margin: auto;
-    overflow: hidden;
-    gap: 20px;
     text-align: start;
     background-color: $eerie-black;
     border-radius: 14px;
-    padding-top: 20px;
-    pointer-events: none;
-    transition: opacity 0.7s cubic-bezier(.4,0,.2,1), height 1s cubic-bezier(.4,0,.2,1);
-
-    @include responsive(lg) {
-      align-items: center;
-      gap: 20px;
-      padding: 15px;
-      box-sizing: border-box;
-    }
-    @include responsive(md) { padding: 15px; }
+    color: $white;
 
     &--first {
       position: absolute;
       bottom: 5%;
       left: 5%;
+      width: 90%;
       height: 100px;
       padding: 15px;
-      width: 90%;
-      background-color: $eerie-black;
-      color: $white;
-      border-radius: 14px;
       opacity: 1;
       pointer-events: auto;
-      transition: opacity 0.2s cubic-bezier(.4,0,.2,1);
+      transition: opacity 0.2s $info-transition;
+      background-color: $eerie-black;
+      border-radius: 14px;
+      color: $white;
 
       &--description {
         text-align: start;
         font-size: clamp(13px, 1vw, 17px);
       }
 
-      @include responsive(lg) { height: 100px; padding: 20px; }
+      @include responsive(lg) {
+        height: 100px;
+        padding: 20px;
+      }
+    }
+
+    &:not(&--first) {
+      height: 15%;
+      padding: 20px 15px;
+      opacity: 0;
+      pointer-events: none;
+      overflow: hidden;
+      transition: opacity 0.7s $info-transition, height 1s $info-transition;
+
+      @include responsive(lg) {
+        align-items: center;
+        padding: 15px;
+        box-sizing: border-box;
+      }
     }
 
     &-item {
       flex: 0.3;
       padding: 0 20px;
 
-      @include responsive(lg) { flex: 1; padding: 0; width: 100%; }
+      @include responsive(lg) {
+        flex: 1;
+        padding: 0;
+        width: 100%;
+      }
 
       &--subtitle {
         font-size: clamp(13px, 1.3vw, 18px);
@@ -143,6 +111,24 @@
         font-size: clamp(13px, 1vw, 16px);
         text-align: start;
       }
+    }
+  }
+
+  &:hover, &.active {
+    .service-card-expanded__info {
+      opacity: 1;
+      height: 75%;
+      pointer-events: auto;
+      gap: 30px;
+
+      @include responsive(xl) { height: 60%; }
+      @include responsive(lg) { height: 50%; }
+      @include responsive(md) { height: 50%; }
+    }
+
+    .service-card-expanded__info--first {
+      opacity: 0;
+      pointer-events: none;
     }
   }
 }

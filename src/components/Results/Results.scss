@@ -24,15 +24,15 @@
     }
 
     &__link-button{
-        color: $eerie-black !important;
-        border: 1px solid #ccc;
+        color: $dark-green !important;
+        border: 1px solid $dark-green;
     }
 
     .nav-button{
         background-color: transparent !important;
         width: auto !important;
         padding: 0px 20px !important;
-        border: 1px solid #ccc;
+        border: 1px solid $dark-green;
 
         @include responsive(sm) {
             padding: 0px 15px !important;

@@ -10,3 +10,18 @@ export interface Service {
   backgroundImage: string;
   black?: boolean; 
 }
+
+export interface ServiceItemProps {
+    href: string;
+    title: string;
+    description: string;
+}
+
+export interface ServiceListProps {
+    backgroundImage: string;
+}
+
+export interface ServicesSectionProps {
+    initialData: Service[];
+    categoryType: string;
+}

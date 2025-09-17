@@ -1,26 +1,37 @@
 import React from 'react';
 import { statsData } from '@/lib/initialData/initialData';
+import { StatItem } from '@/interfaces/statsBadge/statsBadge';
 import './StatsBadge.scss';
 
-export default function StatsBadge() {
-  const stats = statsData;
+
+function StatBadgeItem({ label, value }: StatItem) {
+  const mainText = label.slice(0, -1);
+  const highlightText = label.slice(-1);
 
   return (
+    <div className="stats-badge__item">
+      <p className="stats-badge__item--label">
+        {mainText}
+        <span className="stats-badge__item--label-highlight">
+          {highlightText}
+        </span>
+      </p>
+      <p className="stats-badge__item--value">{value}</p>
+    </div>
+  );
+}
+
+export default function StatsBadge() {
+  return (
     <section className="stats-badge">
-      <div className="stats-badge__container">
-        <div className="stats-badge__content">
-          {stats.map((stat, index) => (
-            <div key={index} className="stats-badge__item">
-              <p className="stats-badge__item--label">                
-                {stat.label.slice(0, -1)}
-                <span className="stats-badge__item--label-highlight">
-                  {stat.label.slice(-1)}
-                </span>
-              </p>
-              <p className="stats-badge__item--value">{stat.value}</p>
-            </div>
-          ))}
-        </div>
+      <div className="stats-badge__content">
+        {statsData.map((stat, index) => (
+          <StatBadgeItem
+            key={`stat-${index}`}
+            label={stat.label}
+            value={stat.value}
+          />
+        ))}
       </div>
     </section>
   );

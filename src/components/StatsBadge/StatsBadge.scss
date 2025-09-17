@@ -1,11 +1,12 @@
 @use '../../app/globals.scss' as *;
 
-
 .stats-badge {
+    width: 100%;
+
     &__content {
         @include flex-center;
-        justify-content: space-between;
         gap: 30px;
+        justify-content: space-between;
 
         @include responsive(lg) {
             gap: 10px;
@@ -13,16 +14,18 @@
     }
 
     &__item {
-        flex: 0.3;
         display: flex;
+        flex: 1;
+        max-width: 33.333%;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
 
         &--label {
+            color: $eerie-black;
             font-size: clamp(16px, 1.5vw + 1.5rem, 52px);
             font-weight: bold;
-            text-align: start;
-            color: $eerie-black;
+            line-height: 1.2;
 
             &-highlight {
                 color: $green-yellow;
@@ -30,9 +33,10 @@
         }
 
         &--value {
+            color: $eerie-black;
             font-size: clamp(12px, 1.5vw + 0.5rem, 20px);
             font-weight: 400;
-            color: $eerie-black;
+            margin-top: 0.5rem;
 
             @include responsive(lg) {
                 font-size: clamp(12px, 1.5vw + 0.5rem, 18px);

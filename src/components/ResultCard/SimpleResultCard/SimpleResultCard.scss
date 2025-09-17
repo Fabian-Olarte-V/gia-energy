@@ -12,7 +12,10 @@
     cursor: pointer;
 
     &:hover {
-        .result-card__title{
+        .result-card__image {
+            transform: scale(1.05);
+        }
+        .result-card__title {
             color: $green-yellow !important;
         }
     }
@@ -23,7 +26,17 @@
         height: 350px;
         border-radius: 16px;
         overflow: hidden;
-        margin-bottom: 20px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 70%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            z-index: 1;
+        }
     }
 
     &__image {
@@ -34,12 +47,15 @@
     }
 
     &__content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 30px;
+        z-index: 2;
         display: flex;
         flex-direction: column;
         gap: 10px;
-        z-index: 1;
-        padding: 0px 10px;
-        height: 100px;
     }   
 
     &__title {
@@ -47,14 +63,14 @@
         font-size: clamp(14px, 2vw + 1rem, 24px); 
         line-height: clamp(1.8rem, 2vw, 1.7rem);
         font-weight: 700;
-        color: $eerie-black !important;
+        color: $white !important;
     }
     
     &__category {
         font-weight: 600;
         font-size: clamp(12px, 2vw + 1rem, 18px);
         line-height: 1.2rem;
-        color: $font-color-third;
+        color: $white;
         position: relative;
         padding-left: 30px;
 
@@ -66,7 +82,7 @@
             transform: translateY(-50%);
             width: 20px;
             height: 2px;
-            background-color: $font-color-third;
+            background-color: $white;
             border-radius: 1px;
         }
     }

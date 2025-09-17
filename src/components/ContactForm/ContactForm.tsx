@@ -1,45 +1,28 @@
 'use client';
-
 import { FormEvent, useMemo, useState } from 'react';
 import './ContactForm.scss';
+import { FormData } from '@/interfaces/contact/contact';
+import { CITIES_OPTIONS, SERVICE_OPTIONS } from '@/lib/contactData/contactData';
 
-interface ServiceOption {
-  value: string;
-  label: string;
-}
 
-interface FormData {
-  selectedService: string;
-  name: string;
-  email: string;
-  message: string;
-}
-
-const SERVICE_OPTIONS: ServiceOption[] = [
-  { value: 'service1', label: '5 a 10 Millones' },
-  { value: 'service2', label: '10 a 20 Millones' },
-  { value: 'service3', label: '25 a 30 Millones' },
-  { value: 'service4', label: '30 a 35 Millones' },
-  { value: 'service5', label: '50 a 60 Millones' },
-  { value: 'service6', label: '70 a 80 Millones' },
-];
-
-const COLS = 2;
+const GRID_COLS = 3;
 
 const ContactForm = () => {
   const [formData, setFormData] = useState<FormData>({
     selectedService: '',
     name: '',
-    email: '',
-    message: '',
+    city: '',
+    phone: '',
+    email: ''
   });
 
   const [focusIdx, setFocusIdx] = useState(0);
   const [errors, setErrors] = useState<Record<keyof FormData, boolean>>({
     selectedService: false,
     name: false,
-    email: false,
-    message: false
+    city: false,
+    phone: false,
+    email: false
   });
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -47,8 +30,9 @@ const ContactForm = () => {
     const newErrors = {
       selectedService: !formData.selectedService,
       name: !formData.name.trim(),
-      email: !formData.email.trim(),
-      message: !formData.message.trim()
+      city: !formData.city,
+      phone: !formData.phone.trim(),
+      email: !formData.email.trim() || !formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)
     };
 
     setErrors(newErrors);
@@ -56,12 +40,10 @@ const ContactForm = () => {
     if (Object.values(newErrors).some(Boolean)) {
       return;
     }
-    
-    console.log(formData);
   };
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -77,8 +59,8 @@ const ContactForm = () => {
 
   const onKeyDownGrid = (e: React.KeyboardEvent<HTMLDivElement>) => {
     const total = SERVICE_OPTIONS.length;
-    const row = Math.floor(focusIdx / COLS);
-    const col = focusIdx % COLS;
+    const row = Math.floor(focusIdx / GRID_COLS);
+    const col = focusIdx % GRID_COLS;
 
     const moveFocus = (next: number) => {
       const clamped = Math.max(0, Math.min(total - 1, next));
@@ -92,7 +74,7 @@ const ContactForm = () => {
     switch (e.key) {
       case 'ArrowRight':
         e.preventDefault();
-        if (col < COLS - 1 && focusIdx + 1 < total) moveFocus(focusIdx + 1);
+        if (col < GRID_COLS - 1 && focusIdx + 1 < total) moveFocus(focusIdx + 1);
         break;
       case 'ArrowLeft':
         e.preventDefault();
@@ -100,11 +82,11 @@ const ContactForm = () => {
         break;
       case 'ArrowDown':
         e.preventDefault();
-        if ((row + 1) * COLS + col < total) moveFocus(focusIdx + COLS);
+        if ((row + 1) * GRID_COLS + col < total) moveFocus(focusIdx + GRID_COLS);
         break;
       case 'ArrowUp':
         e.preventDefault();
-        if (row > 0) moveFocus(focusIdx - COLS);
+        if (row > 0) moveFocus(focusIdx - GRID_COLS);
         break;
       case 'Enter':
       case ' ':
@@ -121,65 +103,58 @@ const ContactForm = () => {
 
   return (
     <div className="contact-form">
-      <div className={`contact-form__service ${errors.selectedService ? 'contact-form__service--error' : ''}`}>
-        <label className="contact-form__service-label">
-          ¿Cuantos Pagas De Luz Mensualmente?
-        </label>
+      <div className='contact-form__title-container'>
+        <h1 className="contact-form__title">
+            Descubre tu ahorro en 60 segundos
+        </h1>
+        <p className='contact-form__subtitle'>
+          Selecciona el rango que más se asemeje a tu gasto mensual en energía y completa tus datos
+        </p>
+      </div>
+      <section className={`contact-form__service ${errors.selectedService ? 'contact-form__service--error' : ''}`}>
+        <h2 className="contact-form__service-label">
+          ¿Cuánto Pagas De Energía Mensualmente?
+        </h2>
 
         <div
-          className={`contact-form__service-grid`}
+          className="contact-form__service-grid"
           role="radiogroup"
-          aria-label="Servicios"
+          aria-label="Rango de consumo energético"
           onKeyDown={onKeyDownGrid}
         >
-          {SERVICE_OPTIONS.map((opt, idx) => {
-            const selected = formData.selectedService === opt.value;
-            return (
-              <button
-                key={opt.value}
-                type="button"
-                className={
-                  'contact-form__service-option' +
-                  (selected ? ' contact-form__service-option--selected' : '')
-                }
-                data-service-index={idx}
-                role="radio"
-                aria-checked={selected}
-                aria-label={opt.label}
-                tabIndex={
-                  selectedIndex >= 0
-                    ? selectedIndex === idx
-                      ? 0
-                      : -1
-                    : idx === focusIdx
-                    ? 0
-                    : -1
-                }
-                onClick={() => handleSelect(opt.value)}
-                onFocus={() => setFocusIdx(idx)}
-              >
-                <span className="contact-form__service-option-label">
-                  {opt.label}
-                </span>
-              </button>
-            );
-          })}
+          {SERVICE_OPTIONS.map((opt, idx) => (
+            <button
+              key={opt.value}
+              type="button"
+              className={`contact-form__service-option ${
+                formData.selectedService === opt.value ? 'contact-form__service-option--selected' : ''
+              }`}
+              data-service-index={idx}
+              role="radio"
+              aria-checked={formData.selectedService === opt.value}
+              aria-label={opt.label}
+              tabIndex={selectedIndex === idx || (selectedIndex === -1 && idx === focusIdx) ? 0 : -1}
+              onClick={() => handleSelect(opt.value)}
+              onFocus={() => setFocusIdx(idx)}
+            >
+              <span className="contact-form__service-option-label">{opt.label}</span>
+            </button>
+          ))}
         </div>
         <input
-          type="text"
+          type="hidden"
           name="selectedService"
           value={formData.selectedService}
-          onChange={() => {}}
-          required
-          hidden
+          aria-hidden="true"
         />
-      </div>
+      </section>
 
       <form className="contact-form__main" onSubmit={handleSubmit} noValidate>
-        <label className="contact-form__service-label contact-form__service-label--form">
-          Ingresa Tus Datos Y Te Contactaremos
-        </label>
-        <div className="contact-form__input-group">
+        <h2 className="contact-form__service-label">
+          Ingresa Tus Datos Personales
+        </h2>
+        
+        <div className="contact-form__grid">
           <input
             className={`contact-form__input ${errors.name ? 'contact-form__input--error' : ''}`}
             type="text"
@@ -189,11 +164,39 @@ const ContactForm = () => {
             onChange={handleInputChange}
             required
             autoComplete="name"
-            placeholder='Tu nombre'
+            placeholder="Tu nombre completo"
+            aria-label="Nombre completo"
           />
-        </div>
 
-        <div className="contact-form__input-group">
+          <select
+            className={`contact-form__input ${errors.city ? 'contact-form__input--error' : ''}`}
+            id="city"
+            name="city"
+            value={formData.city}
+            onChange={handleInputChange}
+            required
+            aria-label="Ciudad"
+          >
+            <option value="">Selecciona tu ciudad</option>
+            {CITIES_OPTIONS.map(city => (
+              <option key={city} value={city}>{city}</option>
+            ))}
+          </select>
+
+          <input
+            className={`contact-form__input ${errors.phone ? 'contact-form__input--error' : ''}`}
+            type="tel"
+            id="phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleInputChange}
+            required
+            autoComplete="tel"
+            placeholder="Número de teléfono"
+            pattern="[0-9]*"
+            aria-label="Teléfono"
+          />
+
           <input
             className={`contact-form__input ${errors.email ? 'contact-form__input--error' : ''}`}
             type="email"
@@ -203,31 +206,18 @@ const ContactForm = () => {
             onChange={handleInputChange}
             required
             autoComplete="email"
-            inputMode="email"
-            placeholder='Tu email'
+            placeholder="Correo electrónico"
+            aria-label="Email"
           />
         </div>
 
-        <div className="contact-form__input-group">
-          <textarea
-            className={`contact-form__input contact-form__input--textarea ${errors.message ? 'contact-form__input--error' : ''}`}
-            id="message"
-            name="message"
-            rows={4}
-            placeholder='Dejanos tu mensaje'
-            value={formData.message}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-
-        <div className='contact-form__submit-container'>
-          <button type="submit" className="contact-form__submit button-template">
-            Enviar
+        <div className="contact-form__submit-container">
+          <button type="submit" className="contact-form__submit">
+            Solicita tu cotización
           </button>
-          {errors.selectedService && (
-            <span className="contact-form__error-message">
-              Por favor completa todos los campos
+          {Object.values(errors).some(Boolean) && (
+            <span className="contact-form__error-message" role="alert">
+              Por favor completa todos los campos correctamente
             </span>
           )}
         </div>

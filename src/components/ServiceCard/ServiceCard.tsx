@@ -2,11 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Service } from '@/interfaces/service/serviceCard.interface';
 import './ServiceCard.scss';
 
-type ServiceCardComponentProps = { data: Service };
-
-export default function ServiceCard({ data }: ServiceCardComponentProps) {
-  const { title, description, backgroundImage, benefits, commonApplications, whatWeDo } = data;
-
+export default function ServiceCard({ data: { title, description, backgroundImage, benefits, commonApplications, whatWeDo } }: { data: Service }) {
   const [active, setActive] = useState(false);
   const [isTouch, setIsTouch] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -15,30 +11,24 @@ export default function ServiceCard({ data }: ServiceCardComponentProps) {
     setIsTouch(window.matchMedia?.('(hover: none)').matches || 'ontouchstart' in window);
   }, []);
 
-  const handleCardClick = () => {
-    if (isTouch) setActive(prev => !prev);
-  };
-
   useEffect(() => {
     if (!isTouch || !active) return;
 
-    const onPointerDown = (e: Event) => {
+    const handleOutsideClick = (e: Event) => {
       const target = e.target as Node;
       if (cardRef.current && !cardRef.current.contains(target)) {
         setActive(false);
       }
     };
 
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setActive(false);
-    };
+    const handleEscape = (e: KeyboardEvent) => e.key === 'Escape' && setActive(false);
 
-    document.addEventListener('pointerdown', onPointerDown, true);
-    document.addEventListener('keydown', onKeyDown, true);
+    document.addEventListener('pointerdown', handleOutsideClick, true);
+    document.addEventListener('keydown', handleEscape, true);
 
     return () => {
-      document.removeEventListener('pointerdown', onPointerDown, true);
-      document.removeEventListener('keydown', onKeyDown, true);
+      document.removeEventListener('pointerdown', handleOutsideClick, true);
+      document.removeEventListener('keydown', handleEscape, true);
     };
   }, [isTouch, active]);
 
@@ -47,7 +37,7 @@ export default function ServiceCard({ data }: ServiceCardComponentProps) {
       ref={cardRef}
       className={`service-card-expanded${active ? ' active' : ''}`}
       style={{ backgroundImage: `url(${backgroundImage})` }}
-      onClick={handleCardClick}
+      onClick={() => isTouch && setActive(prev => !prev)}
       role="button"
       aria-pressed={active}
       tabIndex={0}
@@ -65,13 +55,11 @@ export default function ServiceCard({ data }: ServiceCardComponentProps) {
       </div>
 
       <div className="service-card-expanded__info">
-        <p className="service-card-expanded__description">{description}</p>
-
         <div className="service-card-expanded__info-item service-card-expanded__info-item--benefits">
           <h2 className="service-card-expanded__info-item--subtitle">Beneficios:</h2>
           <ul className="service-card-expanded__info-item--list">
             {benefits.map((benefit, index) => (
-              <li key={index}>{benefit.trim()}</li>
+              <li key={`benefit-${index}`}>{benefit.trim()}</li>
             ))}
           </ul>
         </div>

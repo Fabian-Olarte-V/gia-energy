@@ -1,12 +1,29 @@
-import { Service } from "@/interfaces/service/serviceCard.interface";
+import { Service, ServiceItemProps } from "@/interfaces/service/serviceCard.interface";
+
+export const HomeServices: ServiceItemProps[] = [
+    {
+        href: "/servicios?tipo=energia-solar",
+        title: "Energía Solar",
+        description: "Soluciones renovables"
+    },
+    {
+        href: "/servicios?tipo=instalacion",
+        title: "Instalación",
+        description: "Servicio profesional"
+    },
+    {
+        href: "/servicios?tipo=mantenimiento",
+        title: "Mantenimiento",
+        description: "Cuidado continuo"
+    }
+];
 
 export enum ServiceCardCategory {
   ALL = 'Todos',
-  DIAGNOSTICO = 'Diagnóstico',
-  RECUPERACION = 'Recuperación',
-  OPTIMIZACION = 'Optimización',
+  SOLAR_ENERGY = 'Energía Solar',
+  MAINTENANCE = 'Mantenimiento',
+  INSTALLATION = 'Instalación',
 }
-
 
 export const ServicesData: Service[] = [
   {
@@ -19,7 +36,7 @@ export const ServicesData: Service[] = [
     ],
     whatWeDo: "Digitalizamos procesos críticos mediante automatización y análisis predictivo con redes neuronales.",
     commonApplications: "Centrales de generación, subestaciones automatizadas y sistemas con alta carga operativa",
-    category: ServiceCardCategory.RECUPERACION,
+    category: ServiceCardCategory.SOLAR_ENERGY,
     backgroundImage: "/assets/images/service-4.png",
   },
   {
@@ -32,7 +49,7 @@ export const ServicesData: Service[] = [
     ],
     whatWeDo: "Evaluamos condiciones de bobinas, núcleo y rotor, aplicamos pruebas de tensión y diagnóstico de descargas parciales.",
     commonApplications: "Centrales hidroeléctricas afectadas por eventos extremos",
-    category: ServiceCardCategory.RECUPERACION,
+    category: ServiceCardCategory.SOLAR_ENERGY,
     backgroundImage: "/assets/images/service-4.png",
   },
   {
@@ -45,7 +62,7 @@ export const ServicesData: Service[] = [
     ],
     whatWeDo: "Aplicamos tensión controlada en un entorno oscuro con equipos propios para observar fenómenos de corona y evaluar el aislamiento.",
     commonApplications: "Generadores en operación o en mantenimiento preventivo, especialmente en plantas hidroeléctricas o térmicas",
-    category: ServiceCardCategory.DIAGNOSTICO,
+    category: ServiceCardCategory.MAINTENANCE,
     backgroundImage: "/assets/images/service-4.png",
   },
   {
@@ -58,7 +75,7 @@ export const ServicesData: Service[] = [
     ],
     whatWeDo: "Ejecutamos pruebas eléctricas en generadores como vacío, cortocircuito, tensión aplicada y descarga parcial.",
     commonApplications: "Generadores nuevos, en reparación o previo a su puesta en operación",
-    category: ServiceCardCategory.DIAGNOSTICO,
+    category: ServiceCardCategory.MAINTENANCE,
     backgroundImage: "/assets/images/service-4.png",
   },
   {
@@ -71,7 +88,7 @@ export const ServicesData: Service[] = [
     ],
     whatWeDo: "Realizamos inspección visual interna usando fibroendoscopio, evaluando puntos críticos del generador.",
     commonApplications: "Generadores en garantía, equipos en revisión mayor o con historial de fallas",
-    category: ServiceCardCategory.DIAGNOSTICO,
+    category: ServiceCardCategory.INSTALLATION,
     backgroundImage: "/assets/images/service-4.png",
   },
 

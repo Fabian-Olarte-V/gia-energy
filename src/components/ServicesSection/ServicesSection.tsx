@@ -1,23 +1,31 @@
 'use client';
 import React from "react";
 import ServiceCard from "@/components/ServiceCard/ServiceCard";
-import { Service } from "@/interfaces/service/serviceCard.interface";
+import { ServicesSectionProps } from "@/interfaces/service/serviceCard.interface";
+import { normalizeCategory } from "@/utils/normalizeServiceCategory/normalizeServiceCategory";
 import "./ServicesSection.scss";
 
-export default function ServicesSection({ initialData }: { initialData: Service[] }) {
+
+export default function ServicesSection({ initialData, categoryType }: ServicesSectionProps) {
+    const filteredServices = React.useMemo(() => 
+        categoryType === 'todos' 
+            ? initialData
+            : initialData.filter(service => normalizeCategory(service.category) === categoryType),
+        [initialData, categoryType]
+    );
 
     return (
-        <div className="all-services-section">
-            <div className="all-services-section__list">
-                {initialData.map((service, index) => (
+        <section className="all-services-section">
+            <div className="all-services-section__grid">
+                {filteredServices.map((service, index) => (
                     <div
-                        key={index}
-                        className={`all-services-section__list-item`}
+                        key={`${service.title}-${service.category}-${index}`}
+                        className="all-services-section__item"
                     >
                         <ServiceCard data={service} />
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 }

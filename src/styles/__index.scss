@@ -25,9 +25,10 @@ body, html {
     max-width: 1480px;
     margin: 0 auto;
     padding: 0px 20px;
+    box-sizing: border-box !important;
 
     @include responsive(xl) {
-        max-width: 1280px;
+        max-width: 1200px;
         padding: 0px 50px;
     }
 
