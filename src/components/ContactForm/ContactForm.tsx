@@ -3,6 +3,8 @@ import { FormEvent, useMemo, useState } from 'react';
 import './ContactForm.scss';
 import { FormData } from '@/interfaces/contact/contact';
 import { CITIES_OPTIONS, SERVICE_OPTIONS } from '@/lib/contactData/contactData';
+import { sendMailService } from '@/services/sendMailService/sendMailService';
+import { ColombiaFlag } from '@/components/Shared/IconsSvg/ColombiaFlag/ColombiaFlag';
 
 
 const GRID_COLS = 3;
@@ -25,15 +27,21 @@ const ContactForm = () => {
     email: false
   });
   const [showToast, setShowToast] = useState(false);
+  const [showErrorToast, setShowErrorToast] = useState(false);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const phoneRegex = /^[0-9]{10}$/;
+    const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s-]{4,50}$/;
+
     const newErrors = {
       selectedService: !formData.selectedService,
-      name: !formData.name.trim(),
+      name: !formData.name.trim() || !nameRegex.test(formData.name.trim()) || formData.name.trim().length < 4,
       city: !formData.city,
-      phone: !formData.phone.trim(),
-      email: !formData.email.trim() || !formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)
+      phone: !formData.phone.trim() || !phoneRegex.test(formData.phone.trim()),
+      email: !formData.email.trim() || !emailRegex.test(formData.email.trim())
     };
 
     setErrors(newErrors);
@@ -42,11 +50,24 @@ const ContactForm = () => {
       return;
     }
 
-    //Llamar servicio para enviar los datos 
-    
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 5000);
+    const result = await sendMailService({
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      city: formData.city,
+      selectedService: formData.selectedService
+    }); 
 
+    if (result.success) {
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 5000);
+    }
+
+    else {
+      setShowErrorToast(true);
+      setTimeout(() => setShowErrorToast(false), 5000);
+    }
+    
     setFormData({
       selectedService: '',
       name: '',
@@ -60,8 +81,37 @@ const ContactForm = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    if (value.trim()) {
+    let sanitizedValue = value;
+
+    switch (name) {
+      case 'name':
+        sanitizedValue = value
+          .replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s-]/g, '')
+          .slice(0, 50);
+        break;
+      
+      case 'phone':
+        sanitizedValue = value
+          .replace(/[^0-9]/g, '')
+          .slice(0, 10);
+        break;
+      
+      case 'email':
+        sanitizedValue = value
+          .replace(/\s/g, '')
+          .toLowerCase()
+          .slice(0, 100);
+        break;
+      
+      case 'city':
+        break;
+      
+      default:
+        sanitizedValue = value.slice(0, 200);
+    }
+
+    setFormData(prev => ({ ...prev, [name]: sanitizedValue }));
+    if (sanitizedValue.trim()) {
       setErrors(prev => ({ ...prev, [name]: false }));
     }
   };
@@ -141,6 +191,9 @@ const ContactForm = () => {
             autoComplete="name"
             placeholder="Tu nombre completo"
             aria-label="Nombre completo"
+            minLength={4}
+            maxLength={50}
+            title="Solo letras, espacios y guiones. Mínimo 4 caracteres"
           />
 
           <select
@@ -158,19 +211,37 @@ const ContactForm = () => {
             ))}
           </select>
 
-          <input
-            className={`contact-form__input ${errors.phone ? 'contact-form__input--error' : ''}`}
-            type="tel"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleInputChange}
-            required
-            autoComplete="tel"
-            placeholder="Número de teléfono"
-            pattern="[0-9]*"
-            aria-label="Teléfono"
-          />
+          <div style={{ position: 'relative', width: '100%' }}>
+            <div style={{
+              position: 'absolute',
+              left: '15px',
+              top: '50%',
+              transform: 'translateY(-50%)',
+              pointerEvents: 'none',
+              zIndex: 1,
+              display: 'flex',
+              alignItems: 'center'
+            }}>
+              <ColombiaFlag />
+            </div>
+            <input
+              className={`contact-form__input ${errors.phone ? 'contact-form__input--error' : ''}`}
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleInputChange}
+              required
+              autoComplete="tel"
+              placeholder="Número de teléfono (10 dígitos)"
+              aria-label="Teléfono"
+              minLength={10}
+              maxLength={10}
+              title="Ingresa un número de teléfono colombiano de 10 dígitos"
+              inputMode="numeric"
+              style={{ paddingLeft: '50px' }}
+            />
+          </div>
 
           <input
             className={`contact-form__input ${errors.email ? 'contact-form__input--error' : ''}`}
@@ -183,6 +254,8 @@ const ContactForm = () => {
             autoComplete="email"
             placeholder="Correo electrónico"
             aria-label="Email"
+            maxLength={100}
+            title="Ingresa un email válido"
           />
         </div>
 
@@ -222,6 +295,11 @@ const ContactForm = () => {
             value={formData.selectedService}
             aria-hidden="true"
           />
+          {errors.selectedService && (
+            <span className="contact-form__error-message" role="alert" style={{ marginTop: '10px', display: 'block' }}>
+              Debes seleccionar una opción
+            </span>
+          )}
         </section>
 
         <div className="contact-form__submit-container">
@@ -242,7 +320,11 @@ const ContactForm = () => {
           <span>✓ Datos enviados correctamente</span>
         </div>
       )}
-
+      {showErrorToast && (
+        <div className="contact-form__toast contact-form__toast--error">
+          <span>✖ Error al enviar los datos, por favor intenta más tarde</span>
+        </div>
+      )}
     </div>
   );
 };

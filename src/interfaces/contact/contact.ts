@@ -10,3 +10,11 @@ export interface FormData {
     phone: string;
     email: string;
 }
+
+export interface SendMailPayload {
+    name: string;
+    phone: string;
+    email: string;
+    city: string;
+    selectedService: string;
+}
