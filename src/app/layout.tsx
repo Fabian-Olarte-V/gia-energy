@@ -26,7 +26,7 @@ export const metadata = {
   openGraph: {
     title: "GIA - Soluciones en Energía Renovable",
     description: "Expertos en soluciones de energía solar y renovable. Transformamos el futuro energético con instalaciones sostenibles y eficientes para hogares y empresas.",
-    url: "   ",
+    url: "https://gia-energia.com",
     siteName: "GIA Energía",
     images: [
       {
@@ -43,7 +43,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "GIA - Soluciones en Energía Renovable",
     description: "Expertos en soluciones de energía solar y renovable. Diseñamos el futuro energético con tecnología sostenible.",
-    images: ["  "],
+    images: ["https://gia-energia.com/icon/fullIconBlack.png"],
   },
   keywords: [
     "energía renovable",
@@ -53,12 +53,17 @@ export const metadata = {
     "eficiencia energética",
     "instalación solar",
     "ahorro energético",
-    "energía limpia"
+    "energía limpia",
+    "energía solar Colombia",
+    "paneles solares Colombia"
   ],
   robots: {
     index: true,
     follow: true,
   },
+  authors: [{ name: "GIA Energía" }],
+  creator: "GIA Energía",
+  publisher: "GIA Energía",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -73,7 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@type": "EnergyProvider",
               name: "GIA Energía",
               description: "Empresa especializada en soluciones de energía renovable y sostenible",
-              image: "https://gia-energia.com/assets/images/icon/fullIconBlack.png",
+              image: "https://gia-energia.com/icon/fullIconBlack.png",
               url: "https://gia-energia.com",
               address: {
                 "@type": "PostalAddress",
