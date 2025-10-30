@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
-import Label from "@/components/Shared/Label/Label";
 import ResultCard from "@/components/ResultCard/ResultCard/ResultCard";
 import { resultsData } from "@/lib/resultsData/resultsData";
 import "./page.scss";
@@ -10,11 +9,11 @@ const HeroSection = () => (
     <section className="results-page__hero">
         <div className="results-page__hero-content">
             <h1 className="results-page__hero-title">
-                Your Essential Source for Global Solutions
+                Resultados que generan confianza
             </h1>
             <p className="results-page__hero-description description-template">
-                Conoce nuestros servicios eléctricos diseñados para ayudarte a reducir costos, 
-                evitar fallas y mejorar el rendimiento de tus equipos desde el primer día.
+                En Gia Energy hemos ejecutado con éxito más de 10 proyectos solares 
+                que hoy entregan ahorro comprobado y energía limpia a hogares y empresas.
             </p>
             <Link 
                 href="/contacto"

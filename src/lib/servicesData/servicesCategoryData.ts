@@ -10,23 +10,23 @@ interface ServiceCategories {
 
 export const servicesCategoryData: ServiceCategories = {
     "energia-solar": {
-        "title": "Soluciones Solares para Energía Sustentable",
-        "description": "Ofrecemos sistemas solares diseñados para maximizar el ahorro energético y promover el uso de energía limpia en hogares y negocios.",
-        "backgroundImage": "/assets/images/services/services_image.jpg"
+        "title": "Convierte tu factura en ahorro e independencia",
+        "description": "Diseñamos e instalamos sistemas solares personalizados que reducen tus costos de energía y te brindan independencia eléctrica en tu hogar o empresa.",
+        "backgroundImage": "/images/services/eficiencia.jpg"
     },
-    "instalacion": {
-        "title": "Instalación Segura de Sistemas Solares",
-        "description": "Nuestro equipo instala paneles y sistemas solares siguiendo estándares de calidad y seguridad para un rendimiento óptimo y duradero.",
-        "backgroundImage": "/assets/images/home/home_services_image.jpg"
+    "eficiencia": {
+        "title": "Optimiza tu consumo con energía inteligente",
+        "description": "Optimizamos el consumo eléctrico de tu empresa mediante soluciones eficientes que reducen costos y promueven un uso más sostenible de la energía.",
+        "backgroundImage": "/images/services/energiaSolar.jpg"
     },
-    "mantenimiento": {
-        "title": "Mantenimiento Preventivo de Energía Solar",
-        "description": "Brindamos mantenimiento preventivo y correctivo para garantizar la eficiencia y prolongar la vida útil de tus equipos solares.",
-        "backgroundImage": "/assets/images/home/home_aboutus_image.jpg"
+    "almacenamiento": {
+        "title": "Asegura tu suministro con sistemas de energía solar",
+        "description": "Implementamos y mantenemos sistemas de almacenamiento solar que aseguran energía continua y extienden la vida útil de tus equipos.",
+        "backgroundImage": "/images/services/sistemaAlmacenamiento.jpg"
     },
     "todos": {
-        "title": "Servicios Completos de Energía Renovable",
-        "description": "Descubre nuestra oferta integral: diseño, instalación y mantenimiento de soluciones solares adaptadas a las necesidades de cada cliente.",
-        "backgroundImage": "/assets/images/services/services_image.jpg"
+        "title": "Descubre todas nuestras soluciones solares integradas",
+        "description": "Explora todos nuestros servicios solares: instalación, eficiencia energética y almacenamiento, diseñados para ayudarte a ahorrar y cuidar el planeta.",
+        "backgroundImage": "images/services/servicesImage.jpg"
     }
 };

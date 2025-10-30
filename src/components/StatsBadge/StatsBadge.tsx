@@ -1,10 +1,11 @@
+"use client";
 import React from 'react';
 import { statsData } from '@/lib/initialData/initialData';
-import { StatItem } from '@/interfaces/statsBadge/statsBadge';
+import { IStatItem } from '@/interfaces/statsBadge/statsBadge';
 import './StatsBadge.scss';
 
 
-function StatBadgeItem({ label, value }: StatItem) {
+function StatBadgeItem({ label, value }: IStatItem) {
   const mainText = label.slice(0, -1);
   const highlightText = label.slice(-1);
 
@@ -20,6 +21,7 @@ function StatBadgeItem({ label, value }: StatItem) {
     </div>
   );
 }
+
 
 export default function StatsBadge() {
   return (

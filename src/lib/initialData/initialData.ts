@@ -1,17 +1,16 @@
-import { IStatItem } from "@/interfaces/stats/stast.interface";
+import { IStatItem } from "@/interfaces/statsBadge/statsBadge";
 
 export const statsData: IStatItem[] = [
     {
-        label: "200W+",
-        value: "Lorem Ipsum",
+        label: "200kW+",
+        value: "Instalados",
     },
     {
-        label: "20+",
-        value: "Lorem Ipsum",
+        label: "320+",
+        value: "Paneles instalados",
     },
-
     {
-        label: "80%",
-        value: "Lorem Ipsum",
+        label: "10+",
+        value: " proyectos ejecutados",
     },
 ];

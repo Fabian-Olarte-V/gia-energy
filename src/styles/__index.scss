@@ -15,12 +15,6 @@ body, html {
     overflow-x: hidden;
 }
 
-.page-container {
-    width: 100%;
-    position: relative;
-    overflow-x: hidden;
-}
-
 .container{
     max-width: 1480px;
     margin: 0 auto;
@@ -33,32 +27,12 @@ body, html {
     }
 
     @include responsive(lg) {
-        padding: 0px 30px;
+        padding: 0px 35px;
     }
 
     @include responsive(md) {
-        padding: 0px 15px;
+        padding: 0px 25px;
     }
-}
-
-.title-template{
-    font-size: clamp(20px, 2vw + 1.5rem, 32px); 
-    font-weight: 600;
-    color: $blue-primary;
-
-    @include responsive(lg) {
-        font-size: clamp(16px, 2vw + 1.5rem, 24px);
-    }
-
-    @include responsive(md) {
-        font-size: clamp(14px, 2vw + 1.5rem, 20px);
-    }
-}
-
-.subtitle-template{
-    font-size: clamp(18px, 1.8vw + 1.45rem, 56px); 
-    color: $eerie-black;
-    font-weight: 600;
 }
 
 .description-template{

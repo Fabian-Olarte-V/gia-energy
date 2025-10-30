@@ -1,7 +1,8 @@
 "use client";
+
 import React, { useRef } from "react";
 import Carousel from "@/components/Carousel/Carousel";
-import ArrowIcon from "../Shared/IconsSvg/ArrowIcon/ArrowIcon";
+import ArrowIcon from "@/components/Shared/IconsSvg/ArrowIcon/ArrowIcon";
 import Link from "next/link";
 import { resultsData } from "@/lib/resultsData/resultsData";
 import "./Results.scss";
@@ -23,29 +24,29 @@ export default function Results() {
   };
 
   return (
-    <div className="results-section container">
+    <section className="results-section container">
       <div className="results-section__content">
-        <div className="results-section__buttons-container">
-          <div className="results-section__nav-buttons">
+        <div className="results-section__buttons">
+          <div className="results-section__nav">
             <button
-              className="results-section__nav-buttons--prev nav-button button-template"
-              onClick={handlePrev} 
+              className="results-section__nav--prev nav-button button-template"
+              onClick={handlePrev}
             >
-              <ArrowIcon color="#0F3529"/>
+              <ArrowIcon color="#0F3529" />
             </button>
             <button
-              className="results-section__nav-buttons--next nav-button button-template"
+              className="results-section__nav--next nav-button button-template"
               onClick={handleNext}
             >
-              <ArrowIcon rotation={180} color="#0F3529"/>
+              <ArrowIcon rotation={180} color="#0F3529" />
             </button>
           </div>
-          <Link className="results-section__link-button button-template" href={'/resultados'}>Ver Todos</Link>
+          <Link className="results-section__link button-template" href="/resultados">Ver Todos</Link>
         </div>
       </div>
-      <div className="results-section__carousel-container">
+      <div className="results-section__carousel">
         <Carousel onSwiper={(swiper) => (swiperRef.current = swiper)} items={resultsData} />
       </div>
-    </div>
+    </section>
   );
 }

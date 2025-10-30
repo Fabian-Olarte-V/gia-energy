@@ -1,10 +1,10 @@
 import React from 'react';
-import { ISimpleResultCardProps } from '@/interfaces/result/resultCard.interface';
+import { Result } from '@/interfaces/result/resultCard.interface';
 import Link from 'next/link';
 import Image from 'next/image';
 import './SimpleResultCard.scss';
 
-export default function SimpleResultCard({ data }: {data: ISimpleResultCardProps}) {
+export default function SimpleResultCard({ data }: {data: Result}) {
   const { title, backgroundImage, category } = data;
   
   return (
@@ -13,8 +13,8 @@ export default function SimpleResultCard({ data }: {data: ISimpleResultCardProps
         <Image className='result-card__image' src={backgroundImage} alt={title} fill />
       </div>
       <div className='result-card__content'>
-        <p className="result-card__title">100 kWp Potencia generada</p>
-        <h1 className="result-card__title">162 Paneles Instalados</h1>
+        <p className="result-card__title">{data.outcomeHighlights[1]}</p>
+        <h1 className="result-card__title">{data.outcomeHighlights[0]}</h1>
       </div>
     </Link>
   );

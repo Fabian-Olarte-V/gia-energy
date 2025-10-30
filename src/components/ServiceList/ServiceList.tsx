@@ -2,24 +2,23 @@ import React from 'react';
 import Link from 'next/link';
 import ArrowIcon from '@/components/Shared/IconsSvg/ArrowIcon/ArrowIcon';
 import ServiceIcon from '@/components/Shared/IconsSvg/ServiceIcon/ServiceIcon';
-import { ServiceItemProps, ServiceListProps } from '@/interfaces/service/serviceCard.interface';
+import { ServiceItemProps } from '@/interfaces/service/serviceCard.interface';
 import { HomeServices } from '@/lib/servicesData/servicesData';
 import './ServiceList.scss';
 
-
-const ServiceItem = ({ href, title, description, backgroundImage }: ServiceItemProps & { backgroundImage: string }) => (
+const ServiceItem = ({ service }: { service: ServiceItemProps }) => (
     <Link 
-        href={href}
+        href={service.href}
         className="service-list__item"
         style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${service.backgroundImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
         }}
     >
         <h3 className="service-list__title">
-            {title}
-            <span className="service-list__description">{description}</span>
+            {service.title}
+            <span className="service-list__description">{service.description}</span>
         </h3>
         <div className="service-list__button">
             Explorar más
@@ -31,14 +30,13 @@ const ServiceItem = ({ href, title, description, backgroundImage }: ServiceItemP
     </Link>
 );
 
-export const ServiceList = ({ backgroundImage }: ServiceListProps) => {
+export const ServiceList = () => {
     return (
         <div className="service-list">
             {HomeServices.map((service, index) => (
                 <ServiceItem
                     key={`service-${index}`}
-                    {...service}
-                    backgroundImage={backgroundImage}
+                    service={service}
                 />
             ))}
         </div>

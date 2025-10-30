@@ -24,6 +24,7 @@ const ContactForm = () => {
     phone: false,
     email: false
   });
+  const [showToast, setShowToast] = useState(false);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -40,6 +41,19 @@ const ContactForm = () => {
     if (Object.values(newErrors).some(Boolean)) {
       return;
     }
+
+    //Llamar servicio para enviar los datos 
+    
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 5000);
+
+    setFormData({
+      selectedService: '',
+      name: '',
+      city: '',
+      phone: '',
+      email: ''
+    });
   };
 
   const handleInputChange = (
@@ -105,55 +119,16 @@ const ContactForm = () => {
     <div className="contact-form">
       <div className='contact-form__title-container'>
         <h1 className="contact-form__title">
-            Descubre tu ahorro en 60 segundos
+            ¡Descubre tu ahorro en 60 segundos!
         </h1>
         <p className='contact-form__subtitle'>
-          Selecciona el rango que más se asemeje a tu gasto mensual en energía y completa tus datos
+          Completa tus datos y selecciona el rango que más se asemeje a tu gasto mensual en energía
         </p>
       </div>
-      <section className={`contact-form__service ${errors.selectedService ? 'contact-form__service--error' : ''}`}>
-        <h2 className="contact-form__service-label">
-          ¿Cuánto Pagas De Energía Mensualmente?
-        </h2>
-
-        <div
-          className="contact-form__service-grid"
-          role="radiogroup"
-          aria-label="Rango de consumo energético"
-          onKeyDown={onKeyDownGrid}
-        >
-          {SERVICE_OPTIONS.map((opt, idx) => (
-            <button
-              key={opt.value}
-              type="button"
-              className={`contact-form__service-option ${
-                formData.selectedService === opt.value ? 'contact-form__service-option--selected' : ''
-              }`}
-              data-service-index={idx}
-              role="radio"
-              aria-checked={formData.selectedService === opt.value}
-              aria-label={opt.label}
-              tabIndex={selectedIndex === idx || (selectedIndex === -1 && idx === focusIdx) ? 0 : -1}
-              onClick={() => handleSelect(opt.value)}
-              onFocus={() => setFocusIdx(idx)}
-            >
-              <span className="contact-form__service-option-label">{opt.label}</span>
-            </button>
-          ))}
-        </div>
-        <input
-          type="hidden"
-          name="selectedService"
-          value={formData.selectedService}
-          aria-hidden="true"
-        />
-      </section>
-
       <form className="contact-form__main" onSubmit={handleSubmit} noValidate>
-        <h2 className="contact-form__service-label">
-          Ingresa Tus Datos Personales
-        </h2>
-        
+          <h2 className="contact-form__service-label">
+            Ingresa tus datos personales
+          </h2>
         <div className="contact-form__grid">
           <input
             className={`contact-form__input ${errors.name ? 'contact-form__input--error' : ''}`}
@@ -211,6 +186,44 @@ const ContactForm = () => {
           />
         </div>
 
+        <section className={`contact-form__service ${errors.selectedService ? 'contact-form__service--error' : ''}`}>
+          <h2 className="contact-form__service-label">
+            ¿Cuánto Pagas De Energía Mensualmente?
+          </h2>
+
+          <div
+            className="contact-form__service-grid"
+            role="radiogroup"
+            aria-label="Rango de consumo energético"
+            onKeyDown={onKeyDownGrid}
+          >
+            {SERVICE_OPTIONS.map((opt, idx) => (
+              <button
+                key={opt.value}
+                type="button"
+                className={`contact-form__service-option ${
+                  formData.selectedService === opt.value ? 'contact-form__service-option--selected' : ''
+                }`}
+                data-service-index={idx}
+                role="radio"
+                aria-checked={formData.selectedService === opt.value}
+                aria-label={opt.label}
+                tabIndex={selectedIndex === idx || (selectedIndex === -1 && idx === focusIdx) ? 0 : -1}
+                onClick={() => handleSelect(opt.value)}
+                onFocus={() => setFocusIdx(idx)}
+              >
+                <span className="contact-form__service-option-label">{opt.label}</span>
+              </button>
+            ))}
+          </div>
+          <input
+            type="hidden"
+            name="selectedService"
+            value={formData.selectedService}
+            aria-hidden="true"
+          />
+        </section>
+
         <div className="contact-form__submit-container">
           <button type="submit" className="contact-form__submit">
             Solicita tu cotización
@@ -221,7 +234,15 @@ const ContactForm = () => {
             </span>
           )}
         </div>
+        
       </form>
+
+      {showToast && (
+        <div className="contact-form__toast">
+          <span>✓ Datos enviados correctamente</span>
+        </div>
+      )}
+
     </div>
   );
 };

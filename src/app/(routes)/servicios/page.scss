@@ -2,8 +2,8 @@
 
 .services-page {
     position: relative;
-    padding: clamp(140px, 10vw, 160px) 0 15px;
-    background-color: $mint-cream;
+    padding: clamp(110px, 10vw, 130px) 0 15px;
+    background-color: $gray-neutral;
 
     &__container {
         display: flex;
@@ -16,59 +16,62 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: clamp(40px, 6vw, 80px);
+        gap: 80px;
+
+        @include responsive(xl) {
+            gap: 50px;
+        }
 
         @include responsive(lg) {
             flex-direction: column;
             align-items: stretch;
         }
+    }
 
-        &-content {
-            flex: 1 1 65%;
-            position: relative;   
-            
+    &__hero-content {
+        flex: 1 1 50%;
+        position: relative;
+        @include responsive(lg) {
+            flex: 1 1 60%;
+            flex-basis: 100%;
+        }
+    }
+
+    &__hero-title {
+        color: $eerie-black;
+        margin-bottom: clamp(10px, 1.5vw, 15px);
+        font-size: clamp(2rem, 3.5vw + 1rem, 4.3rem);
+        line-height: clamp(2rem, 3.5vw + 1rem, 4.5rem);
+        @include responsive(xl) {
+            font-size: clamp(2rem, 3vw + 1rem, 3.5rem);
+            line-height: clamp(2rem, 3vw + 1rem, 3.7rem);
+        }
+        @include responsive(lg) {
+            text-align: center;
+        }
+    }
+
+    &__hero-description {
+        width: 100%;
+        font-size: clamp(1rem, 1vw + 1rem, 1.4rem);
+        line-height: clamp(1.6rem, 1vw + 1.5rem, 1.8rem);
+        @include responsive(lg) {
+            text-align: center;
+        }
+        &--mobile {
+            display: none;
             @include responsive(lg) {
-                flex-basis: 100%;
+                display: block;
             }
         }
+    }
 
-        &-title {
-            color: $eerie-black;
-            margin-bottom: clamp(10px, 1.5vw, 15px);
-            font-size: clamp(2rem, 3.5vw + 1rem, 4.3rem);
-            line-height: 1.15;
-            
-            @include responsive(lg) {
-                text-align: center;
-            }
-        }
-
-        &-description {
-            width: 100%;
-            font-size: clamp(1rem, 1vw + 0.5rem, 1.5rem);
-            line-height: clamp(1.6rem, 1.7vw + 1rem, 2rem);
-
-            @include responsive(lg) {
-                text-align: center;
-            }
-            
-            &--mobile {
-                display: none;
-
-                @include responsive(lg) {
-                    display: block;
-                }
-            }
-        }
-
-        &-image {
-            flex: 1 1 35%;
-            display: flex;
-            align-items: center;
-
-            @include responsive(lg) {
-                display: none;
-            }
+    &__hero-image {
+        flex: 1 1 35%;
+        display: flex;
+        align-items: center;
+        @include responsive(lg) {
+            display: none;
         }
     }
 
@@ -81,5 +84,9 @@
             repeat: no-repeat;
         }
         border-radius: 16px;
+
+        &--large {
+            background-position: 40%;
+        }
     }
 }

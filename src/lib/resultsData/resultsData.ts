@@ -2,95 +2,53 @@ import { Result } from "@/interfaces/result/resultCard.interface";
 
 export const resultsData: Result[] = [
   {
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum.",
-    description: "Reconstrucción en sitio del generador 1 tras cortocircuito. Sustitución de bobinas, reconstrucción del anillo de cortocircuito y mantenimiento del rotor.",
-    backgroundImage: "/assets/images/service-6.png",
+    title: "Sistema Hibrido",
+    backgroundImage: "/images/projects/carlosB.jpg",
     outcomeHighlights: [
-      "Vida útil extendida en más de 10 años",
-      "Verificación de aislamiento al 125% de la tensión nominal",
-      "Restauración completa del generador para operación eficiente"
+      "24 Paneles Instalados",
+      "13.8kWp Potencia generada",
     ],
-    servicesInvolved: [
-      "Recuperación de Generadores de Alta Tensión",
-      "Pruebas eléctricas especializadas a generadores"
-    ],
-    category: "Energia Solar",
+    category: "Carlos B.",
     site: "VILLAVICENCIO"
   },
   {
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum.",
-    description: "Desarrollo de especificaciones para reparación mayor del estator de la unidad #1 y acompañamiento técnico en procesos de mejora.",
-    backgroundImage: "/assets/images/service-6.png",
+    title: "Sistema On Grid",
+    backgroundImage: "/images/projects/bioproyectos.jpg",
     outcomeHighlights: [
-      "Reducción de fallas recurrentes en la máquina",
-      "Propuesta de mejora en potencia y eficiencia",
-      "Intervención sobre defecto constructivo documentado"
+      "160 Paneles Instalados",
+      "100kWp Potencia generada",
     ],
-    servicesInvolved: [
-      "Consultoría técnica",
-      "Análisis de causa raíz (ACR) en fallas de bobinados"
-    ],
-    category: "Energia Solar",
+    category: "Bioproyectos",
     site: "VILLAVICENCIO"
   },
   {
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum.",
-    description: "Elaboración de pliegos para compra de bobinas de estator y rotor. Revisión técnica y corrección posterior.",
-    backgroundImage: "/assets/images/service-6.png",
+    title: "Sistema Hibrido",
+    backgroundImage: "/images/projects/marioP.jpg",
     outcomeHighlights: [
-      "Optimización técnica de especificaciones",
-      "Prevención de fallas ligadas a descargas parciales desde la operación inicial"
+      "10 Paneles Instalados",
+      "6.15kWp Potencia generada",
     ],
-    servicesInvolved: [
-      "Soporte especializado en especificaciones técnicas para licitaciones"
-    ],
-    category: "Energia Solar",
+    category: "Mario P.",
     site: "VILLAVICENCIO"
   },
   {
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum.",
-    description: "Diagnóstico completo del generador tras evento de inundación. Análisis de bobinas, núcleo, polos y pruebas de tensión y descarga parcial.",
-    backgroundImage: "/assets/images/service-6.png",
+    title: "Sistema On Grid",
+    backgroundImage: "/images/projects/pedroH.jpg",
     outcomeHighlights: [
-      "Evaluación integral del estado del generador",
-      "Aplicación de pruebas eléctricas hasta 13,8 kV",
-      "Diagnóstico técnico detallado con acciones recomendadas"
+      "24 Paneles Instalados",
+      "15kWp Potencia generada",
     ],
-    servicesInvolved: [
-      "Consultoría en recuperación de generadores tras eventos críticos",
-      "Pruebas eléctricas especializadas a generadores"
-    ],
-    category: "Energia Solar",
+    category: "Pedro H.",
     site: "VILLAVICENCIO"
   },
   {
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum.",
-    description: "Supervisión técnica en montaje, desmontaje y diagnóstico de ambas unidades. Acompañamiento en pruebas y especificaciones para adquisición de equipos.",
-    backgroundImage: "/assets/images/service-6.png",
+    title: "Sistema On Grid",
+    backgroundImage: "/images/projects/carlosM.jpg",
     outcomeHighlights: [
-      "Diagnóstico completo de unidades #1 y #2",
-      "Supervisión de procesos clave en campo",
-      "Elaboración de informes técnicos para decisiones estratégicas",
+      "16 Paneles Instalados",
+      "10kWp Potencia generada",
     ],
-    servicesInvolved: [
-      "Supervisión técnica e interventoría especializada"
-    ],
-    category: "Energia Solar",
+    category: "Carlos M.",
     site: "VILLAVICENCIO"
   },
-  {
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum.",
-    description: "Dirección técnica y supervisión de la rehabilitación de tres pequeñas centrales hidroeléctricas, incluyendo evaluación de reposición de tuberías.",
-    backgroundImage: "/assets/images/service-6.png",
-    outcomeHighlights: [
-      "Supervisión de obras electromecánicas",
-      "Revisión integral de infraestructura operativa",
-      "Acompañamiento técnico en todo el proceso de rehabilitación",
-    ],
-    servicesInvolved: [
-      "Supervisión técnica e interventoría especializada"
-    ],
-    category: "Energia Solar",
-    site: "VILLAVICENCIO"
-  }
 ];

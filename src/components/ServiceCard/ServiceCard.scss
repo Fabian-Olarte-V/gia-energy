@@ -12,6 +12,18 @@
   background: center/cover white;
   text-align: center;
 
+  @include responsive(xl) {
+    height: 450px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 1;
+  }
+
   * {
     position: relative;
     z-index: 2;
@@ -21,7 +33,7 @@
     padding: 30px 20px;
     font-size: clamp(16px, 1.3vw + 0.8rem, 28px);
     font-weight: 600;
-    color: $eerie-black;
+    color: $white;
     text-align: start;
   }
 
@@ -44,7 +56,7 @@
       bottom: 5%;
       left: 5%;
       width: 90%;
-      height: 100px;
+      height: 105px;
       padding: 15px;
       opacity: 1;
       pointer-events: auto;
@@ -58,9 +70,21 @@
         font-size: clamp(13px, 1vw, 17px);
       }
 
-      @include responsive(lg) {
-        height: 100px;
+      
+      @include responsive(xl) {
+        height: 115px;
         padding: 20px;
+      }
+
+      @include responsive(lg) {
+        height: 120px;
+        padding: 20px;
+      }
+
+      
+      @include responsive(md) {
+        height: 110px;
+        padding: 10px 10px;
       }
     }
 
@@ -121,9 +145,9 @@
       pointer-events: auto;
       gap: 30px;
 
-      @include responsive(xl) { height: 60%; }
-      @include responsive(lg) { height: 50%; }
-      @include responsive(md) { height: 50%; }
+      @include responsive(xl) { height: 80%; }
+      @include responsive(lg) { height: 75%; }
+      @include responsive(md) { height: 80%; }
     }
 
     .service-card-expanded__info--first {

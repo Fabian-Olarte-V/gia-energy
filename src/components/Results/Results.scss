@@ -3,46 +3,47 @@
 .results-section {
     &__content {
         display: flex;
-        flex-flow: column nowrap;
+        flex-direction: column;
         justify-content: space-between;
     }
 
-    &__buttons-container {
+    &__buttons {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin-bottom: 30px;
     }
 
-    &__nav-buttons{
+    &__nav {
         display: flex;
         gap: 20px;
-
         @include responsive(sm) {
             gap: 10px;
         }
     }
 
-    &__link-button{
+    &__link {
         color: $dark-green !important;
         border: 1px solid $dark-green;
+        &:hover {
+            background-color: $green-yellow !important;
+            color: $eerie-black !important;
+        }
     }
 
-    .nav-button{
+    .nav-button {
         background-color: transparent !important;
         width: auto !important;
         padding: 0px 20px !important;
         border: 1px solid $dark-green;
-
         @include responsive(sm) {
             padding: 0px 15px !important;
         }
+        &:hover {
+            background-color: $green-yellow !important;
+        }
     }
 
-    &__results {
-        display: flex;
-        flex-flow: row nowrap;
-        gap: 20px;
-        overflow: hidden;
+    &__carousel {
+        width: 100%;
     }
 }

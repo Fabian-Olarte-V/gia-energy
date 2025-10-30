@@ -1,8 +1,7 @@
-import { IStatItem } from "../stats/stast.interface";
+import { IStatItem } from "../statsBadge/statsBadge";
 
 export interface ISimpleResultCardProps {
     title: string; 
-    description: string; 
     backgroundImage: string; 
     category: string;
     site: string;
@@ -17,9 +16,7 @@ export interface IExpandedResultCardProps {
 
 export interface Result {
     title: string; 
-    description: string; 
     outcomeHighlights: string[];
-    servicesInvolved: string[];
     backgroundImage: string;
     category: string;
     site: string;

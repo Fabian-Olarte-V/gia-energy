@@ -1,8 +1,8 @@
 @use '../../globals.scss' as *;
 
 .results-page {
-    background-color: $mint-cream;
-    padding: clamp(100px, 10vw, 110px) 0 15px;
+    background-color: $gray-neutral;
+    padding: clamp(80px, 10vw, 100px) 0 15px;
 
     &__hero {
         padding: clamp(20px, 4vw, 40px) 0;
@@ -14,6 +14,10 @@
         gap: clamp(10px, 2vw, 20px);
         width: 80%;
         margin: 0 auto;
+
+        @include responsive(lg) {
+            width: 90%;
+        }
     }
 
     &__hero-title {

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectCoverflow, Autoplay } from 'swiper/modules';
-import { ISimpleResultCardProps } from '@/interfaces/result/resultCard.interface';
+import { Result } from '@/interfaces/result/resultCard.interface';
 import SimpleResultCard from '../ResultCard/SimpleResultCard/SimpleResultCard';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -13,7 +13,7 @@ import './Carousel.scss';
 
 type CarouselProps = {
   onSwiper: (swiper: any) => void; 
-  items: ISimpleResultCardProps[]; 
+  items: Result[]; 
 };
 
 export default function Carousel({ onSwiper, items }: CarouselProps) {

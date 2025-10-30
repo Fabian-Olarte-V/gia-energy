@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
@@ -8,98 +7,97 @@ import StatsBadge from "@/components/StatsBadge/StatsBadge";
 import Label from "@/components/Shared/Label/Label";
 import Results from "@/components/Results/Results";
 import { ServiceList } from "@/components/ServiceList/ServiceList";
-import serviceSolar from "public/assets/images/services/services_image.jpg";
 import "./page.scss";
 
 
 export default function Home() {
 	return (
-		<main className="home-page page-container" style={{ position: 'relative' }}>
+		<main className="home-page page-container">
 			<div className="home-page__header">
-				<Header />
+				<Header dynamicBackground={true} />
 			</div>
 			<div className="home-page__main-content">
-				<div className="hero-container">
+				<div className="home-page__hero">
 					<Hero />
 				</div>
 				<section className="aboutus-section container">
 					<div className="aboutus-section__content">
 						<div className="aboutus-section__title-container">
 							<h1 className="aboutus-section__title">
-								Más ahorro, más valor, un futuro más <span className="aboutus-section__title--highlight">verde</span>
+								Más <span className="aboutus-section__title--highlight">ahorro</span> hoy, más libertad mañana
 							</h1>
 						</div>
 						<div className="aboutus-section__stats-badge">
 							<StatsBadge />
 						</div>
 						<div className="aboutus-section__description-container">
-							<Label label="Nuestros Servicios" textColor='#0F3529'/>
-							<ServiceList backgroundImage={serviceSolar.src} />
+							<Label label="Nuestras soluciones energéticas" textColor='#0F3529' />
+							<ServiceList />
 						</div>
 					</div>
 				</section>
 				<section className="about-section">
-					<div className="about-section__image-container--sun">
-						<Image
-							src={"assets/images/icon/sun.png"} 
-							alt="About Us" 
-							fill
-						/>
-					</div>
+					<video
+						className="about-section__video-bg"
+						src="/videos/aboutVideoBackground.mp4"
+						autoPlay
+						loop
+						muted
+						playsInline
+					/>
+					<div className="about-section__overlay" />
 					<div className="about-section__content container">
 						<div className="about-section__title-container">
-							<Label label="Quienes Somos" textColor='#fff'/>
+							<Label label="Quienes Somos" textColor='#fff' />
 							<div className="about-section__content-container">
-								<h1 className="about-section__title ">
-									GIA ENERGY lidera la transición energética y redefine el consumo de energía en hogares y empresas
+								<h1 className="about-section__title">
+									Energía eficiente, limpia y sostenible para hogares y empresas.
+									En GIA Energy lideramos el cambio hacia un futuro solar inteligente.
 								</h1>
 								<p className="about-section__description description-template">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-									Nam ultricies libero ac aliquet pulvinar. Nullam eu auctor nisi, 
-									eu mollis justo. Aenean porttitor vitae leo eget maximus.
+									En GIA Energy diseñamos, instalamos y monitoreamos sistemas solares que 
+									convierten tu consumo eléctrico en una inversión. Con proyectos ejecutados 
+									en Villavicencio y la región, ofrecemos soluciones confiables que garantizan 
+									ahorro real, seguridad y sostenibilidad.
 								</p>
 								<div className="about-section__stats-badge">
 									<div className="about-section__badge">
-										<span>RETIE NTC 20553</span>
+										<span>Proyectos certificados</span>
 									</div>
 									<div className="about-section__badge">
 										<span>Monitoreo 24/7</span>
 									</div>
 									<div className="about-section__badge">
-										<span>Financiacion a medida</span>
+										<span>Energía limpia</span>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div className="about-section__image-container--solar-panel">
-						<Image 
-							src={"assets/images/icon/solar-panel.png"} 
-							alt="About Us" 
-							fill
-						/>
-					</div>
 				</section>
-				<div className="results-section-container ">
+
+				<section className="results-section">
 					<h1 className="aboutus-section__title aboutus-section__title--results container">
 						Cómo Hemos Transformado el <span className="aboutus-section__title--highlight">Consumo de Energía</span>
 					</h1>
 					<Results />
-				</div>
-				<section className="contact-section-container ">
-					<div className="contact-section-container__title-container container">
-						<h1 className="contact-section-container__title ">
-							¿Tienes Un Proyecto En Mente?
+				</section>
+
+				<section className="contact-section">
+					<div className="contact-section__title-container container">
+						<h1 className="contact-section__title">
+							¿Tienes un proyecto en mente?
 						</h1>
 					</div>
-					<div className="contact-section-container__content-container container">
+					<div className="contact-section__content-container container">
 						<Label label="Contacto" textColor='#fff' />
-						<p className="contact-section-container__description description-template">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultricies 
-							libero ac aliquet pulvinar. Nullam eu auctor nisi, eu mollis justo. 
-							Aenean porttitor vitae leo eget maximus. 
+						<p className="contact-section__description description-template">
+							En GIA, transformamos la energía del sol en soluciones sostenibles 
+							para hogares y empresas. Te ayudamos a reducir costos, proteger 
+							el medio ambiente y aprovechar al máximo la energía limpia 
+							con nuestros sistemas de paneles solares y tecnologías renovables.
 						</p>
-						<Link className="contact-section-container__button button-template" href='/contacto'>
+						<Link className="contact-section__button button-template" href='/contacto'>
 							Contáctanos
 						</Link>
 					</div>

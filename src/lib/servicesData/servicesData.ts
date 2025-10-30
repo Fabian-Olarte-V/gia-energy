@@ -3,94 +3,111 @@ import { Service, ServiceItemProps } from "@/interfaces/service/serviceCard.inte
 export const HomeServices: ServiceItemProps[] = [
     {
         href: "/servicios?tipo=energia-solar",
-        title: "Energía Solar",
-        description: "Soluciones renovables"
+        title: "Energia Solar",
+        description: "Ahorro e independencia",
+        backgroundImage: "/images/services/eficiencia.jpg"
     },
     {
-        href: "/servicios?tipo=instalacion",
-        title: "Instalación",
-        description: "Servicio profesional"
+        href: "/servicios?tipo=eficiencia",
+        title: "Eficiencia Energetica",
+        description: "Consumo inteligente",
+        backgroundImage: "/images/services/energiaSolar.jpg"
     },
     {
-        href: "/servicios?tipo=mantenimiento",
-        title: "Mantenimiento",
-        description: "Cuidado continuo"
+        href: "/servicios?tipo=almacenamiento",
+        title: "Sistemas de Almacenamiento",
+        description: "Energía siempre disponible ",
+        backgroundImage: "/images/services/sistemaAlmacenamiento.jpg"
     }
 ];
 
 export enum ServiceCardCategory {
   ALL = 'Todos',
   SOLAR_ENERGY = 'Energía Solar',
-  MAINTENANCE = 'Mantenimiento',
-  INSTALLATION = 'Instalación',
+  INSTALLATION = 'Eficiencia',
+  STORAGE = 'Almacenamiento',
 }
 
 export const ServicesData: Service[] = [
   {
-    title: "Lorem ipsum dolor sit amet",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultricies libero ac aliquet pulvinar.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultricies libero ac aliquet pulvinar.",
+    title: "On Grid (Ahorro)",
+    description:
+      "Ayudamos a hogares y empresas a optimizar el uso de la energía mediante sistemas solares conectados a la red. Reducimos costos operativos, mejoramos la eficiencia eléctrica y garantizamos un consumo sostenible y confiable a largo plazo.",
     benefits: [
-      "Reducción de tiempos de parada",
-      "Eliminación de focos de falla",
-      "Mejora en la eficiencia operativa"
+      "Reducción inmediata en la factura de energía",
+      "Acceso constante a electricidad gracias a la red pública",
+      "Bajo costo inicial al no requerir baterías",
     ],
-    whatWeDo: "Digitalizamos procesos críticos mediante automatización y análisis predictivo con redes neuronales.",
-    commonApplications: "Centrales de generación, subestaciones automatizadas y sistemas con alta carga operativa",
+    whatWeDo:
+      "Diseñamos e instalamos sistemas solares conectados a la red que permiten cubrir parte de tu consumo diario y reducir tus gastos energéticos de manera sostenible.",
+    commonApplications:
+      "Hogares y empresas en zonas urbanas con conexión estable a la red eléctrica.",
     category: ServiceCardCategory.SOLAR_ENERGY,
-    backgroundImage: "/assets/images/service-4.png",
+    backgroundImage: "/images/services/onGrid.jpg",
   },
   {
-    title: "Lorem ipsum dolor sit amet",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultricies libero ac aliquet pulvinar.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultricies libero ac aliquet pulvinar.",
+    title: "Off Grid (Autónomos)",
+    description:
+      "Instalamos sistemas solares con baterías inteligentes que almacenan la energía generada durante el día para garantizar suministro continuo y confiable. Reducimos la dependencia de la red eléctrica y aseguramos la estabilidad energética en todo momento.",
     benefits: [
-      "Recuperación efectiva de activos críticos",
-      "Minimización del impacto económico",
-      "Prolongación de la vida útil de equipos afectados"
+      "Autonomía energética total",
+      "Energía disponible incluso en cortes de red",
+      "Ideal para lugares sin acceso a la red pública",
     ],
-    whatWeDo: "Evaluamos condiciones de bobinas, núcleo y rotor, aplicamos pruebas de tensión y diagnóstico de descargas parciales.",
-    commonApplications: "Centrales hidroeléctricas afectadas por eventos extremos",
+    whatWeDo:
+      "Instalamos sistemas solares con baterías de almacenamiento que garantizan el suministro continuo de electricidad y priorizan cargas críticas según la necesidad del usuario.",
+    commonApplications:
+      "Fincas, zonas rurales, sistemas aislados y proyectos que requieren independencia energética.",
     category: ServiceCardCategory.SOLAR_ENERGY,
-    backgroundImage: "/assets/images/service-4.png",
+    backgroundImage: "/images/services/offGrid.jpg",
   },
   {
-    title: "Lorem ipsum dolor sit amet",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultricies libero ac aliquet pulvinar.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultricies libero ac aliquet pulvinar.",
+    title: "Estudios de Eficiencia Energética",
+    description:
+      "Realizamos diagnósticos detallados para identificar oportunidades de ahorro en tus instalaciones. Analizamos consumos, equipos y hábitos energéticos para optimizar el uso de la electricidad y lograr un rendimiento más eficiente y sostenible.",
     benefits: [
-      "Ubicación precisa de descargas",
-      "Prevención de fallas mayores",
-      "Extensión de vida útil de los equipos"
+      "Reducción de costos en la factura de energía",
+      "Identificación de consumos innecesarios",
+      "Optimización de procesos y equipos",
     ],
-    whatWeDo: "Aplicamos tensión controlada en un entorno oscuro con equipos propios para observar fenómenos de corona y evaluar el aislamiento.",
-    commonApplications: "Generadores en operación o en mantenimiento preventivo, especialmente en plantas hidroeléctricas o térmicas",
-    category: ServiceCardCategory.MAINTENANCE,
-    backgroundImage: "/assets/images/service-4.png",
-  },
-  {
-    title: "Lorem ipsum dolor sit amet",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultricies libero ac aliquet pulvinar.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultricies libero ac aliquet pulvinar.",
-    benefits: [
-      "Verificación del estado real del generador",
-      "Soporte para decisiones de puesta en marcha o retiro",
-      "Detección de problemas ocultos"
-    ],
-    whatWeDo: "Ejecutamos pruebas eléctricas en generadores como vacío, cortocircuito, tensión aplicada y descarga parcial.",
-    commonApplications: "Generadores nuevos, en reparación o previo a su puesta en operación",
-    category: ServiceCardCategory.MAINTENANCE,
-    backgroundImage: "/assets/images/service-4.png",
-  },
-  {
-    title: "Lorem ipsum dolor sit amet",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultricies libero ac aliquet pulvinar.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultricies libero ac aliquet pulvinar.",
-    benefits: [
-      "Alerta temprana de descargas parciales",
-      "Evita fallas durante el periodo de garantía",
-      "Define acciones de mantenimiento específicas"
-    ],
-    whatWeDo: "Realizamos inspección visual interna usando fibroendoscopio, evaluando puntos críticos del generador.",
-    commonApplications: "Generadores en garantía, equipos en revisión mayor o con historial de fallas",
+    whatWeDo:
+      "Realizamos diagnósticos energéticos para identificar puntos de mejora en el uso de la electricidad, proponiendo soluciones que reduzcan el consumo sin afectar la operación de la empresa.",
+    commonApplications:
+      "Fábricas, oficinas, centros comerciales y empresas con alto consumo eléctrico.",
     category: ServiceCardCategory.INSTALLATION,
-    backgroundImage: "/assets/images/service-4.png",
+    backgroundImage: "/images/services/eficienciaEnergetica.jpg",
   },
-
-
+  {
+    title: "Calidad de Potencia",
+    description:
+      "Evaluamos la estabilidad y pureza de la energía que alimenta tus sistemas eléctricos. Detectamos variaciones, armónicos y fallas que puedan afectar tus equipos, implementando soluciones que aseguran un suministro limpio, constante y seguro.",
+    benefits: [
+      "Disminución de fallas en equipos sensibles",
+      "Estabilidad y confiabilidad en la operación",
+      "Prolongación de la vida útil de los sistemas eléctricos",
+    ],
+    whatWeDo:
+      "Medimos y analizamos la calidad de la energía suministrada, detectando variaciones, armónicos o problemas de voltaje, e implementamos soluciones para garantizar energía limpia y estable.",
+    commonApplications:
+      "Industrias con maquinaria de precisión, hospitales, centros de datos y sistemas eléctricos críticos.",
+    category: ServiceCardCategory.INSTALLATION,
+    backgroundImage: "/images/services/calidadDePotencia.jpg",
+  },
+  {
+    title: "Sistemas de Almacenamiento de Energía (BESS)",
+    description:
+      "Diseñamos soluciones de almacenamiento solar con baterías de última generación que acumulan la energía excedente y la liberan cuando más la necesitas. Garantizamos autonomía, reducción de costos en horas pico y continuidad operativa incluso durante cortes eléctricos.",
+    benefits: [
+      "Energía disponible incluso durante cortes eléctricos",
+      "Mayor independencia de la red pública",
+      "Optimización del uso de energía solar generada",
+      "Reducción de costos en horas de mayor demanda",
+    ],
+    whatWeDo:
+      "Instalamos sistemas de almacenamiento solar que acumulan energía y la liberan cuando es necesario, brindando autonomía y eficiencia energética.",
+    commonApplications:
+      "Hogares y empresas con cortes frecuentes o alta demanda energética, proyectos que requieren autonomía solar.",
+    category: ServiceCardCategory.STORAGE,
+    backgroundImage: "/images/services/baterias.jpg",
+  }
 ];

@@ -1,5 +1,5 @@
 export interface SocialLink {
     href: string;
-    iconType: 'whatsapp' | 'linkedin';
+    iconType: 'whatsapp' | 'instagram' | 'facebook';
     color?: string;
 }
