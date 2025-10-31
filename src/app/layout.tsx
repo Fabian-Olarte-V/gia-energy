@@ -20,20 +20,20 @@ const roboto = Roboto({
 export const metadata = {
   title: {
     default: "GIA - Soluciones en Energía Renovable",
-    template: "%s | GIA Energía",
+    template: "%s | GIA Energy",
   },
   description: "Expertos en soluciones de energía solar y renovable. Transformamos el futuro energético con instalaciones sostenibles y eficientes para hogares y empresas.",
   openGraph: {
     title: "GIA - Soluciones en Energía Renovable",
     description: "Expertos en soluciones de energía solar y renovable. Transformamos el futuro energético con instalaciones sostenibles y eficientes para hogares y empresas.",
-    url: "https://gia-energia.com",
-    siteName: "GIA Energía",
+    url: "https://giaenergy.com",
+    siteName: "GIA Energy",
     images: [
       {
-        url: "https://gia-energia.com/icon/fullIconBlack.png",
+        url: "https://gia-website-content.s3.us-east-1.amazonaws.com/fullIconBlack.png",
         width: 1200,
         height: 630,
-        alt: "GIA Energía Renovable",
+        alt: "GIA",
       },
     ],
     locale: "es_CO",
@@ -43,7 +43,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "GIA - Soluciones en Energía Renovable",
     description: "Expertos en soluciones de energía solar y renovable. Diseñamos el futuro energético con tecnología sostenible.",
-    images: ["https://gia-energia.com/icon/fullIconBlack.png"],
+    images: ["https://gia-website-content.s3.us-east-1.amazonaws.com/fullIconBlack.png"],
   },
   keywords: [
     "energía renovable",
@@ -61,9 +61,9 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  authors: [{ name: "GIA Energía" }],
-  creator: "GIA Energía",
-  publisher: "GIA Energía",
+  authors: [{ name: "GIA Energy" }],
+  creator: "GIA Energy",
+  publisher: "GIA Energy",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
