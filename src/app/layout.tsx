@@ -17,87 +17,110 @@ const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
 });
 
+
 export const metadata = {
+  metadataBase: new URL("https://www.giaenergy.com"),
   title: {
-    default: "GIA - Soluciones en Energía Renovable",
-    template: "%s | GIA Energy",
+    default: "GIA Energy — Energía Solar para Colombia",
+    template: "%s | GIA Energy"
   },
-  description: "Expertos en soluciones de energía solar y renovable. Transformamos el futuro energético con instalaciones sostenibles y eficientes para hogares y empresas.",
+  description: "Soluciones solares para hogares y empresas. Diseñamos e instalamos sistemas solares eficientes y sostenibles en Colombia.",
+  
   openGraph: {
-    title: "GIA - Soluciones en Energía Renovable",
-    description: "Expertos en soluciones de energía solar y renovable. Transformamos el futuro energético con instalaciones sostenibles y eficientes para hogares y empresas.",
-    url: "https://giaenergy.com",
+    title: "GIA Energy — Energía Solar para Colombia",
+    description: "Instalamos sistemas solares para hogares y empresas en Colombia, ayudándote a reducir tu factura de energía y lograr independencia eléctrica. Proyectos certificados, monitoreo 24/7 y soluciones sostenibles adaptadas a tus necesidades.",
+    url: "https://www.giaenergy.com",
     siteName: "GIA Energy",
     images: [
       {
         url: "https://gia-website-content.s3.us-east-1.amazonaws.com/fullIconBlack.png",
         width: 1200,
         height: 630,
-        alt: "GIA",
+        alt: "GIA Energy"
       },
+      {
+        url: "https://gia-website-content.s3.us-east-1.amazonaws.com/fullIconWhite.png",
+        width: 1200,
+        height: 630,
+        alt: "GIA Energy"
+      }
     ],
-    locale: "es_CO",
     type: "website",
+    locale: "es_CO",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "GIA - Soluciones en Energía Renovable",
-    description: "Expertos en soluciones de energía solar y renovable. Diseñamos el futuro energético con tecnología sostenible.",
-    images: ["https://gia-website-content.s3.us-east-1.amazonaws.com/fullIconBlack.png"],
+    title: "GIA Energy — Energía Solar",
+    description: "Energía solar sostenible para hogares y empresas.",
+    images: [
+      "https://gia-website-content.s3.us-east-1.amazonaws.com/fullIconBlack.png",
+      "https://gia-website-content.s3.us-east-1.amazonaws.com/fullIconWhite.png"
+    ],
   },
-  keywords: [
-    "energía renovable",
-    "paneles solares",
-    "energía solar",
-    "sostenibilidad",
-    "eficiencia energética",
-    "instalación solar",
-    "ahorro energético",
-    "energía limpia",
-    "energía solar Colombia",
-    "paneles solares Colombia"
-  ],
-  robots: {
-    index: true,
-    follow: true,
+
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
-  authors: [{ name: "GIA Energy" }],
-  creator: "GIA Energy",
-  publisher: "GIA Energy",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es-CO">
       <head>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "EnergyProvider",
-              name: "GIA Energía",
-              description: "Empresa especializada en soluciones de energía renovable y sostenible",
-              image: "https://gia-energia.com/icon/fullIconBlack.png",
-              url: "https://gia-energia.com",
-              address: {
+              "@type": ["Organization", "SolarEnergyContractor"],
+              "name": "GIA Energy",
+              "url": "https://www.giaenergy.com",
+              "logo": "https://gia-website-content.s3.us-east-1.amazonaws.com/giaIconBlack.png",
+              "image": "https://gia-website-content.s3.us-east-1.amazonaws.com/fullIconBlack.png",
+              "description": "Instalamos sistemas solares para hogares y empresas en Colombia, ayudándote a reducir tu factura de energía y lograr independencia eléctrica. Proyectos certificados, monitoreo 24/7 y soluciones sostenibles adaptadas a tus necesidades.",
+              "address": {
                 "@type": "PostalAddress",
-                addressCountry: "CO"
+                "addressCountry": "CO"
               },
-              sameAs: [
+              "areaServed": "Colombia",
+              "sameAs": [
                 "https://www.linkedin.com/company/gia-energia",
                 "https://www.instagram.com/gia.energia"
               ],
-              areaServed: "Colombia",
-              priceRange: "$$",
-              additionalType: "SolarEnergyContractor",
-              knowsAbout: [
-                "Energía Solar",
-                "Paneles Solares",
-                "Energía Renovable",
-                "Eficiencia Energética"
+              "knowsAbout": [
+                "Energía solar",
+                "Paneles solares",
+                "Sistemas solares",
+                "Sistemas fotovoltaicos",
+                "Instalación de paneles solares",
+                "Eficiencia energética",
+                "Almacenamiento de energía",
+                "Baterías solares",
+                "Sistemas On-Grid",
+                "Sistemas Off-Grid",
+                "Sistemas híbridos solares",
+                "Autonomía energética",
+                "Inversores solares",
+                "Monitoreo solar 24/7",
+                "Ahorro energético",
+                "Energía renovable",
+                "Energía limpia",
+                "Proyectos solares en Colombia",
+                "Energía solar para hogares",
+                "Energía solar para empresas",
+                "Celdas solares",
+                "Microinversores solares",
+                "Paneles solares en Villavicencio",
+                "Instalación solar en Colombia"
               ]
-            }),
+            })
           }}
         />
       </head>

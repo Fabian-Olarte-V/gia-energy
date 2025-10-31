@@ -3,7 +3,7 @@ import { Result } from "@/interfaces/result/resultCard.interface";
 export const resultsData: Result[] = [
   {
     title: "Sistema Hibrido",
-    backgroundImage: "/images/projects/carlosB.jpg",
+    backgroundImage: "/images/projects/carlosbp.jpg",
     outcomeHighlights: [
       "24 Paneles Instalados",
       "13.8kWp Potencia generada",
@@ -13,7 +13,7 @@ export const resultsData: Result[] = [
   },
   {
     title: "Sistema On Grid",
-    backgroundImage: "/images/projects/bioproyectos.jpg",
+    backgroundImage: "/images/projects/bioproyecto.jpg",
     outcomeHighlights: [
       "160 Paneles Instalados",
       "100kWp Potencia generada",
@@ -23,7 +23,7 @@ export const resultsData: Result[] = [
   },
   {
     title: "Sistema Hibrido",
-    backgroundImage: "/images/projects/marioP.jpg",
+    backgroundImage: "/images/projects/mario.jpg",
     outcomeHighlights: [
       "10 Paneles Instalados",
       "6.15kWp Potencia generada",
@@ -33,7 +33,7 @@ export const resultsData: Result[] = [
   },
   {
     title: "Sistema On Grid",
-    backgroundImage: "/images/projects/pedroH.jpg",
+    backgroundImage: "/images/projects/pedro.jpg",
     outcomeHighlights: [
       "24 Paneles Instalados",
       "15kWp Potencia generada",
@@ -43,7 +43,7 @@ export const resultsData: Result[] = [
   },
   {
     title: "Sistema On Grid",
-    backgroundImage: "/images/projects/carlosM.jpg",
+    backgroundImage: "/images/projects/carlos.jpg",
     outcomeHighlights: [
       "16 Paneles Instalados",
       "10kWp Potencia generada",
