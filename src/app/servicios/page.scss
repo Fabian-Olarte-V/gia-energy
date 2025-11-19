@@ -53,11 +53,13 @@
 
     &__hero-description {
         width: 100%;
-        font-size: clamp(1rem, 1vw + 1rem, 1.4rem);
-        line-height: clamp(1.6rem, 1vw + 1.5rem, 1.8rem);
+        font-size: clamp(0.8rem, 1vw + 0.8rem, 1.4rem);
+        line-height: clamp(1.4rem, 1vw + 1.2rem, 1.8rem);
+
         @include responsive(lg) {
             text-align: center;
         }
+
         &--mobile {
             display: none;
             @include responsive(lg) {

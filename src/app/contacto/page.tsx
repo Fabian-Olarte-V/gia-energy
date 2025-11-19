@@ -7,7 +7,7 @@ import "./page.scss";
 
 export default function ContactPage() {
     return (
-        <main className="">
+        <main>
             <Header blackItems={true} />
             <div className="contact-page__hero">
                 <div className="contact-page__hero-overlay" />

@@ -61,6 +61,8 @@
 
         @include responsive(md) {
             min-height: unset;
+            height: auto !important;
+            padding: 30px 0px;
         }
     }
 

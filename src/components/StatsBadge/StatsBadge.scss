@@ -11,6 +11,11 @@
         @include responsive(lg) {
             gap: 10px;
         }
+
+        @include responsive(sm) {
+            flex-direction: column;
+            gap: 25px;
+        }
     }
 
     &__item {

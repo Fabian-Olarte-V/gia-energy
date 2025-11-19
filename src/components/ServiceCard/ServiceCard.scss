@@ -56,8 +56,8 @@
       bottom: 5%;
       left: 5%;
       width: 90%;
-      height: 105px;
-      padding: 15px;
+      height: 95px;
+      padding: 12px;
       opacity: 1;
       pointer-events: auto;
       transition: opacity 0.2s $info-transition;
@@ -70,20 +70,17 @@
         font-size: clamp(13px, 1vw, 17px);
       }
 
-      
       @include responsive(xl) {
-        height: 115px;
-        padding: 20px;
+        height: 90px;
+        padding: 15px 10px;
       }
 
       @include responsive(lg) {
-        height: 120px;
-        padding: 20px;
+        height: 115px;
       }
 
-      
       @include responsive(md) {
-        height: 110px;
+        height: auto !important;
         padding: 10px 10px;
       }
     }
