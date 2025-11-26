@@ -16,6 +16,11 @@
     height: 450px;
   }
 
+  @include responsive(xs) {
+    height: 500px;
+  }
+
+
   &::before {
     content: '';
     position: absolute;
@@ -138,13 +143,13 @@
   &:hover, &.active {
     .service-card-expanded__info {
       opacity: 1;
-      height: 75%;
+      height: 70%;
       pointer-events: auto;
       gap: 30px;
 
       @include responsive(xl) { height: 80%; }
       @include responsive(lg) { height: 75%; }
-      @include responsive(md) { height: 80%; }
+      @include responsive(md) { height: 78%; }
     }
 
     .service-card-expanded__info--first {

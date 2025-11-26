@@ -96,17 +96,16 @@ export const ServicesData: Service[] = [
   {
     title: "Sistemas de Almacenamiento de Energía (BESS)",
     description:
-      "Diseñamos soluciones de almacenamiento solar con baterías de última generación que acumulan la energía excedente y la liberan cuando más la necesitas. Garantizamos autonomía, reducción de costos en horas pico y continuidad operativa incluso durante cortes eléctricos.",
+      "Soluciones con baterías de última generación que acumulan energía solar excedente y la liberan cuando más la necesitas. Autonomía, reducción de costos en horas pico y continuidad operativa.",
     benefits: [
       "Energía disponible incluso durante cortes eléctricos",
-      "Mayor independencia de la red pública",
-      "Optimización del uso de energía solar generada",
+      "Mayor autonomía energética y optimización de energía solar generada",
       "Reducción de costos en horas de mayor demanda",
     ],
     whatWeDo:
-      "Instalamos sistemas de almacenamiento solar que acumulan energía y la liberan cuando es necesario, brindando autonomía y eficiencia energética.",
+      "Instalamos sistemas que acumulan energía solar y la liberan cuando es necesario, brindando autonomía y eficiencia energética.",
     commonApplications:
-      "Hogares y empresas con cortes frecuentes o alta demanda energética, proyectos que requieren autonomía solar.",
+      "Hogares y empresas con cortes frecuentes o alta demanda energética.",
     category: ServiceCardCategory.STORAGE,
     backgroundImage: "/images/services/baterias.jpg",
   }
